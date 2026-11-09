@@ -1,0 +1,526 @@
+/* componentes.css */
+/* Piezas que se repiten en mis-solicitudes, empresa-vacantes,
+   solicitudes-recibidas y 404. Usan solo las variables de variables.css.
+   Cada clase de aqui sera despues un componente de React. */
+
+
+/* ENCABEZADO DE PAGINA */
+.titulo-pagina {
+    display: grid;
+    gap: var(--espacio-2);
+    margin-bottom: var(--espacio-5);
+}
+
+.titulo-pagina p {
+    color: var(--texto-2);
+}
+
+
+/* BOTONES */
+/* Sirven para <a> y <button>. Alto minimo de 3.5rem (mas de 44px) */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacio-1);
+    min-height: var(--alto-boton);
+    min-width: 3rem;
+    padding: var(--espacio-2) var(--espacio-4);
+    border: var(--grosor-borde) solid transparent;
+    border-radius: var(--radio-boton);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    text-decoration: none;
+}
+
+/* Iconos dentro de botones */
+.boton .icono {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Boton principal: marino */
+.boton--primario {
+    background-color: var(--marino);
+    color: var(--texto-invertido);
+}
+
+.boton--primario:hover {
+    background-color: var(--texto-2);
+}
+
+/* Boton con borde */
+.boton--secundario {
+    background-color: var(--fondo);
+    border-color: var(--marino);
+    color: var(--marino);
+}
+
+.boton--secundario:hover {
+    background-color: var(--coral-tinte);
+}
+
+/* Boton de acento: coral */
+.boton--coral {
+    background-color: var(--coral);
+    color: var(--marino);
+}
+
+.boton--coral:hover {
+    background-color: var(--coral-hover);
+}
+
+/* Acciones que no se pueden deshacer (rechazar) */
+.boton--peligro {
+    background-color: var(--fondo);
+    border-color: var(--error);
+    color: var(--error);
+}
+
+.boton--peligro:hover {
+    background-color: var(--error-fondo);
+}
+
+.boton--exito {
+    background-color: var(--exito);
+    color: var(--texto-invertido);
+}
+
+.boton--exito:hover {
+    background-color: #17532A;
+}
+
+/* Varios botones juntos, con separacion */
+.grupo-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-3);
+}
+
+
+/* ETIQUETA DE ESTATUS */
+/* Siempre lleva icono y texto, no solo color */
+.etiqueta-estatus {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: flex-start;
+    padding: 0.25rem var(--espacio-2);
+    border-radius: 999px;
+    font-size: var(--texto-chico);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.etiqueta-estatus .icono {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Enviada / pendiente: azul */
+.etiqueta-estatus--enviada,
+.etiqueta-estatus--pendiente {
+    background-color: var(--azul-amac);
+    color: var(--marino);
+}
+
+/* En revisión / pausada: arena */
+.etiqueta-estatus--revision,
+.etiqueta-estatus--pausada {
+    background-color: var(--aviso-fondo);
+    color: var(--aviso);
+}
+
+.etiqueta-estatus--entrevista {
+    background-color: var(--coral-tinte);
+    color: var(--marino);
+}
+
+/* Aceptada / activa: verde */
+.etiqueta-estatus--aceptada,
+.etiqueta-estatus--activa {
+    background-color: var(--exito-fondo);
+    color: var(--exito);
+}
+
+/* Rechazada: rojo */
+.etiqueta-estatus--rechazada {
+    background-color: var(--error-fondo);
+    color: var(--error);
+}
+
+/* Cancelada / cerrada: gris */
+.etiqueta-estatus--cancelada,
+.etiqueta-estatus--cerrada {
+    background-color: var(--gris);
+    color: var(--texto-2);
+}
+
+
+/* TARJETA (vacante y candidato) */
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-3);
+    height: 100%;
+    padding: var(--espacio-4);
+    background-color: var(--fondo);
+    border: var(--grosor-borde) solid var(--linea);
+    border-radius: var(--radio-tarjeta);
+}
+
+.tarjeta__titulo {
+    overflow-wrap: anywhere;
+}
+
+.tarjeta__subtitulo {
+    color: var(--texto-2);
+}
+
+.tarjeta__datos {
+    display: grid;
+    gap: var(--espacio-1);
+    padding: 0;
+    list-style: none;
+}
+
+/* Los botones se van al final de la tarjeta */
+.tarjeta__acciones {
+    margin-top: auto;
+    padding-top: var(--espacio-2);
+}
+
+/* Solicitud o vacante que ya no esta activa */
+.tarjeta--inactiva {
+    background-color: var(--gris);
+    border-color: var(--gris);
+}
+
+
+/* LISTA DE TARJETAS */
+/* Celular: 1 columna. Tablet: 2. Computadora: 3 */
+.lista-tarjetas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacio-4);
+    padding: 0;
+    list-style: none;
+}
+
+.lista-tarjetas > li {
+    max-width: none;
+}
+
+
+/* AVISOS POR CORREO (mis-solicitudes) */
+.avisos-correo {
+    display: grid;
+    gap: var(--espacio-2);
+    margin-bottom: var(--espacio-5);
+    padding: var(--espacio-4);
+    background-color: var(--gris);
+    border-radius: var(--radio-tarjeta);
+}
+
+.avisos-correo__titulo {
+    font-family: var(--fuente-texto);
+    font-size: var(--texto-h3);
+    font-weight: 700;
+}
+
+.avisos-correo__lista {
+    display: grid;
+    gap: var(--espacio-1);
+    padding-left: var(--espacio-4);
+    list-style: disc;
+}
+
+/* Punto de color coral */
+.avisos-correo__lista li::marker {
+    color: var(--coral);
+}
+
+
+/* LISTA DE SOLICITUDES (mis-solicitudes) */
+/* Celular: cada solicitud es una tarjeta con las etiquetas visibles.
+   Computadora: 4 columnas (Vacante, Fecha, Estatus, Qué puede hacer) */
+.tabla-cabecera {
+    display: none;
+}
+
+.solicitudes {
+    display: grid;
+    gap: var(--espacio-3);
+    padding: 0;
+    list-style: none;
+}
+
+.solicitudes > li {
+    max-width: none;
+}
+
+.solicitud {
+    display: grid;
+    gap: var(--espacio-3);
+    padding: var(--espacio-4);
+    background-color: var(--fondo);
+    border: var(--grosor-borde) solid var(--linea);
+    border-radius: var(--radio-tarjeta);
+}
+
+.solicitud__titulo {
+    font-family: var(--fuente-titulos);
+    font-size: var(--texto-h3);
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+/* El titulo es un enlace, se subraya al pasar el mouse o al usar Tab */
+.solicitud__titulo a {
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.solicitud__titulo a:hover,
+.solicitud__titulo a:focus-visible {
+    text-decoration: underline;
+}
+
+.solicitud__empresa {
+    color: var(--texto-2);
+}
+
+.solicitud__etiqueta {
+    display: block;
+    font-weight: 700;
+    color: var(--texto-2);
+}
+
+.solicitud__acciones {
+    display: grid;
+    gap: var(--espacio-2);
+    justify-items: start;
+}
+
+.solicitud__acciones .boton {
+    max-width: 100%;
+}
+
+.solicitud__pregunta {
+    font-weight: 700;
+}
+
+
+/* VENTANA DE CONFIRMACION (sin JavaScript, con :target) */
+.ventana {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    place-items: center;
+    padding: var(--margen-lateral);
+    background-color: rgb(32 41 69 / 0.6);
+}
+
+.ventana:target {
+    display: grid;
+}
+
+.ventana__caja {
+    display: grid;
+    gap: var(--espacio-3);
+    width: min(100%, 28rem);
+    padding: var(--espacio-4);
+    background-color: var(--fondo);
+    border-radius: var(--radio-tarjeta);
+}
+
+.ventana__titulo {
+    font-size: var(--texto-h2);
+}
+
+
+/* RESUMEN CON CIFRAS (panel de empresa) */
+.resumen {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacio-3);
+    margin-bottom: var(--espacio-5);
+    padding: 0;
+    list-style: none;
+}
+
+.dato-resumen {
+    display: grid;
+    padding: var(--espacio-3) var(--espacio-4);
+    background-color: var(--azul-amac);
+    border-radius: var(--radio-tarjeta);
+}
+
+.dato-resumen__numero {
+    font-family: var(--fuente-titulos);
+    font-size: var(--texto-cifra);
+    line-height: var(--interlineado-titulo);
+}
+
+
+/* FORMULARIO Y FILTROS */
+.barra-filtros {
+    display: grid;
+    gap: var(--espacio-3);
+    margin-bottom: var(--espacio-5);
+    padding: var(--espacio-4);
+    background-color: var(--coral-tinte);
+    border-radius: var(--radio-tarjeta);
+}
+
+.campo-formulario {
+    display: grid;
+    gap: var(--espacio-1);
+}
+
+.campo-formulario label {
+    font-weight: 700;
+}
+
+.campo-formulario select,
+.campo-formulario input {
+    width: 100%;
+    min-height: var(--alto-boton);
+    padding: var(--espacio-1) var(--espacio-3);
+    background-color: var(--fondo);
+    color: var(--texto);
+    border: var(--grosor-borde) solid var(--borde);
+    border-radius: var(--radio-campo);
+}
+
+
+/* SECCIONES Y AVISOS */
+.seccion {
+    display: grid;
+    gap: var(--espacio-4);
+    margin-top: var(--espacio-6);
+}
+
+/* Cuando no hay resultados */
+.aviso-vacio {
+    padding: var(--espacio-5) var(--espacio-4);
+    text-align: center;
+    background-color: var(--gris);
+    border-radius: var(--radio-tarjeta);
+}
+
+
+/* PAGINA 404 */
+.pagina-error {
+    display: grid;
+    justify-items: center;
+    gap: var(--espacio-3);
+    max-width: 40rem;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.pagina-error p {
+    max-width: none;
+}
+
+.pagina-error .grupo-botones {
+    justify-content: center;
+}
+
+.codigo-error {
+    font-family: var(--fuente-titulos);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--coral);
+}
+
+
+/* FOCO SOBRE FONDOS OSCUROS */
+/* El foco marino no se ve sobre marino, aqui lo cambio a blanco */
+.barra-ayuda :focus-visible,
+.pie :focus-visible,
+.boton-ayuda:focus-visible {
+    outline-color: var(--texto-invertido);
+}
+
+/* Dejo espacio abajo para que el boton de ayuda fijo no tape el pie */
+.pie {
+    padding-bottom: 6rem;
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+
+    .lista-tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .resumen {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .barra-filtros {
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        align-items: end;
+    }
+
+    .ventana__caja .grupo-botones {
+        justify-content: flex-end;
+    }
+
+}
+
+
+/* COMPUTADORA */
+@media (min-width: 1024px) {
+
+    .lista-tarjetas {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Candidatos: tarjetas mas anchas, solo 2 columnas */
+    .lista-tarjetas--dos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Mis solicitudes: 4 columnas con encabezados */
+    .tabla-cabecera,
+    .solicitud {
+        grid-template-columns: 1.8fr 1fr 1.2fr 2fr;
+        column-gap: var(--espacio-4);
+    }
+
+    .tabla-cabecera {
+        display: grid;
+        padding: 0 var(--espacio-4) var(--espacio-2);
+        font-weight: 700;
+    }
+
+    .solicitud {
+        align-items: center;
+    }
+
+    /* Las etiquetas ya estan en el encabezado: las dejo solo para lectores de pantalla */
+    .solicitud__etiqueta {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .solicitud__acciones .boton {
+        width: 100%;
+    }
+
+}
