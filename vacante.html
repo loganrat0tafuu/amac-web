@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxiliar de almacén en Soriana | Bolsa de Trabajo AMAC</title>
+
+    <!-- las fuentes que usamos en las paginas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
+    <!-- aqui conectamos los css, primero las variables y al final componentes!!! -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+
+</head>
+
+<body>
+    <!-- esto sirve para saltarnos el menu con tab e ir directo a lo importante -->
+    <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
+
+    <!-- barra de ayuda de arriba -->
+    <!-- esta solo sale en compu, en cel ya tenemos el boton de abajo -->
+    <div class="barra-ayuda">
+
+        <div class="contenedor">
+
+            <!-- aqui va el telefono de amac -->
+            <a class="barra-ayuda__telefono" href="tel:+520000000000">
+
+                <!-- iconito del telefono -->
+                <svg class="icono"
+                     aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                </svg>
+
+                <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
+
+            </a>
+
+            <!-- aqui ponemos a maria como si ya hubiera iniciado sesion -->
+            <div class="barra-ayuda__cuenta">
+                <span>Hola, María</span>
+                <a href="login.html">Cerrar sesión</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- header -->
+    <header class="encabezado">
+
+        <!-- el logo y el menu los acomodamos con flex desde layout.css -->
+        <div class="contenedor encabezado__fila">
+
+            <!-- logo de amac, si le damos click regresamos al inicio -->
+            <a class="marca" href="index.html">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
+                <span class="marca__nombre">Bolsa de Trabajo</span>
+            </a>
+
+            <!-- menu de compu -->
+            <nav class="nav-principal" aria-label="Navegación principal">
+
+                <ul>
+                    <!-- aria-current sirve para marcar la pagina actual, aqui estamos en detalle de vacante asi que no lo ponemos -->
+                    <li><a href="index.html">Vacantes</a></li>
+                    <li>
+                        <a href="mis-solicitudes.html">
+                            Mis solicitudes
+                            <span class="contador" aria-label="2 avisos nuevos">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Guardadas
+                            <span class="contador" aria-label="1 vacante guardada">1</span>
+                        </a>
+                    </li>
+                    <li><a href="#">Mi perfil</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- menu de cel -->
+            <!-- con details podemos abrir el menu sin usar javascript -->
+            <details class="menu-movil">
+
+                <!-- este es el que tocamos para abrir el menu -->
+                <summary>
+                    <!-- las rayitas del menu -->
+                    <svg class="icono"  
+                         aria-hidden="true" 
+                         xmlns="http://www.w3.org/2000/svg" 
+                         viewBox="0 0 24 24" 
+                         fill="none" 
+                         stroke="currentColor" 
+                         stroke-width="2" 
+                         stroke-linecap="round" 
+                         stroke-linejoin="round">
+                        <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                    </svg> Menú
+                </summary>
+
+                <!-- las opciones que mostramos cuando se abre -->
+                <nav aria-label="Navegación principal (celular)">
+
+                    <ul class="menu-movil__lista">
+                        <li><a href="index.html">Vacantes</a></li>
+                        <li><a href="mis-solicitudes.html">Mis solicitudes (2)</a></li>
+                        <li><a href="#">Guardadas (1)</a></li>
+                        <li><a href="#">Mi perfil</a></li>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </nav>
+            </details>
+        </div>
+    </header>
+
+
+    <!-- main, aqui empieza lo de la vacante -->
+    <main id="principal" class="contenedor">
+
+        <!-- para regresar al listado de trabajos -->
+        <p><a class="con-icono" href="index.html"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> Regresar a las vacantes</a></p>
+
+
+        <!-- aqui dividimos la info de la vacante y el cuadro para postularnos, en cel se ponen uno abajo de otro -->
+        <div class="detalle seccion">
+
+            <!-- datos de la vacante -->
+            <article>
+
+                <div class="titulo-pagina">
+                    <h1>Auxiliar de almacén</h1>
+                    <!-- el perfil de soriana todavia no esta hechooo, por eso el enlace tiene # (rf-053) -->
+                    <p>Soriana. <a href="#">Ver perfil de la empresa</a></p>
+                </div>
+
+                <!-- estos son los datos mas importantes, usamos las tarjetas grises que ya hicimos en css -->
+                <ul class="lista columnas">
+                    <li class="tarjeta tarjeta--gris">
+                        <span class="texto-2">Sueldo</span>
+                        <strong>$9,500 al mes</strong>
+                    </li>
+                    <li class="tarjeta tarjeta--gris">
+                        <span class="texto-2">Lugar</span>
+                        <strong>Guadalupe, N.L., a unos 3 km de su casa</strong>
+                    </li>
+                    <li class="tarjeta tarjeta--gris">
+                        <span class="texto-2">Horario</span>
+                        <strong>Medio tiempo, lunes a viernes de 8:00 a 14:00</strong>
+                    </li>
+                    <li class="tarjeta tarjeta--gris">
+                        <span class="texto-2">Categoría</span>
+                        <strong>Operativo</strong>
+                    </li>
+                </ul>
+
+                <section class="seccion">
+                    
+                    <!-- Texto y etiqueta en la misma fila !!!!! NO OLVIDAR-->
+                    <div class = "con-icono">
+                        <p class="texto-2"> Buscan experiencia en:</p>
+                        <ul class="etiquetas-experiencia">
+                            <li class="etiqueta-experiencia">Almacén</li>
+                        </ul>
+                    </div>
+                    <!-- ponemos las areas de experiencia que pide la empresa -->
+
+                    <h2>¿Qué hará?</h2>
+                    <p>Revisar la mercancía que llega al almacén, acomodarla en su lugar y llevar el registro de entradas y salidas en una libreta o en la computadora.</p>
+                </section>
+
+                <section class="seccion">
+                    <h2>Requisitos</h2>
+                    <ul class="lista-puntos">
+                        <li>Saber leer y escribir.</li>
+                        <li>Experiencia en almacén, bodega o tienda (deseable).</li>
+                        <li>Poder estar de pie parte de la jornada.</li>
+                    </ul>
+                </section>
+
+                <section class="seccion">
+                    <h2>Prestaciones</h2>
+                    <ul class="lista-puntos">
+                        <li>Prestaciones de ley.</li>
+                        <li>Vales de despensa.</li>
+                        <li>Apoyo para transporte.</li>
+                        <li>Servicio de comedor (comida sin costo).</li>
+                    </ul>
+                </section>
+
+                <!-- aqui explicamos los pasos del proceso de seleccion que puso la empresa (rf-055) -->
+                <section class="seccion">
+                    <h2>¿Qué pasa después de postularse?</h2>
+                    <ol class="lista-puntos">
+                        <li>La empresa revisa su solicitud.</li>
+                        <li>Entrevista presencial en el almacén.</li>
+                        <li>Entrega de documentos: INE, comprobante de domicilio y CURP.</li>
+                    </ol>
+                </section>
+
+                <div class="mensaje mensaje--aviso seccion">
+                    <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    <p>Ninguna empresa de esta bolsa le debe pedir dinero para contratarlo. Si se lo piden, repórtelo.</p>
+                </div>
+
+                <!-- falta la pantalla para reportar una vacante, por eso de momento tiene # !!! -->
+                <p class="seccion"><a class="con-icono texto-2" href="#"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></svg> Reportar esta vacante si le parece sospechosa</a></p>
+
+            </article>
+
+
+            <!-- este cuadro es para postularnos, rf-004 y rf-049 -->
+            <aside class="tarjeta" aria-labelledby="titulo-postular">
+
+                <h2 id="titulo-postular">¿Le interesa este empleo?</h2>
+
+                <!-- con los radio la persona puede elegir como prefiere que la contacten -->
+                <fieldset>
+                    <legend>¿Cómo prefiere que la empresa lo contacte?</legend>
+                    <label class="opcion"><input type="radio" name="contacto" value="telefono" checked> Por teléfono: 81 1234 5678</label>
+                    <label class="opcion"><input type="radio" name="contacto" value="correo"> Por correo: maria.lopez@correo.com</label>
+                </fieldset>
+
+                <!-- !!!!!!!!! este enlace abre el html de solicitud enviada!!!!!!!!!! -->
+                <a class="boton boton--coral boton--bloque" href="solicitud-enviada.html">Postularme</a>
+
+                <hr>
+
+                <!-- el boton para llamar solo va cuando la empresa permite solicitudes por telefono -->
+                <p class="texto-2">Esta empresa también recibe solicitudes por teléfono:</p>
+                <p><strong>81 8000 1234</strong></p>
+                <a class="boton boton--secundario boton--bloque" href="tel:+528180001234"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> Llamar a la empresa</a>
+
+                <button class="boton boton--secundario boton--bloque" type="button"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> Guardar vacante</button>
+
+            </aside>
+
+        </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer class="pie">
+        <div class="contenedor pie__columnas">
+            <div class="pie__columna">
+                <img class="pie__logo" src="img/logo-amac-blanco.svg"
+                     alt="AMAC" width="200" height="23">
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+                <a href="mailto:contacto@somosamac.org">
+                    contacto@somosamac.org
+                </a>
+                <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
+
+                <a href="https://somosamac.org">Aviso de privacidad</a>
+
+            </div>
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
+
+                <ul>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
+                </ul>
+
+            </nav>
+
+            <div class="pie__columna">
+                <h2 class="pie__titulo">Síguenos</h2>
+                <ul class="pie__redes">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- boton de ayuda de abajo -->
+    <!-- este se queda fijo aunque bajemos por la pagina -->
+    <a class="boton-ayuda" href="tel:+520000000000">
+
+        <!-- iconito de telefono -->
+        <svg class="icono" 
+             aria-hidden="true" 
+             xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             fill="none" 
+             stroke="currentColor" 
+             stroke-width="2" 
+             stroke-linecap="round" 
+             stroke-linejoin="round">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+        </svg>
+
+        ¿Necesita ayuda?
+
+    </a>
+
+</body>
+</html>

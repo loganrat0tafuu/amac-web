@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxiliar de almacén en Soriana | Bolsa de Trabajo AMAC</title>
+
+    <!-- las fuentes que usamos en las paginas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
+    <!-- aqui conectamos los css, primero las variables y al final componentes!!! -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+
+</head>
+
+<body>
+    <!-- esto sirve para saltarnos el menu con tab e ir directo a lo importante -->
+    <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
+
+    <!-- barra de ayuda de arriba -->
+    <!-- esta solo sale en compu, en cel ya tenemos el boton de abajo -->
+    <div class="barra-ayuda">
+
+        <div class="contenedor">
+
+            <!-- aqui va el telefono de amac -->
+            <a class="barra-ayuda__telefono" href="tel:+520000000000">
+
+                <!-- iconito del telefono -->
+                <svg class="icono"
+                     aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                </svg>
+
+                <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
+
+            </a>
+
+            <!-- aqui ponemos a maria como si ya hubiera iniciado sesion -->
+            <div class="barra-ayuda__cuenta">
+                <span>Hola, María</span>
+                <a href="login.html">Cerrar sesión</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- header -->
+    <header class="encabezado">
+
+        <!-- el logo y el menu los acomodamos con flex desde layout.css -->
+        <div class="contenedor encabezado__fila">
+
+            <!-- logo de amac, si le damos click regresamos al inicio -->
+            <a class="marca" href="index.html">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
+                <span class="marca__nombre">Bolsa de Trabajo</span>
+            </a>
+
+            <!-- menu de compu -->
+            <nav class="nav-principal" aria-label="Navegación principal">
+
+                <ul>
+                    <!-- aria-current sirve para marcar la pagina actual, aqui estamos en detalle de vacante asi que no lo ponemos -->
+                    <li><a href="index.html">Vacantes</a></li>
+                    <li>
+                        <a href="mis-solicitudes.html">
+                            Mis solicitudes
+                            <span class="contador" aria-label="2 avisos nuevos">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Guardadas
+                            <span class="contador" aria-label="1 vacante guardada">1</span>
+                        </a>
+                    </li>
+                    <li><a href="#">Mi perfil</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- menu de cel -->
+            <!-- con details podemos abrir el menu sin usar javascript -->
+            <details class="menu-movil">
+
+                <!-- este es el que tocamos para abrir el menu -->
+                <summary>
+                    <!-- las rayitas del menu -->
+                    <svg class="icono"  
+                         aria-hidden="true" 
+                         xmlns="http://www.w3.org/2000/svg" 
+                         viewBox="0 0 24 24" 
+                         fill="none" 
+                         stroke="currentColor" 
+                         stroke-width="2" 
+                         stroke-linecap="round" 
+                         stroke-linejoin="round">
+                        <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                    </svg> Menú
+                </summary>
+
+                <!-- las opciones que mostramos cuando se abre -->
+                <nav aria-label="Navegación principal (celular)">
+
+                    <ul class="menu-movil__lista">
+                        <li><a href="index.html">Vacantes</a></li>
+                        <li><a href="mis-solicitudes.html">Mis solicitudes (2)</a></li>
+                        <li><a href="#">Guardadas (1)</a></li>
+                        <li><a href="#">Mi perfil</a></li>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </nav>
+            </details>
+        </div>
+    </header>
+
+
+    <main id="contenido" class="contenedor">
+        <!-- CONFIRMACION (RF-005): la solicitud ya se envio a la empresa -->
+        <section class="confirmacion">
+
+            <!-- Circulo verde con la palomita (icono check de Lucide) -->
+            <div class="confirmacion__icono">
+                <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+
+            <h1>¡Listo! Su solicitud fue enviada</h1>
+            <p>Soriana va a revisar su solicitud y ya recibió un aviso. Le avisaremos por correo cada vez que cambie el estatus.</p>
+
+            <!-- Resumen de la solicitud -->
+            <div class="tarjeta tarjeta--gris">
+                <p class="confirmacion__fila"><span class="texto-2">Vacante:</span> <strong>Auxiliar de almacén</strong></p>
+                <p class="confirmacion__fila"><span class="texto-2">Fecha:</span> 25 de octubre de 2026</p>
+                <p class="confirmacion__fila">
+                    <span class="texto-2">Estatus:</span>
+                    <span class="etiqueta-estatus etiqueta-estatus--enviada">
+                        <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        Enviada
+                    </span>
+                </p>
+                <p class="confirmacion__fila"><span class="texto-2">Contacto:</span> Por teléfono</p>
+            </div>
+
+            <div class="grupo-botones">
+                <a class="boton boton--coral" href="mis-solicitudes.html">Ver mis solicitudes</a>
+                <a class="boton boton--secundario" href="index.html">Seguir buscando vacantes</a>
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- footer -->
+    <footer class="pie">
+        <div class="contenedor pie__columnas">
+            <div class="pie__columna">
+                <img class="pie__logo" src="img/logo-amac-blanco.svg"
+                     alt="AMAC" width="200" height="23">
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+                <a href="mailto:contacto@somosamac.org">
+                    contacto@somosamac.org
+                </a>
+                <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
+
+                <a href="https://somosamac.org">Aviso de privacidad</a>
+
+            </div>
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
+
+                <ul>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
+                </ul>
+
+            </nav>
+
+            <div class="pie__columna">
+                <h2 class="pie__titulo">Síguenos</h2>
+                <ul class="pie__redes">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- boton de ayuda de abajo -->
+    <!-- este se queda fijo aunque bajemos por la pagina -->
+    <a class="boton-ayuda" href="tel:+520000000000">
+
+        <!-- iconito de telefono -->
+        <svg class="icono" 
+             aria-hidden="true" 
+             xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             fill="none" 
+             stroke="currentColor" 
+             stroke-width="2" 
+             stroke-linecap="round" 
+             stroke-linejoin="round">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+        </svg>
+
+        ¿Necesita ayuda?
+
+    </a>
+
+</body>
+</html>
