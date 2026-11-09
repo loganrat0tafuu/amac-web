@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar mi empresa | Bolsa de Trabajo AMAC</title>
+
+    <!-- Fuentes que uso en la pagina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
+    <!-- Conecto mis archivos de CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+
+</head>
+
+<body>
+
+    <!-- Enlace para ir directo al contenido usando Tab -->
+    <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
+
+
+    <!-- BARRA DE AYUDA -->
+    <div class="barra-ayuda">
+
+        <div class="contenedor">
+
+            <!-- Falta agregar el numero cuando lo tengamos -->
+            <a class="barra-ayuda__telefono" href="tel:+520000000000">
+
+                <svg class="icono" 
+                    aria-hidden="true" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round">
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                </svg>
+
+                <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
+
+            </a>
+
+            <!-- Visitante: todavia no inicia sesion -->
+            <div class="barra-ayuda__cuenta">
+                <a href="login.html">Iniciar sesión</a>
+                <a href="registro-candidato.html">Registrarme</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="encabezado">
+
+        <div class="contenedor encabezado__fila">
+
+            <!-- Logo de AMAC -->
+            <a class="marca" href="index.html">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
+                <span class="marca__nombre">Bolsa de Trabajo</span>
+            </a>
+
+
+            <!-- MENU DE COMPUTADORA -->
+
+            <nav class="nav-principal" aria-label="Navegación principal">
+
+                <ul>
+                    <li><a href="index.html">Vacantes</a></li>
+                    <li><a href="#">Sobre AMAC</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- MENU DE CELULAR -->
+
+            <details class="menu-movil">
+
+                <summary>
+                    <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                    </svg> Menú
+                </summary>
+
+                <nav aria-label="Navegación principal (celular)">
+
+                    <ul class="menu-movil__lista">
+                        <li><a href="index.html">Vacantes</a></li>
+                        <li><a href="#">Sobre AMAC</a></li>
+                        <li><a href="login.html">Iniciar sesión</a></li>
+                        <li><a href="registro-candidato.html">Registrarme</a></li>
+                    </ul>
+
+                </nav>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main id="principal" class="contenedor pagina-formulario">
+
+        <div class="titulo-pagina">
+            <h1>Registrar mi empresa</h1>
+            <p>Publique vacantes para personas adultas mayores. AMAC revisará sus datos antes de que pueda publicar. Los campos con * son obligatorios.</p>
+        </div>
+
+        <form class="formulario-registro formulario-registro--ancho formulario-registro--empresa" action="login.html" method="get">
+
+
+            <!--  1. DATOS DE LA EMPRESA  -->
+
+            <section class="seccion-formulario" aria-labelledby="titulo-datos">
+
+                <h2 class="seccion-formulario__titulo" id="titulo-datos">1. Datos de la empresa</h2>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="empresa">Nombre de la empresa *</label>
+                        <input type="text" id="empresa" name="empresa" autocomplete="organization" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="giro">Giro *</label>
+                        <p class="campo-formulario__ayuda" id="ayuda-giro">A qué se dedica. Ejemplo: comercio, salud, logística.</p>
+                        <input type="text" id="giro" name="giro" aria-describedby="ayuda-giro" required>
+                    </div>
+                </div>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="rfc">RFC *</label>
+                        <p class="campo-formulario__ayuda" id="ayuda-rfc">12 o 13 caracteres, sin espacios ni guiones.</p>
+                        <input type="text" id="rfc" name="rfc" pattern="[A-Za-z0-9]{12,13}" minlength="12" maxlength="13" autocapitalize="characters" spellcheck="false" aria-describedby="ayuda-rfc" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="telefono-empresa">Teléfono de la empresa *</label>
+                        <p class="campo-formulario__ayuda" id="ayuda-telefono-empresa">10 números, sin espacios.</p>
+                        <input type="tel" id="telefono-empresa" name="telefono_empresa" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" aria-describedby="ayuda-telefono-empresa" required>
+                    </div>
+                </div>
+
+                <!-- Una sola columna: queda en la mitad, como en Figma -->
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="correo-empresa">Correo de la empresa *</label>
+                        <p class="campo-formulario__ayuda" id="ayuda-correo-empresa">Con este correo iniciará sesión.</p>
+                        <input type="email" id="correo-empresa" name="correo_empresa" autocomplete="email" aria-describedby="ayuda-correo-empresa" required>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!--  2. DIRECCION  -->
+
+            <section class="seccion-formulario" aria-labelledby="titulo-direccion">
+
+                <h2 class="seccion-formulario__titulo" id="titulo-direccion">2. Dirección</h2>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="calle">Calle y número *</label>
+                        <input type="text" id="calle" name="calle" autocomplete="address-line1" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="colonia">Colonia *</label>
+                        <input type="text" id="colonia" name="colonia" required>
+                    </div>
+                </div>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="codigo-postal">Código postal *</label>
+                        <input type="text" id="codigo-postal" name="codigo_postal" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="municipio">Municipio o ciudad *</label>
+                        <select id="municipio" name="municipio" required>
+                            <option value="">Elija</option>
+                            <!-- De ejemplo: agrega los municipios que falten -->
+                            <option>Apodaca</option>
+                            <option>García</option>
+                            <option>General Escobedo</option>
+                            <option>Guadalupe</option>
+                            <option>Juárez</option>
+                            <option>Monterrey</option>
+                            <option>San Nicolás de los Garza</option>
+                            <option>San Pedro Garza García</option>
+                            <option>Santa Catarina</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!--  3. PERSONA DE CONTACTO  -->
+
+            <section class="seccion-formulario" aria-labelledby="titulo-contacto">
+
+                <h2 class="seccion-formulario__titulo" id="titulo-contacto">3. Persona de contacto</h2>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="contacto-nombres">Nombre(s) *</label>
+                        <input type="text" id="contacto-nombres" name="contacto_nombres" autocomplete="given-name" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="contacto-paterno">Apellido paterno *</label>
+                        <input type="text" id="contacto-paterno" name="contacto_apellido_paterno" autocomplete="family-name" required>
+                    </div>
+                </div>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="contacto-materno">Apellido materno *</label>
+                        <input type="text" id="contacto-materno" name="contacto_apellido_materno" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="contacto-telefono">Teléfono de contacto *</label>
+                        <input type="tel" id="contacto-telefono" name="contacto_telefono" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+                </div>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="contacto-correo">Correo de contacto *</label>
+                        <input type="email" id="contacto-correo" name="contacto_correo" required>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!--  4. LOGO Y PORTADA  -->
+
+            <section class="seccion-formulario" aria-labelledby="titulo-imagenes">
+
+                <h2 class="seccion-formulario__titulo" id="titulo-imagenes">4. Logo y portada</h2>
+
+                <div class="formulario-fila formulario-fila--tarjetas">
+
+                    <div class="subida-archivo subida-archivo--tarjeta">
+                        <p class="subida-archivo__titulo">Logo de la empresa</p>
+                        <p class="campo-formulario__ayuda" id="ayuda-logo">Imagen cuadrada en PNG o JPG, de máximo 2 MB.</p>
+                        <input class="solo-lector" type="file" id="logo" name="logo" accept=".png,.jpg,.jpeg" aria-describedby="ayuda-logo">
+                        <label class="boton boton--secundario" for="logo">
+                            <svg class="icono" 
+                                aria-hidden="true" 
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 24 24" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                stroke-width="2" 
+                                stroke-linecap="round" 
+                                stroke-linejoin="round">
+                                <path d="M12 3v12"/><path d="m17 8-5-5-5 5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            </svg>
+                            Subir logo
+                        </label>
+                    </div>
+
+                    <div class="subida-archivo subida-archivo--tarjeta">
+                        <p class="subida-archivo__titulo">Imagen de portada (banner)</p>
+                        <p class="campo-formulario__ayuda" id="ayuda-portada">Imagen horizontal en PNG o JPG, de máximo 2 MB.</p>
+                        <input class="solo-lector" type="file" id="portada" name="portada" accept=".png,.jpg,.jpeg" aria-describedby="ayuda-portada">
+                        <label class="boton boton--secundario" for="portada">
+                            <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3v12"/><path d="m17 8-5-5-5 5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            </svg>
+                            Subir portada
+                        </label>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!--  5. CONTRASEÑA Y ACEPTACION  -->
+
+            <section class="seccion-formulario" aria-labelledby="titulo-clave">
+
+                <h2 class="seccion-formulario__titulo" id="titulo-clave">5. Contraseña y aceptación</h2>
+
+                <div class="formulario-fila">
+                    <div class="campo-formulario">
+                        <label class="campo-formulario__etiqueta" for="clave">Contraseña *</label>
+                        <p class="campo-formulario__ayuda" id="ayuda-clave">Mínimo 8 caracteres.</p>
+                        <div class="campo-formulario__grupo">
+                            <!-- Sin name a proposito: asi la contraseña no viaja en la URL mientras es estatico -->
+                            <input type="password" id="clave" minlength="8" autocomplete="new-password" aria-describedby="ayuda-clave" required>
+                            <button class="boton-texto" type="button" aria-controls="clave">
+                                <svg class="icono" 
+                                    aria-hidden="true" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    viewBox="0 0 24 24" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-width="2" 
+                                    stroke-linecap="round" 
+                                    stroke-linejoin="round">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Mostrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-terminos">
+                    <label class="opcion">
+                        <input type="checkbox" name="terminos" required>
+                        He leído y acepto los términos y condiciones y el aviso de privacidad. *
+                    </label>
+                    <a href="#">Leer términos y aviso de privacidad</a>
+                </div>
+
+            </section>
+
+
+            <!-- BOTONES -->
+
+            <div class="formulario-acciones">
+                <a class="boton boton--secundario" href="login.html">Cancelar</a>
+                <button class="boton boton--coral" type="submit">Enviar registro a revisión</button>
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="pie">
+
+        <div class="contenedor pie__columnas">
+
+            <!-- PRIMERA COLUMNA: INFORMACION DE AMAC -->
+
+            <div class="pie__columna">
+
+                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC" width="200" height="23">
+
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+
+                <a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a>
+
+                <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
+
+                <a href="https://somosamac.org">Aviso de privacidad</a>
+
+            </div>
+
+
+            <!-- SEGUNDA COLUMNA: ENLACES -->
+
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
+
+                <ul>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- TERCERA COLUMNA: REDES SOCIALES -->
+
+            <div class="pie__columna">
+
+                <h2 class="pie__titulo">Síguenos</h2>
+
+                <ul class="pie__redes">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOTON DE AYUDA -->
+
+    <!-- Falta agregar el numero de telefono para que pueda llamar -->
+    <a class="boton-ayuda" href="tel:+520000000000">
+
+        <svg class="icono" 
+            aria-hidden="true" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+        </svg>
+
+        ¿Necesita ayuda?
+
+    </a>
+
+</body>
+</html>
