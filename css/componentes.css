@@ -702,6 +702,7 @@ hr {
     justify-content: center;
 }
 
+
 /* Iconos que se usan con <use href="#..."> */
 .icono {
     fill: none;
@@ -710,34 +711,74 @@ hr {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
- 
+
+
+/* Avisos: los puntos van en coral */
+.lista-puntos li::marker {
+    color: var(--coral);
+}
+
+
+/* Titulos que son enlace: sin subrayado, se subrayan al pasar el mouse o con Tab */
+.tarjeta h3 a {
+    text-decoration: none;
+}
+
+.tarjeta h3 a:hover,
+.tarjeta h3 a:focus-visible {
+    text-decoration: underline;
+}
+
+
 /* Enlace "Regresar" (se usa junto con .con-icono) */
 .enlace-volver {
     min-height: 3rem;
     margin-bottom: var(--espacio-3);
 }
- 
+
+
 /* Solicitud que se puede retirar: borde coral */
 .tarjeta--destacada {
     border-color: var(--coral);
 }
- 
-/* Columna "Qué puede hacer": textos y botones uno debajo del otro */
+
+
+/* Columna "Que puede hacer": textos y botones uno debajo del otro */
 .acciones-celda {
     display: grid;
     gap: var(--espacio-2);
     justify-items: start;
 }
- 
+
+
 /* Tarjeta de candidato: sus dos columnas acomodan el contenido con espacio */
 .tarjeta--candidato > div {
     display: grid;
     gap: var(--espacio-2);
     align-content: start;
 }
- 
+
+
 /* Filtros: el checkbox queda alineado con los selects */
 .tarjeta--gris.columnas {
     align-items: end;
 }
- 
+
+
+/* COMPUTADORA: 1024px o mas */
+@media (min-width: 1024px) {
+
+    /* Mis solicitudes: el contenido de cada fila queda centrado en vertical */
+    .tarjeta--fila {
+        align-items: center;
+    }
+
+    /* Mis vacantes (panel de empresa): Vacante, Estado, Solicitudes y Acciones */
+    .tarjeta--fila-4,
+    .tabla-cabecera--4 {
+        grid-template-columns: 1.5fr 1fr 1fr 3.5fr;
+        column-gap: var(--espacio-3);
+        align-items: center;
+    }
+
+}
