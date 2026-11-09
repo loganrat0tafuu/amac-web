@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitudes recibidas | Panel de empresas AMAC</title>
-  
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -12,37 +16,35 @@
 </head>
 <body>
 
-    <!-- Iconos (se usan con <use href="#i-nombre">) -->
+    <!-- Iconos: se usan con <use href="#i-nombre"> -->
     <svg class="solo-lector" aria-hidden="true" focusable="false">
-        <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
-        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
-        <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
-        <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
-        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
-        <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
     </svg>
 
     <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
 
-    <!-- BARRA DE AYUDA (solo computadora) -->
     <div class="barra-ayuda">
         <div class="contenedor">
             <a class="barra-ayuda__telefono" href="tel:+520000000000">
-                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+                <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg>
                 <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
             </a>
             <div class="barra-ayuda__cuenta">
-                <span>Soriana</span>
+                <span>Distribuidora del Norte</span>
                 <a href="login.html">Cerrar sesión</a>
             </div>
         </div>
     </div>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
         <div class="contenedor encabezado__fila">
             <a class="marca" href="index.html">
-                <img src="img/logo-amac.svg" alt="AMAC">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
                 <span class="marca__nombre">Panel de empresas</span>
             </a>
 
@@ -51,28 +53,31 @@
                     <li><a href="empresa-vacantes.html">Mis vacantes</a></li>
                     <li><a href="solicitudes-recibidas.html" aria-current="page">Solicitudes</a></li>
                     <li><a href="mi-empresa.html">Mi empresa</a></li>
+                    <li><a href="index.html">Bolsa de trabajo</a></li>
                 </ul>
             </nav>
 
             <details class="menu-movil">
                 <summary>
-                    <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
-                    Menú
+                    <svg class="icono" aria-hidden="true"><use href="#i-menu"/></svg> Menú
                 </summary>
-                <ul class="menu-movil__lista">
-                    <li><a href="empresa-vacantes.html">Mis vacantes</a></li>
-                    <li><a href="solicitudes-recibidas.html" aria-current="page">Solicitudes</a></li>
-                    <li><a href="mi-empresa.html">Mi empresa</a></li>
-                    <li><a href="login.html">Cerrar sesión</a></li>
-                </ul>
+                <nav aria-label="Navegación principal (celular)">
+                    <ul class="menu-movil__lista">
+                        <li><a href="empresa-vacantes.html">Mis vacantes</a></li>
+                        <li><a href="solicitudes-recibidas.html" aria-current="page">Solicitudes</a></li>
+                        <li><a href="mi-empresa.html">Mi empresa</a></li>
+                        <li><a href="index.html">Bolsa de trabajo</a></li>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </nav>
             </details>
         </div>
     </header>
 
     <main id="principal" class="contenedor">
 
-        <a class="enlace-volver" href="empresa-vacantes.html">
-            <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg>
+        <a class="con-icono enlace-volver" href="empresa-vacantes.html">
+            <svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg>
             Regresar a mis vacantes
         </a>
 
@@ -80,7 +85,7 @@
             <div class="titulo-pagina">
                 <h1>Solicitudes recibidas</h1>
             </div>
-            <div class="campo-formulario campo-formulario--vacante">
+            <div class="campo-formulario">
                 <label for="vacante">Vacante</label>
                 <select id="vacante" name="vacante">
                     <option selected>Auxiliar de almacén (4)</option>
@@ -91,8 +96,7 @@
             </div>
         </div>
 
-        <!-- FILTROS (solo visuales) -->
-        <form class="barra-filtros barra-filtros--gris" aria-label="Filtrar solicitudes">
+        <form class="tarjeta tarjeta--gris columnas columnas--3" aria-label="Filtrar solicitudes">
             <div class="campo-formulario">
                 <label for="municipio">Municipio donde vive</label>
                 <select id="municipio" name="municipio">
@@ -100,118 +104,114 @@
                     <option>Monterrey</option>
                     <option>San Nicolás de los Garza</option>
                     <option>Apodaca</option>
-                    <option>San Pedro Garza García</option>
                     <option>Guadalupe</option>
+                    <option>San Pedro Garza García</option>
                     <option>Santa Catarina</option>
                 </select>
             </div>
             <div class="campo-formulario">
-                <label for="filtro-estatus">Estatus</label>
-                <select id="filtro-estatus" name="estatus">
+                <label for="estatus">Estatus</label>
+                <select id="estatus" name="estatus">
                     <option selected>Todos</option>
                     <option>Enviada</option>
                     <option>En revisión</option>
-                    <option>Entrevista</option>
                     <option>Aceptada</option>
                     <option>Rechazada</option>
                 </select>
             </div>
-            <div class="campo-formulario">
-                <label for="experiencia">Experiencia en</label>
-                <select id="experiencia" name="experiencia">
-                    <option>Todos</option>
-                    <option selected>Almacén</option>
-                    <option>Ventas</option>
-                    <option>Reparto</option>
-                </select>
-            </div>
+            <label class="opcion" for="solo-almacen">
+                <input type="checkbox" id="solo-almacen" name="solo-almacen">
+                <span>Solo con experiencia en almacén</span>
+            </label>
         </form>
 
-        <p role="status"><strong>3 de 4 solicitudes coinciden</strong></p>
+        <p class="seccion" role="status"><strong>4 de 4 solicitudes coinciden</strong></p>
 
         <section class="seccion" aria-labelledby="candidatos-titulo">
             <h2 class="solo-lector" id="candidatos-titulo">Personas que se postularon</h2>
 
-            <ul class="solicitudes">
+            <ul class="lista">
 
-                <!-- Candidato 1: enviada -->
                 <li>
                     <article class="tarjeta tarjeta--candidato">
-                        <div class="tarjeta__cuerpo">
-                            <h3 class="tarjeta__titulo">José Emilio Pliego Rangel</h3>
-                            <p class="tarjeta__subtitulo">64 años · Vive en Monterrey, N.L. · Solicitud del 24 oct 2026</p>
+                        <div>
+                            <h3>José Emilio Pliego Rangel</h3>
+                            <p class="texto-2">64 años · Vive en Monterrey, N.L. · Solicitud del 24 oct 2026</p>
                             <p><strong>Experiencia:</strong> Almacenista en ferretería 12 años; vendedor de mostrador 8 años.</p>
-                            <ul class="etiquetas-experiencia">
-                                <li class="etiqueta-experiencia">Almacén</li>
-                                <li class="etiqueta-experiencia">Ventas</li>
-                            </ul>
                             <p><strong>Prefiere que lo contacten por:</strong> teléfono, 81 2345 6789</p>
                             <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de José Emilio Pliego Rangel</span></a>
                         </div>
                         <div class="tarjeta__estatus">
-                            <span class="solicitud__etiqueta">Estatus actual</span>
-                            <span class="etiqueta-estatus etiqueta-estatus--enviada">
-                                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-send"/></svg>
-                                Enviada
-                            </span>
+                            <p><strong>Estatus actual</strong></p>
+                            <span class="etiqueta-estatus etiqueta-estatus--enviada"><svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg>Enviada</span>
                             <form class="campo-formulario">
                                 <label for="cambiar-1">Cambiar estatus a</label>
                                 <select id="cambiar-1" name="cambiar-estatus">
                                     <option selected>En revisión</option>
-                                    <option>Entrevista</option>
                                     <option>Aceptada</option>
                                     <option>Rechazada</option>
                                 </select>
-                                <button class="boton boton--secundario" type="button">Guardar estatus<span class="solo-lector"> de José Emilio Pliego Rangel</span></button>
+                                <button class="boton boton--secundario boton--bloque" type="button">Guardar estatus<span class="solo-lector"> de José Emilio Pliego Rangel</span></button>
                             </form>
                         </div>
                     </article>
                 </li>
 
-                <!-- Candidato 2: aceptada -->
                 <li>
                     <article class="tarjeta tarjeta--candidato">
-                        <div class="tarjeta__cuerpo">
-                            <h3 class="tarjeta__titulo">Rogelio Cantú Salazar</h3>
-                            <p class="tarjeta__subtitulo">81 años · Vive en San Nicolás de los Garza, N.L. · Solicitud del 22 oct 2026</p>
+                        <div>
+                            <h3>Rogelio Cantú Salazar</h3>
+                            <p class="texto-2">61 años · Vive en San Nicolás de los Garza, N.L. · Solicitud del 22 oct 2026</p>
                             <p><strong>Experiencia:</strong> Supervisor de bodega 20 años.</p>
-                            <ul class="etiquetas-experiencia">
-                                <li class="etiqueta-experiencia">Almacén</li>
-                            </ul>
                             <p><strong>Prefiere que lo contacten por:</strong> correo, rogelio.cantu@correo.com</p>
                             <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de Rogelio Cantú Salazar</span></a>
                         </div>
                         <div class="tarjeta__estatus">
-                            <span class="solicitud__etiqueta">Estatus actual</span>
-                            <span class="etiqueta-estatus etiqueta-estatus--aceptada">
-                                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>
-                                Aceptada
-                            </span>
-                            <p>Esperando que la persona confirme si fue contratada.</p>
+                            <p><strong>Estatus actual</strong></p>
+                            <span class="etiqueta-estatus etiqueta-estatus--aceptada"><svg class="icono" aria-hidden="true"><use href="#i-check"/></svg>Aceptada</span>
+                            <p class="texto-2">Esperando que la persona confirme si fue contratada.</p>
                         </div>
                     </article>
                 </li>
 
-                <!-- Candidato 3: rechazada -->
                 <li>
                     <article class="tarjeta tarjeta--candidato">
-                        <div class="tarjeta__cuerpo">
-                            <h3 class="tarjeta__titulo">Héctor Javier Ríos Leal</h3>
-                            <p class="tarjeta__subtitulo">62 años · Vive en Apodaca, N.L. · Solicitud del 19 oct 2026</p>
+                        <div>
+                            <h3>Ana María Villarreal Ochoa</h3>
+                            <p class="texto-2">67 años · Vive en Guadalupe, N.L. · Solicitud del 21 oct 2026</p>
+                            <p><strong>Experiencia:</strong> Costurera en taller 25 años.</p>
+                            <p><strong>Prefiere que lo contacten por:</strong> teléfono, 81 3456 7890</p>
+                            <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de Ana María Villarreal Ochoa</span></a>
+                        </div>
+                        <div class="tarjeta__estatus">
+                            <p><strong>Estatus actual</strong></p>
+                            <span class="etiqueta-estatus etiqueta-estatus--enviada"><svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg>Enviada</span>
+                            <form class="campo-formulario">
+                                <label for="cambiar-3">Cambiar estatus a</label>
+                                <select id="cambiar-3" name="cambiar-estatus">
+                                    <option selected>En revisión</option>
+                                    <option>Aceptada</option>
+                                    <option>Rechazada</option>
+                                </select>
+                                <button class="boton boton--secundario boton--bloque" type="button">Guardar estatus<span class="solo-lector"> de Ana María Villarreal Ochoa</span></button>
+                            </form>
+                        </div>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="tarjeta tarjeta--candidato">
+                        <div>
+                            <h3>Héctor Javier Ríos Leal</h3>
+                            <p class="texto-2">62 años · Vive en Apodaca, N.L. · Solicitud del 19 oct 2026</p>
                             <p><strong>Experiencia:</strong> Chofer repartidor 18 años; carga y descarga de mercancía.</p>
-                            <ul class="etiquetas-experiencia">
-                                <li class="etiqueta-experiencia">Almacén</li>
-                            </ul>
                             <p><strong>Prefiere que lo contacten por:</strong> correo, hector.rios@correo.com</p>
                             <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de Héctor Javier Ríos Leal</span></a>
                         </div>
                         <div class="tarjeta__estatus">
-                            <span class="solicitud__etiqueta">Estatus actual</span>
-                            <span class="etiqueta-estatus etiqueta-estatus--rechazada">
-                                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-x"/></svg>
-                                Rechazada
-                            </span>
-                            <p>Estatus final. La persona ya recibió el aviso por correo.</p>
+                            <p><strong>Estatus actual</strong></p>
+                            <span class="etiqueta-estatus etiqueta-estatus--rechazada"><svg class="icono" aria-hidden="true"><use href="#i-x"/></svg>Rechazada</span>
+                            <p class="texto-2">Estatus final. La persona ya recibió el aviso por correo.</p>
                         </div>
                     </article>
                 </li>
@@ -221,41 +221,42 @@
 
     </main>
 
-    <!-- PIE DE PAGINA -->
     <footer class="pie">
         <div class="contenedor pie__columnas">
             <div class="pie__columna">
-                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC">
-                <p><strong>asociAMayores A.C.</strong></p>
-                <p>Amatista 107<br>San Pedro Garza García, N.L.</p>
-                <p><a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a></p>
+                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC" width="200" height="23">
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+                <a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a>
                 <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
-                <p><a href="aviso-privacidad.html">Aviso de privacidad</a></p>
+                <a href="https://somosamac.org">Aviso de privacidad</a>
             </div>
 
-            <nav class="pie__columna" aria-label="Enlaces del sitio">
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="que-hacemos.html">Qué hacemos</a></li>
-                    <li><a href="apoyanos.html">Apóyanos</a></li>
-                    <li><a href="donar.html">Quiero donar</a></li>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
                 </ul>
             </nav>
 
             <div class="pie__columna">
                 <h2 class="pie__titulo">Síguenos</h2>
                 <ul class="pie__redes">
-                    <li><a href="https://www.facebook.com/">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
-    <!-- BOTON DE AYUDA (fijo) -->
     <a class="boton-ayuda" href="tel:+520000000000">
-        <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+        <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg>
         ¿Necesita ayuda?
     </a>
 
