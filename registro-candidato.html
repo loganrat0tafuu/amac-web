@@ -21,7 +21,6 @@
 
 <body>
 
-    <!-- Enlace para ir directo al contenido usando Tab -->
     <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
 
 
@@ -42,11 +41,7 @@
                     stroke-width="2" 
                     stroke-linecap="round" 
                     stroke-linejoin="round">
-                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
-                </svg>
-
-                <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
-
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1  
             </a>
 
             <!-- Visitante: todavia no inicia sesion -->
@@ -90,7 +85,15 @@
             <details class="menu-movil">
 
                 <summary>
-                    <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icono" 
+                        aria-hidden="true" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round">
                         <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
                     </svg> Menú
                 </summary>
@@ -115,16 +118,16 @@
 
     <!-- MAIN -->
 
-    <main id="principal" class="contenedor pagina-formulario">
+    <main id="principal" class="contenedor">
 
-        <form class="formulario-registro" action="login.html" method="get">
+        <form class="formulario" action="login.html" method="get">
 
             <h1>Crear mi cuenta para buscar empleo</h1>
 
 
-            <!-- ================= PASO 1: SUS DATOS ================= -->
+            <!-- 1, SUS DATOS  -->
 
-            <section class="paso-registro" id="paso-1" aria-labelledby="titulo-paso-1">
+            <section class="tarjeta" id="paso-1" aria-labelledby="titulo-paso-1">
 
                 <h2 class="solo-lector" id="titulo-paso-1">Paso 1: Sus datos</h2>
 
@@ -145,60 +148,59 @@
                     </li>
                 </ol>
 
-                <p class="formulario-registro__nota">Paso 1 de 3. Los campos con * son obligatorios.</p>
+                <p class="texto-2">Paso 1 de 3. Los campos con * son obligatorios.</p>
 
-                <button class="boton boton--secundario formulario-registro__google" type="button">
+                <button class="boton boton--secundario" type="button">
                     <img src="img/google.svg" alt="" width="24" height="24">
                     Registrarme con mi cuenta de Google
                 </button>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="nombres">Nombre(s) *</label>
+                    <label for="nombres">Nombre(s) *</label>
                     <input type="text" id="nombres" name="nombres" autocomplete="given-name" placeholder="María Guadalupe" required>
                 </div>
 
-                <div class="formulario-fila">
+                <div class="columnas">
                     <div class="campo-formulario">
-                        <label class="campo-formulario__etiqueta" for="apellido-paterno">Apellido paterno *</label>
+                        <label for="apellido-paterno">Apellido paterno *</label>
                         <input type="text" id="apellido-paterno" name="apellido_paterno" autocomplete="family-name" placeholder="López" required>
                     </div>
                     <div class="campo-formulario">
-                        <label class="campo-formulario__etiqueta" for="apellido-materno">Apellido materno *</label>
+                        <label for="apellido-materno">Apellido materno *</label>
                         <input type="text" id="apellido-materno" name="apellido_materno" placeholder="Treviño" required>
                     </div>
                 </div>
 
-                <fieldset class="grupo-campos">
+                <fieldset>
                     <legend>Fecha de nacimiento *</legend>
-                    <div class="formulario-fila formulario-fila--tres">
+                    <div class="columnas columnas--3">
                         <div class="campo-formulario">
-                            <label class="campo-formulario__etiqueta" for="dia">Día</label>
+                            <label for="dia">Día</label>
                             <select id="dia" name="dia" required>
                                 <option value="">Elija</option>
                                 <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
                             </select>
                         </div>
                         <div class="campo-formulario">
-                            <label class="campo-formulario__etiqueta" for="mes">Mes</label>
+                            <label for="mes">Mes</label>
                             <select id="mes" name="mes" required>
                                 <option value="">Elija</option>
                                 <option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option><option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option><option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
                             </select>
                         </div>
                         <div class="campo-formulario">
-                            <label class="campo-formulario__etiqueta" for="anio">Año</label>
+                            <label for="anio">Año</label>
                             <select id="anio" name="anio" required>
                                 <option value="">Elija</option>
-                                <!-- De ejemplo: agrega los años que falten -->
                                 <option>1965</option><option>1964</option><option>1963</option><option>1962</option><option>1961</option><option>1960</option><option>1959</option><option>1958</option><option>1957</option><option>1956</option><option>1955</option>
                             </select>
                         </div>
                     </div>
                 </fieldset>
 
-                <div class="formulario-fila">
+                <div class="columnas">
                     <div class="campo-formulario">
-                        <label class="campo-formulario__etiqueta" for="sexo">Sexo *</label>
+                        <label for="sexo">Sexo *</label>
                         <select id="sexo" name="sexo" required>
                             <option value="">Elija</option>
                             <option>Mujer</option>
@@ -206,7 +208,7 @@
                         </select>
                     </div>
                     <div class="campo-formulario">
-                        <label class="campo-formulario__etiqueta" for="estudios">Máximo nivel de estudios *</label>
+                        <label for="estudios">Máximo nivel de estudios *</label>
                         <select id="estudios" name="estudios" required>
                             <option value="">Elija</option>
                             <option>Sin estudios</option>
@@ -220,26 +222,26 @@
                     </div>
                 </div>
 
-                <hr class="separador">
+                <hr>
 
                 <div>
-                    <h3 class="titulo-seccion">¿Cómo lo contactamos?</h3>
+                    <h3>¿Cómo lo contactamos?</h3>
                     <p class="campo-formulario__ayuda">Escriba su correo, su celular o los dos. Con al menos uno es suficiente.</p>
                 </div>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="correo">Correo electrónico</label>
+                    <label for="correo">Correo electrónico</label>
                     <p class="campo-formulario__ayuda" id="ayuda-correo">Ejemplo: nombre@correo.com</p>
                     <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="ayuda-correo" placeholder="maria.lopez@correo.com">
                 </div>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="celular">Número de celular</label>
+                    <label for="celular">Número de celular</label>
                     <p class="campo-formulario__ayuda" id="ayuda-celular">10 números, sin espacios. Ejemplo: 8112345678</p>
                     <input type="tel" id="celular" name="celular" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="ayuda-celular" placeholder="8112345678">
                 </div>
 
-                <fieldset class="grupo-campos grupo-campos--opciones">
+                <fieldset>
                     <legend>Si escribió los dos: ¿por dónde prefiere recibir los avisos?</legend>
                     <label class="opcion">
                         <input type="radio" name="aviso" value="correo" checked>
@@ -252,7 +254,7 @@
                 </fieldset>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="clave">Cree una contraseña *</label>
+                    <label for="clave">Cree una contraseña *</label>
                     <p class="campo-formulario__ayuda" id="ayuda-clave">Mínimo 8 letras o números. Guárdela en un lugar seguro.</p>
                     <div class="campo-formulario__grupo">
                         <!-- Sin name a proposito: asi la contraseña no viaja en la URL mientras es estatico -->
@@ -282,8 +284,9 @@
             </section>
 
 
-            <!-- PASO 2: DIRECCIÓN  -->
-            <section class="paso-registro" id="paso-2" aria-labelledby="titulo-paso-2">
+            <!-- 2, DIRECCION  -->
+
+            <section class="tarjeta" id="paso-2" aria-labelledby="titulo-paso-2">
 
                 <h2 class="solo-lector" id="titulo-paso-2">Paso 2: Dirección</h2>
 
@@ -304,30 +307,29 @@
                     </li>
                 </ol>
 
-                <p class="formulario-registro__nota">Paso 2 de 3. Los campos con * son obligatorios.</p>
+                <p class="texto-2">Paso 2 de 3. Los campos con * son obligatorios.</p>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="calle">Calle y número *</label>
+                    <label for="calle">Calle y número *</label>
                     <p class="campo-formulario__ayuda" id="ayuda-calle">Ejemplo: Limón 201</p>
-                    <input type="text" id="calle" name="calle" autocomplete="street-address" aria-describedby="ayuda-calle" placeholder="Limón 201" required>
+                    <input type="text" id="calle" name="calle" autocomplete="address-line1" aria-describedby="ayuda-calle" placeholder="Limón 201" required>
                 </div>
 
-                <div class="formulario-fila">
+                <div class="columnas">
                     <div class="campo-formulario">
-                        <label class="campo-formulario__etiqueta" for="colonia">Colonia *</label>
+                        <label for="colonia">Colonia *</label>
                         <input type="text" id="colonia" name="colonia" placeholder="Arboledas" required>
                     </div>
                     <div class="campo-formulario">
-                        <label class="campo-formulario__etiqueta" for="codigo-postal">Código postal *</label>
+                        <label for="codigo-postal">Código postal *</label>
                         <input type="text" id="codigo-postal" name="codigo_postal" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="67110" required>
                     </div>
                 </div>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="municipio">Municipio donde vive *</label>
+                    <label for="municipio">Municipio donde vive *</label>
                     <select id="municipio" name="municipio" required>
                         <option value="">Elija</option>
-                        <!-- De ejemplo: agrega los municipios que falten -->
                         <option>Apodaca</option>
                         <option>García</option>
                         <option>General Escobedo</option>
@@ -341,7 +343,7 @@
                     </select>
                 </div>
 
-                <div class="mensaje mensaje--exito">
+                <div class="mensaje">
                     <svg class="icono" 
                         aria-hidden="true" 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -364,9 +366,9 @@
             </section>
 
 
-            <!--  PASO 3: EXPERIENCIA  -->
+            <!-- 3, EXPERIENCIA  -->
 
-            <section class="paso-registro" id="paso-3" aria-labelledby="titulo-paso-3">
+            <section class="tarjeta" id="paso-3" aria-labelledby="titulo-paso-3">
 
                 <h2 class="solo-lector" id="titulo-paso-3">Paso 3: Experiencia</h2>
 
@@ -387,12 +389,12 @@
                     </li>
                 </ol>
 
-                <p class="formulario-registro__nota">Paso 3 de 3. Los campos con * son obligatorios.</p>
+                <p class="texto-2">Paso 3 de 3. Los campos con * son obligatorios.</p>
 
-                <fieldset class="grupo-campos grupo-campos--opciones">
+                <fieldset>
                     <legend>¿En qué áreas tiene experiencia?</legend>
                     <p class="campo-formulario__ayuda">Marque todas las que apliquen. Las empresas las usan para encontrarlo.</p>
-                    <div class="lista-casillas">
+                    <div class="columnas">
                         <label class="opcion"><input type="checkbox" name="areas" value="almacen"> Almacén</label>
                         <label class="opcion"><input type="checkbox" name="areas" value="cocina"> Cocina</label>
                         <label class="opcion"><input type="checkbox" name="areas" value="ventas"> Ventas</label>
@@ -405,19 +407,19 @@
                 </fieldset>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="experiencia">Experiencia laboral *</label>
+                    <label for="experiencia">Experiencia laboral *</label>
                     <p class="campo-formulario__ayuda" id="ayuda-experiencia">Trabajos que ha tenido y cuánto tiempo. Ejemplo: "Encargada de tienda de abarrotes, 15 años".</p>
                     <textarea id="experiencia" name="experiencia" rows="4" aria-describedby="ayuda-experiencia" placeholder="Encargada de tienda de abarrotes durante 15 años. Cajera en supermercado 5 años." required></textarea>
                 </div>
 
                 <div class="campo-formulario">
-                    <label class="campo-formulario__etiqueta" for="habilidades">Habilidades *</label>
+                    <label for="habilidades">Habilidades *</label>
                     <p class="campo-formulario__ayuda" id="ayuda-habilidades">Cosas que sabe hacer bien. Ejemplo: "Manejo de caja, atención a clientes".</p>
                     <textarea id="habilidades" name="habilidades" rows="4" aria-describedby="ayuda-habilidades" placeholder="Manejo de caja y dinero, atención a clientes, control de inventario." required></textarea>
                 </div>
 
                 <div class="subida-archivo">
-                    <p class="subida-archivo__titulo">Currículum (opcional)</p>
+                    <p><strong>Currículum (opcional)</strong></p>
                     <p class="campo-formulario__ayuda" id="ayuda-curriculum">Si tiene uno, súbalo en PDF o Word, de máximo 5 MB.</p>
                     <input class="solo-lector" type="file" id="curriculum" name="curriculum" accept=".pdf,.doc,.docx" aria-describedby="ayuda-curriculum">
                     <label class="boton boton--secundario" for="curriculum">
@@ -436,16 +438,22 @@
                     </label>
                 </div>
 
-                <div class="tarjeta-terminos">
-                    <label class="opcion">
-                        <input type="checkbox" name="terminos" required>
-                        He leído y acepto los términos y condiciones y el aviso de privacidad. *
-                    </label>
-                    <a href="#">Leer términos y aviso de privacidad</a>
-                </div>
+                <label class="opcion">
+                    <input type="checkbox" name="terminos" required>
+                    He leído y acepto los términos y condiciones y el aviso de privacidad. *
+                </label>
+                <a href="#">Leer términos y aviso de privacidad</a>
 
                 <div class="mensaje mensaje--aviso">
-                    <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icono" 
+                        aria-hidden="true" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
                     </svg>
                     <p>Al terminar le enviaremos un código a su correo para confirmarlo. Después, AMAC revisará su registro. Mientras tanto podrá ver vacantes, pero no postularse.</p>
