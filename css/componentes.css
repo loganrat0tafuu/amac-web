@@ -1,441 +1,521 @@
-/* componentes.css */
-/* Piezas que se repiten en mis-solicitudes, empresa-vacantes,
-   solicitudes-recibidas y 404. Usan solo las variables de variables.css.
-   Cada clase de aqui sera despues un componente de React. */
+/* componentes.css
+Estilos que vamos a reutilizar en las paginas de AMAC!!!! */
 
-
-/* ENCABEZADO DE PAGINA */
+/* TITULOS Y TEXTOS */
+/* se acomoda  el titulo y su descripcion */
 .titulo-pagina {
     display: grid;
-    gap: var(--espacio-2);
+    gap: var(--espacio-1);
     margin-bottom: var(--espacio-5);
 }
 
-.titulo-pagina p {
+/* Evito que el boton junto al titulo se estire */
+.titulo-pagina .boton {
+    justify-self: start;
+}
+
+/* se pone el titulo a la izquierda y las acciones a la derecha */
+.encabezado-panel {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben, los elementos pasan a otra fila */
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--espacio-3);
+    margin-bottom: var(--espacio-5);
+}
+
+.encabezado-panel .titulo-pagina {
+    margin-bottom: 0;
+}
+
+/* Separo esta seccion de la anterior */
+.seccion {
+    margin-top: var(--espacio-5);
+}
+
+/*color para textos secundarios */
+.texto-2 {
     color: var(--texto-2);
 }
 
-
 /* BOTONES */
-/* Sirven para <a> y <button>. Alto minimo de 3.5rem (mas de 44px) */
+/* Estilos que comparten todos los botones */
 .boton {
-    display: inline-flex;
+    display: inline-flex; /* Acomoda el icono y el texto en una fila */
     align-items: center;
     justify-content: center;
     gap: var(--espacio-1);
     min-height: var(--alto-boton);
-    min-width: 3rem;
-    padding: var(--espacio-2) var(--espacio-4);
-    border: var(--grosor-borde) solid transparent;
+    padding: 0 1.25rem;
+    border: var(--grosor-borde) solid transparent; /* se mantiene el mismo tamaño aunque el borde sea invisible */
     border-radius: var(--radio-boton);
     font-weight: 700;
-    line-height: 1.2;
     text-align: center;
-    text-decoration: none;
-    cursor: pointer;
+    text-decoration: none; /* se quita el subrayado de los enlaces que parecen botones */
+    cursor: pointer; 
 }
 
-.boton:hover {
-    text-decoration: none;
+/*COLORES !*/
+/* Boton principal coral */
+.boton--coral {
+    background-color: var(--coral);
+    color: var(--texto);
 }
 
-/* Iconos dentro de botones */
-.boton .icono {
-    width: 1.25rem;
-    height: 1.25rem;
+/* Cambio el color cuando paso el mouse */
+.boton--coral:hover {
+    background-color: var(--coral-hover);
 }
 
-/* Boton principal: marino */
-.boton--primario {
-    background-color: var(--marino);
-    color: var(--texto-invertido);
-}
-
-.boton--primario:hover {
-    background-color: var(--texto-2);
-}
-
-/* Boton con borde */
+/* Boton blanco con borde */
 .boton--secundario {
     background-color: var(--fondo);
     border-color: var(--marino);
-    color: var(--marino);
+    color: var(--texto);
 }
 
 .boton--secundario:hover {
     background-color: var(--coral-tinte);
 }
 
-/* Boton de acento: coral */
-.boton--coral {
-    background-color: var(--coral);
-    color: var(--marino);
-}
-
-.boton--coral:hover {
-    background-color: var(--coral-hover);
-}
-
-/* Acciones que no se pueden deshacer (rechazar) */
-.boton--peligro {
-    background-color: var(--fondo);
-    border-color: var(--error);
-    color: var(--error);
-}
-
-.boton--peligro:hover {
-    background-color: var(--error-fondo);
-}
-
-.boton--exito {
-    background-color: var(--exito);
+/* Boton oscuro */
+.boton--oscuro {
+    background-color: var(--marino);
     color: var(--texto-invertido);
 }
 
-.boton--exito:hover {
-    background-color: #17532A;
+.boton--oscuro:hover {
+    background-color: var(--texto-2);
 }
 
-/* Varios botones juntos, con separacion */
+/* Hago que el boton ocupe todo el ancho */
+.boton--bloque {
+    width: 100%;
+}
+
+/* Boton que uso para Mostrar contraseña */
+.boton-texto {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--espacio-1);
+    min-height: 2.875rem; 
+    padding: 0 0.625rem;
+    border: none;
+    background: none;
+    color: var(--texto);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Acomodo varios botones en una fila */
 .grupo-botones {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-3);
+    flex-wrap: wrap; /* Si no caben, pasan a otra fila */
+    gap: var(--espacio-2);
 }
 
+/* TARJETAS */
+/* Caja blanca que se reutiliza para formularios y tarjetas */
+.tarjeta {
+    display: grid;
+    gap: var(--espacio-3);
+    align-content: start; /* se empieza  a acomodar el contenido desde arriba */
+    padding: var(--espacio-4);
+    background-color: var(--fondo);
+    border: var(--grosor-borde) solid var(--gris);
+    border-radius: var(--radio-tarjeta);
+}
 
-/* ETIQUETA DE ESTATUS */
-/* Siempre lleva icono y texto, no solo color */
+/* Cambio la caja a gris para avisos y filtros */
+.tarjeta--gris {
+    background-color: var(--gris);
+    border-color: var(--gris);
+}
+
+/* Cambio la fuente de los subtitulos dentro de la tarjeta */
+.tarjeta h2 {
+    font-family: var(--fuente-texto);
+    font-size: var(--texto-h3);
+    font-weight: 700;
+}
+
+/* se meustram numeros grandes del panel */
+.cifra {
+    font-size: var(--texto-cifra);
+    font-weight: 700;
+}
+
+/* Etiqueta del dato: se ve en celular y se oculta en computadora */
+.etiqueta-dato {
+    display: block;
+    font-weight: 700;
+    color: var(--texto-2);
+}
+
+/* Encabezado de tabla: se muestra en computadora */
+.tabla-cabecera {
+    display: none;
+}
+
+/* LISTAS Y COLUMNAS */
+/* Quito los puntos de la lista y separo sus elementos */
+.lista {
+    display: grid;
+    gap: var(--espacio-4);
+    padding: 0;
+    list-style: none;
+}
+
+/* Permito que los elementos ocupen todo el ancho */
+.lista > li {
+    max-width: none;
+}
+
+/* Uso grid para acomodar columnas segun el tamaño de pantalla */
+.columnas {
+    display: grid;
+    gap: var(--espacio-4);
+}
+
+/* Lista de avisos con puntos */
+.lista-puntos {
+    display: grid;
+    gap: var(--espacio-2);
+    padding-left: var(--espacio-4);
+}
+
+/* Con ::marker cambio el color del punto */
+.lista-puntos li::marker {
+    color: var(--coral);
+}
+
+/* ESTATUS Y EXPERIENCIA */
+
+/* Muestro el estatus con texto e icono, no solo color */
 .etiqueta-estatus {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    align-self: flex-start;
-    padding: 0.25rem var(--espacio-2);
-    border-radius: 999px;
-    font-size: var(--texto-chico);
+    gap: var(--espacio-1);
+    width: fit-content; /* El ancho se ajusta al texto */
+    padding: 0.375rem var(--espacio-3);
+    border-radius: 999px; /* Redondeo la etiqueta para que parezca una pastilla */
     font-weight: 700;
-    line-height: 1.3;
 }
 
+/* Ajusto el tamaño del icono del estatus */
 .etiqueta-estatus .icono {
-    width: 1rem;
-    height: 1rem;
+    width: 1.125rem;
+    height: 1.125rem;
 }
 
-/* Enviada / pendiente: azul */
-.etiqueta-estatus--enviada,
-.etiqueta-estatus--pendiente {
+/* Estatus enviada */
+.etiqueta-estatus--enviada {
     background-color: var(--azul-amac);
-    color: var(--marino);
 }
 
-/* En revisión / pausada: arena */
+/* Estatus en revision o pausada */
 .etiqueta-estatus--revision,
 .etiqueta-estatus--pausada {
     background-color: var(--aviso-fondo);
     color: var(--aviso);
 }
 
-.etiqueta-estatus--entrevista {
-    background-color: var(--coral-tinte);
-    color: var(--marino);
-}
-
-/* Aceptada / activa: verde */
+/* Estatus aceptada o activa */
 .etiqueta-estatus--aceptada,
 .etiqueta-estatus--activa {
     background-color: var(--exito-fondo);
     color: var(--exito);
 }
 
-/* Rechazada: rojo */
+/* Estatus rechazada */
 .etiqueta-estatus--rechazada {
     background-color: var(--error-fondo);
     color: var(--error);
 }
 
-/* Cancelada / cerrada: gris */
-.etiqueta-estatus--cancelada,
+/* Estatus cerrada */
 .etiqueta-estatus--cerrada {
     background-color: var(--gris);
     color: var(--texto-2);
 }
 
-
-/* TARJETA (vacante y candidato) */
-.tarjeta {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-3);
-    height: 100%;
-    padding: var(--espacio-4);
-    background-color: var(--fondo);
-    border: var(--grosor-borde) solid var(--linea);
-    border-radius: var(--radio-tarjeta);
-}
-
-.tarjeta__titulo {
-    overflow-wrap: anywhere;
-}
-
-.tarjeta__subtitulo {
-    color: var(--texto-2);
-}
-
-.tarjeta__datos {
-    display: grid;
-    gap: var(--espacio-1);
-    padding: 0;
-    list-style: none;
-}
-
-/* Los botones se van al final de la tarjeta */
-.tarjeta__acciones {
-    margin-top: auto;
-    padding-top: var(--espacio-2);
-}
-
-/* Solicitud o vacante que ya no esta activa */
-.tarjeta--inactiva {
-    background-color: var(--gris);
-    border-color: var(--gris);
-}
-
-
-/* LISTA DE TARJETAS */
-/* Celular: 1 columna. Tablet: 2. Computadora: 3 */
-.lista-tarjetas {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--espacio-4);
-    padding: 0;
-    list-style: none;
-}
-
-.lista-tarjetas > li {
-    max-width: none;
-}
-
-
-/* AVISOS POR CORREO (mis-solicitudes) */
-.avisos-correo {
-    display: grid;
-    gap: var(--espacio-2);
-    margin-bottom: var(--espacio-5);
-    padding: var(--espacio-4);
-    background-color: var(--gris);
-    border-radius: var(--radio-tarjeta);
-}
-
-.avisos-correo__titulo {
-    font-family: var(--fuente-texto);
-    font-size: var(--texto-h3);
-    font-weight: 700;
-}
-
-.avisos-correo__lista {
-    display: grid;
-    gap: var(--espacio-1);
-    padding-left: var(--espacio-4);
-    list-style: disc;
-}
-
-/* Punto de color coral */
-.avisos-correo__lista li::marker {
-    color: var(--coral);
-}
-
-
-/* LISTA DE SOLICITUDES (mis-solicitudes) */
-/* Celular: cada solicitud es una tarjeta con las etiquetas visibles.
-   Computadora: 4 columnas (Vacante, Fecha, Estatus, Qué puede hacer) */
-.tabla-cabecera {
-    display: none;
-}
-
-.solicitudes {
-    display: grid;
-    gap: var(--espacio-3);
-    padding: 0;
-    list-style: none;
-}
-
-.solicitudes > li {
-    max-width: none;
-}
-
-.solicitud {
-    display: grid;
-    gap: var(--espacio-3);
-    padding: var(--espacio-4);
-    background-color: var(--fondo);
-    border: var(--grosor-borde) solid var(--linea);
-    border-radius: var(--radio-tarjeta);
-}
-
-.solicitud__titulo {
-    font-family: var(--fuente-titulos);
-    font-size: var(--texto-h3);
-    font-weight: 400;
-    overflow-wrap: anywhere;
-}
-
-/* El titulo es un enlace, se subraya al pasar el mouse o al usar Tab */
-.solicitud__titulo a {
-    font-weight: 400;
-    text-decoration: none;
-}
-
-.solicitud__titulo a:hover,
-.solicitud__titulo a:focus-visible {
-    text-decoration: underline;
-}
-
-.solicitud__empresa {
-    color: var(--texto-2);
-}
-
-.solicitud__etiqueta {
-    display: block;
-    font-weight: 700;
-    color: var(--texto-2);
-}
-
-.solicitud__acciones {
-    display: grid;
-    gap: var(--espacio-2);
-    justify-items: start;
-}
-
-.solicitud__acciones .boton {
-    max-width: 100%;
-}
-
-.solicitud__pregunta {
-    font-weight: 700;
-}
-
-
-/* VENTANA DE CONFIRMACION (sin JavaScript, con :target) */
-.ventana {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 50;
-    place-items: center;
-    padding: var(--margen-lateral);
-    background-color: rgb(32 41 69 / 0.6);
-}
-
-.ventana:target {
-    display: grid;
-}
-
-.ventana__caja {
-    display: grid;
-    gap: var(--espacio-3);
-    width: min(100%, 28rem);
-    padding: var(--espacio-4);
-    background-color: var(--fondo);
-    border-radius: var(--radio-tarjeta);
-}
-
-.ventana__titulo {
-    font-size: var(--texto-h2);
-}
-
-
-/* RESUMEN CON CIFRAS (panel de empresa) */
-.resumen {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--espacio-3);
-    margin-bottom: var(--espacio-5);
-    padding: 0;
-    list-style: none;
-}
-
-.dato-resumen {
-    display: grid;
-    padding: var(--espacio-3) var(--espacio-4);
-    background-color: var(--azul-amac);
-    border-radius: var(--radio-tarjeta);
-}
-
-.dato-resumen__numero {
-    font-family: var(--fuente-titulos);
-    font-size: var(--texto-cifra);
-    line-height: var(--interlineado-titulo);
-}
-
-
-/* FORMULARIO Y FILTROS */
-.barra-filtros {
-    display: grid;
-    gap: var(--espacio-3);
-    margin-bottom: var(--espacio-5);
-    padding: var(--espacio-4);
+/* Etiquetas para las areas de experiencia */
+.etiqueta-experiencia {
+    padding: 0.25rem var(--espacio-2);
+    border-radius: 999px;
     background-color: var(--coral-tinte);
-    border-radius: var(--radio-tarjeta);
-    background-color: var(--gris);
+    font-weight: 700;
 }
 
+/* Acomodo varias etiquetas en una fila */
+.etiquetas-experiencia {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben, pasan a la siguiente fila */
+    gap: var(--espacio-1);
+    padding: 0;
+    list-style: none;
+}
+
+/* FORMULARIOS */
+/* Centro el formulario y acomodo los campos en una columna */
+.formulario {
+    display: grid;
+    gap: var(--espacio-4);
+    width: 47.5rem;
+    max-width: 100%; /* Evito que el formulario se salga de la pantalla */
+    margin: 0 auto; 
+}
+
+/* Hago mas angosto el formulario de inicio de sesion */
+.formulario--login {
+    width: 35rem;
+    gap: 1.25rem;
+}
+
+/* El formulario de empresa ocupa todo el ancho */
+.formulario--ancho {
+    width: 100%;
+}
+
+/* Acomodo la etiqueta arriba del campo */
 .campo-formulario {
     display: grid;
     gap: var(--espacio-1);
+    align-content: start;
 }
 
-.campo-formulario label {
+/* Pongo las etiquetas en negritas */
+.campo-formulario label,
+fieldset legend {
     font-weight: 700;
 }
 
+/* Estilos de los campos donde escribo o selecciono datos */
+.campo-formulario input,
 .campo-formulario select,
-.campo-formulario input {
+.campo-formulario textarea {
     width: 100%;
     min-height: var(--alto-boton);
-    padding: var(--espacio-1) var(--espacio-3);
-    background-color: var(--fondo);
-    color: var(--texto);
+    padding: 0 var(--espacio-3);
     border: var(--grosor-borde) solid var(--borde);
     border-radius: var(--radio-campo);
+    background-color: var(--fondo);
+    color: var(--texto);
 }
 
+/* Dejo mas alto el campo de texto largo */
+.campo-formulario textarea {
+    min-height: 8.25rem;
+    padding: 0.875rem var(--espacio-3);
+    resize: vertical; /* Permito cambiar la altura, pero no el ancho */
+}
 
-/* SECCIONES Y AVISOS */
-.seccion {
+/* Texto de ayuda debajo del campo */
+.campo-formulario__ayuda {
+    color: var(--texto-2);
+}
+
+/* Acomodo el boton Mostrar dentro de la contraseña */
+.campo-formulario__grupo {
+    position: relative; /* Tomo esta caja como referencia para colocar el boton */
+    display: flex;
+    align-items: center; 
+}
+
+/* Dejo espacio para que el texto no quede debajo de Mostrar */
+.campo-formulario__grupo input {
+    padding-right: 8rem;
+}
+
+/* Pongo el boton a la derecha */
+.campo-formulario__grupo .boton-texto {
+    position: absolute;
+    right: 0.375rem;
+}
+
+/* Quito el borde que trae fieldset por defecto */
+fieldset {
     display: grid;
-    gap: var(--espacio-4);
-    margin-top: var(--espacio-6);
+    gap: var(--espacio-2);
+    min-width: 0;
+    padding: 0;
+    border: none;
 }
 
-/* Cuando no hay resultados */
-.aviso-vacio {
-    padding: var(--espacio-5) var(--espacio-4);
-    text-align: center;
-    background-color: var(--gris);
-    border-radius: var(--radio-tarjeta);
+/* Acomodo el checkbox o radio junto a su texto */
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-2);
+    min-height: 3rem; /* Dejo espacio suficiente para tocar la opcion */
+    cursor: pointer;
 }
 
+/* Defino el tamaño y color de las casillas */
+.opcion input {
+    width: 1.625rem;
+    height: 1.625rem;
+    flex: none; /* Evito que la casilla se haga mas pequeña */
+    accent-color: var(--marino); /* Cambio el color cuando marco la casilla */
+}
+
+/* Separo los botones de Regresar y Continuar */
+.formulario-acciones {
+    display: grid; /* En celular los acomodo uno debajo de otro */
+    gap: var(--espacio-3);
+    padding-top: var(--espacio-5);
+    border-top: var(--grosor-borde) solid var(--linea);
+}
+
+/* Linea que separa partes del formulario */
+hr {
+    border: none;
+    border-top: var(--grosor-borde) solid var(--gris);
+}
+
+/* PASOS DEL REGISTRO */
+
+/* Acomodo los pasos en una fila */
+.pasos {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben en celular, pasan abajo */
+    align-items: center;
+    gap: var(--espacio-3);
+    padding: 0;
+    list-style: none;
+}
+
+/* Cada paso tiene un numero y su nombre */
+.pasos__item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-weight: 700;
+    color: var(--texto-2);
+}
+
+/* Hago el circulo que contiene el numero */
+.pasos__numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--fondo);
+    border: var(--grosor-borde) solid var(--borde);
+    border-radius: 50%; /* Con 50% hago que el borde sea circular */
+}
+
+/* Flex: 1 hace que la linea ocupe el espacio disponible */
+.pasos__linea {
+    flex: 1;
+    min-width: 1rem;
+    height: var(--grosor-borde);
+    background-color: var(--borde);
+}
+
+/* Destaco el texto del paso actual y de los terminados */
+.pasos__item--actual,
+.pasos__item--listo {
+    color: var(--texto);
+}
+
+/* Marco el paso actual en coral */
+.pasos__item--actual .pasos__numero {
+    background-color: var(--coral);
+    border-color: var(--coral);
+}
+
+/* Marco en verde los pasos terminados */
+.pasos__item--listo .pasos__numero {
+    background-color: var(--exito);
+    border-color: var(--exito);
+    color: var(--texto-invertido);
+}
+
+/* Con ::after agrego la palomita sin escribirla en HTML */
+.pasos__item--listo .pasos__numero::after {
+    content: "✓";
+}
+
+/* SUBIR ARCHIVOS */
+/* Creo la caja para subir el curriculum, logo o portada */
+.subida-archivo {
+    display: grid;
+    justify-items: start; /* Evito que el boton ocupe toda la fila */
+    gap: var(--espacio-2);
+    padding: 1.25rem;
+    border: var(--grosor-borde) solid var(--borde);
+    border-radius: var(--radio-boton);
+}
+
+/* Con + marco el label que esta justo despues del input al usar Tab */
+.subida-archivo input:focus-visible + label {
+    outline: 3px solid var(--marino);
+    outline-offset: 3px;
+}
+
+/* MENSAJES */
+/* Estilos que comparten los mensajes */
+.mensaje {
+    display: flex;
+    align-items: flex-start; /* Dejo el icono alineado arriba si el texto ocupa varias lineas */
+    gap: var(--espacio-2);
+    padding: var(--espacio-3) 1.25rem;
+    border-radius: var(--radio-boton);
+    background-color: var(--azul-amac);
+}
+
+/* Aviso en color arena */
+.mensaje--aviso {
+    background-color: var(--aviso-fondo);
+    color: var(--aviso);
+}
+
+/* Mensaje de exito */
+.mensaje--exito {
+    background-color: var(--exito-fondo);
+    color: var(--exito);
+}
+
+/* VENTANA DE CONFIRMACION */
+/* La ventana esta escondida y cubre toda la pantalla al abrirse */
+.ventana {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50; /* Coloco la ventana encima de los demas elementos */
+    align-items: center;
+    justify-content: center; /* Centro la tarjeta dentro de la ventana */
+    padding: var(--margen-lateral);
+    background-color: rgb(32 41 69 / 0.6); /* Uso un fondo marino transparente */
+}
+
+/* Con :target muestro la ventana al entrar a su enlace #id */
+.ventana:target {
+    display: flex;
+}
+
+/* Limito el ancho de la tarjeta dentro de la ventana */
+.ventana .tarjeta {
+    width: 30rem;
+    max-width: 100%;
+}
 
 /* PAGINA 404 */
+
+/* Centro el contenido de la pagina de error */
 .pagina-error {
     display: grid;
     justify-items: center;
     gap: var(--espacio-3);
-    max-width: 40rem;
-    margin-inline: auto;
     text-align: center;
 }
 
-.pagina-error p {
-    max-width: none;
-}
-
-.pagina-error .grupo-botones {
-    justify-content: center;
-}
-
+/* Numero 404 grande en coral */
 .codigo-error {
     font-family: var(--fuente-titulos);
     font-size: 5rem;
@@ -443,75 +523,74 @@
     color: var(--coral);
 }
 
-
-/* FOCO SOBRE FONDOS OSCUROS */
-/* El foco marino no se ve sobre marino, aqui lo cambio a blanco */
-.barra-ayuda :focus-visible,
-.pie :focus-visible,
-.boton-ayuda:focus-visible {
-    outline-color: var(--texto-invertido);
-}
-
-/* Dejo espacio abajo para que el boton de ayuda fijo no tape el pie */
-.pie {
-    padding-bottom: 6rem;
-}
-
-
-/* TABLET */
+/* TABLET: 768px o mas */
 @media (min-width: 768px) {
 
-    .lista-tarjetas {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Acomodo las columnas en dos */
+    .columnas {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .resumen {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Coloco un boton a cada lado */
+    .formulario-acciones {
+        display: flex;
+        justify-content: space-between;
     }
 
-    .barra-filtros {
-        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-        align-items: end;
+    /* Separo los datos y el estatus del candidato en dos columnas */
+    .tarjeta--candidato {
+        grid-template-columns: 1fr 23rem;
+        column-gap: var(--espacio-5);
     }
 
-    .ventana__caja .grupo-botones {
-        justify-content: flex-end;
+    .tarjeta__estatus {
+        padding-left: var(--espacio-5);
+        border-left: var(--grosor-borde) solid var(--gris);
     }
 
 }
 
-
-/* COMPUTADORA */
+/* COMPUTADORA: 1024px o mas */
 @media (min-width: 1024px) {
 
-    .lista-tarjetas {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Aumento el espacio lateral de los botones */
+    .boton {
+        padding: 0 1.75rem;
     }
 
-    /* Candidatos: tarjetas mas anchas, solo 2 columnas */
-    .lista-tarjetas--dos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Aumento el espacio interior del login */
+    .formulario--login {
+        padding: 2.5rem;
     }
 
-    /* Mis solicitudes: 4 columnas con encabezados */
-    .tabla-cabecera,
-    .solicitud {
-        grid-template-columns: 1.8fr 1fr 1.2fr 2fr;
-        column-gap: var(--espacio-4);
+    /* Acomodo las tarjetas en tres columnas */
+    .columnas--3 {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
+    /* Divido Mis solicitudes en cuatro columnas */
+    .tarjeta--fila,
+    .tabla-cabecera {
+        grid-template-columns: 2fr 1fr 1.2fr 2fr;
+        column-gap: 0;
+    }
+
+    /* Divido Mis vacantes en tres columnas */
+    .tarjeta--fila-3,
+    .tabla-cabecera--3 {
+        grid-template-columns: 4fr 2.5fr 3fr;
+    }
+
+    /* Muestro los encabezados de la tabla */
     .tabla-cabecera {
         display: grid;
-        padding: 0 var(--espacio-4) var(--espacio-2);
+        padding: 0 var(--espacio-4);
         font-weight: 700;
+        color: var(--texto-2);
     }
 
-    .solicitud {
-        align-items: center;
-    }
-
-    /* Las etiquetas ya estan en el encabezado: las dejo solo para lectores de pantalla */
-    .solicitud__etiqueta {
+    /* Oculto las etiquetas visualmente, pero siguen disponibles para lectores de pantalla */
+    .etiqueta-dato {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -520,127 +599,4 @@
         white-space: nowrap;
     }
 
-    .solicitud__acciones .boton {
-        width: 100%;
-    }
-
 }
- 
- 
-/* ENCABEZADO DE PANEL (titulo a la izquierda, accion a la derecha) */
-.encabezado-panel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: var(--espacio-3) var(--espacio-4);
-    margin-bottom: var(--espacio-5);
-}
- 
-.encabezado-panel .titulo-pagina {
-    margin-bottom: 0;
-}
- 
- 
-/* ENLACE "REGRESAR" */
-.enlace-volver {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--espacio-1);
-    min-height: 3rem;
-    margin-bottom: var(--espacio-3);
-}
- 
-.enlace-volver .icono {
-    width: 1.25rem;
-    height: 1.25rem;
-}
- 
- 
-/* SELECTOR DE VACANTE */
-.campo-formulario--vacante {
-    width: 100%;
-}
- 
- 
-/* ETIQUETAS DE EXPERIENCIA (Almacen, Ventas...) */
-.etiquetas-experiencia {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-1);
-    padding: 0;
-    list-style: none;
-}
- 
-.etiqueta-experiencia {
-    padding: 0.25rem var(--espacio-2);
-    border-radius: 999px;
-    background-color: var(--coral-tinte);
-    color: var(--marino);
-    font-size: var(--texto-chico);
-    font-weight: 700;
-    line-height: 1.3;
-}
- 
- 
-/* TARJETA DE CANDIDATO */
-.tarjeta__cuerpo,
-.tarjeta__estatus {
-    display: grid;
-    gap: var(--espacio-2);
-    align-content: start;
-}
- 
-.tarjeta__estatus .campo-formulario {
-    gap: var(--espacio-2);
-}
- 
- 
-/* GRUPO DE BOTONES DENTRO DE UNA VACANTE */
-.grupo-botones--vacante {
-    margin-top: var(--espacio-2);
-}
- 
- 
-/* TABLET */
-@media (min-width: 768px) {
- 
-    .campo-formulario--vacante {
-        width: 18rem;
-    }
- 
-    .tarjeta--candidato {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: var(--espacio-5);
-    }
- 
-    .tarjeta--candidato .tarjeta__cuerpo {
-        flex: 1;
-    }
- 
-    .tarjeta--candidato .tarjeta__estatus {
-        flex: none;
-        width: 16rem;
-        padding-left: var(--espacio-4);
-        border-left: var(--grosor-borde) solid var(--linea);
-    }
- 
-}
- 
- 
-/* COMPUTADORA */
-@media (min-width: 1024px) {
- 
-    /* Mis vacantes: 3 columnas (Vacante, Estado, Solicitudes) */
-    .tabla-cabecera--vacantes,
-    .solicitud--vacante {
-        grid-template-columns: 2.6fr 1fr 1fr;
-    }
- 
-    .solicitud--vacante {
-        align-items: start;
-    }
- 
-}
- 

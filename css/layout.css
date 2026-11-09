@@ -201,7 +201,7 @@ main {
 .pie {
     background-color: var(--marino);
     color: var(--texto-invertido);
-    padding-block: var(--espacio-6);
+    padding-block: var(--espacio-6) 6rem; /* cambio*/
 }
 
 /* Color de los enlaces del footer */
@@ -333,4 +333,12 @@ main {
         right: var(--espacio-4);
     }
 
+}
+
+/* FOCO SOBRE FONDOS OSCUROS !!!!!!!!!*/
+/* El contorno marino no se ve sobre marino, aqui lo cambio a blanco */
+.barra-ayuda :focus-visible,
+.pie :focus-visible,
+.boton-ayuda:focus-visible {
+    outline-color: var(--texto-invertido);
 }
