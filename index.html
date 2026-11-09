@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacantes disponibles | Bolsa de Trabajo AMAC</title>
 
-    <!-- Fuentes que uso en la pagina -->
+    <!-- las fuentes q usamos para toda la pagina -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
 
-    <!-- Conecto mis archivos de CSS -->
+    <!-- conectamos los css, primero las variables y ya luego los estilos -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -21,21 +21,20 @@
 
 <body>
 
-    <!-- Enlace para ir directo al contenido usando Tab -->
+    <!-- esto es para que con tab puedan saltar directo a las vacantes -->
     <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
 
-
-    <!-- BARRA DE AYUDA -->
-    <!-- Esta barra aparece en computadora -->
+    <!-- barra de ayuda de arriba -->
+    <!-- esta solo la mostramos en compu, en cel ya esta el boton de abajo -->
     <div class="barra-ayuda">
 
         <div class="contenedor">
 
-            <!-- Telefono de ayuda de AMAC -->
-            <!-- Falta agregar el numero cuando lo tengamos -->
+            <!-- aqui va el telefono de amac -->
+            <!-- falta poner el numero real cuando nos lo pasen -->
             <a class="barra-ayuda__telefono" href="tel:+520000000000">
 
-                <!-- Icono de telefono -->
+                <!-- icono del telefono -->
                 <svg class="icono"
                      aria-hidden="true"
                      xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +51,7 @@
 
             </a>
 
-            <!-- Datos de la cuenta -->
+            <!-- aqui dejamos el nombre y cerrar sesion, por el momento  es de ejemplo -->
             <div class="barra-ayuda__cuenta">
                 <span>Hola, María</span>
                 <a href="login.html">Cerrar sesión</a>
@@ -63,49 +62,51 @@
     </div>
 
 
-    <!-- HEADER -->
-
+    <!-- encabezado de la pagina -->
     <header class="encabezado">
 
-        <!-- Uso flex desde CSS para acomodar el logo y los menus -->
+        <!-- con encabezado__fila acomodamos el logo y el menu con flex -->
         <div class="contenedor encabezado__fila">
 
-            <!-- Logo de AMAC -->
+            <!-- logo de amac, si lo presionan regresan al inicio -->
             <a class="marca" href="index.html">
                 <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
                 <span class="marca__nombre">Bolsa de Trabajo</span>
             </a>
 
 
-            <!-- MENU DE COMPUTADORA -->
-
+            <!-- menu que se ve en computadora -->
             <nav class="nav-principal" aria-label="Navegación principal">
 
                 <ul>
-                    <!-- Indico que esta es la pagina actual -->
-                    <li>
-                        <a href="index.html" aria-current="page">Vacantes</a>
-                    </li>
-
+                    <!-- aria-current marca donde estamos, por eso sale la rayita coral -->
+                    <li><a href="index.html" aria-current="page">Vacantes</a></li>
                     <li>
                         <a href="mis-solicitudes.html">
                             Mis solicitudes
                             <span class="contador" aria-label="2 avisos nuevos">2</span>
                         </a>
                     </li>
+                    <!-- guardadas y mi perfil todavia no tienen pagina!!! por eso el # -->
+                    <li>
+                        <a href="#">
+                            Guardadas
+                            <span class="contador" aria-label="1 vacante guardada">1</span>
+                        </a>
+                    </li>
+                    <li><a href="#">Mi perfil</a></li>
                 </ul>
 
             </nav>
 
 
-            <!-- MENU DE CELULAR -->
-
-            <!-- Details permite abrir y cerrar el menu -->
+            <!-- menu para celular -->
+            <!-- usamos details para poder abrir y cerrar el menu sin js -->
             <details class="menu-movil">
 
-                <!-- Boton que abre el menu -->
+                <!-- summary es lo que presionamos para abrir el menu -->
                 <summary>
-                    <!-- Icono del menu -->
+                    <!-- las tres rayitas del menu -->
                     <svg class="icono"  
                          aria-hidden="true" 
                          xmlns="http://www.w3.org/2000/svg" 
@@ -119,12 +120,14 @@
                     </svg> Menú
                 </summary>
 
-                <!-- Opciones que aparecen al abrirlo -->
+                <!-- estas opciones salen cuando abrimos el menu -->
                 <nav aria-label="Navegación principal (celular)">
 
                     <ul class="menu-movil__lista">
                         <li><a href="index.html" aria-current="page">Vacantes</a></li>
                         <li><a href="mis-solicitudes.html">Mis solicitudes (2)</a></li>
+                        <li><a href="#">Guardadas (1)</a></li>
+                        <li><a href="#">Mi perfil</a></li>
                         <li><a href="login.html">Cerrar sesión</a></li>
                     </ul>
 
@@ -137,28 +140,291 @@
     </header>
 
 
-    <!-- MAIN -->
-
-    <!-- Aqui va el contenido principal de la pagina -->
+    <!-- contenido de la pagina -->
     <main id="principal" class="contenedor">
 
-        <h1>Encuentre su próximo empleo</h1>
+        <!-- saludo y titulo -->
+        <div class="titulo-pagina">
+            <p>Hola, María</p>
+            <h1>Encuentre su próximo empleo</h1>
+            <p>Vacantes de empresas revisadas por AMAC, pensadas para personas de 60 años o más.</p>
+        </div>
 
-        <!-- Falta agregar el buscador, los filtros y las 6 vacantes -->
+
+        <!-- buscador de vacantes -->
+        <!-- por ahora buscar solo vuelve a cargar el index, todavia no filtra naaada -->
+        <form class="tarjeta tarjeta--gris buscador" action="index.html" method="get" role="search">
+            <div class="campo-formulario">
+                <label for="buscar">Buscar por puesto, empresa o lugar</label>
+                <input type="search" id="buscar" name="buscar" placeholder="Ejemplo: cajero, Soriana o Guadalupe">
+            </div>
+            <button class="boton boton--oscuro" type="submit"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg> Buscar</button>
+        </form>
+
+
+        <!-- aqui separamos los filtros de las vacantes, en cel quedan uno abajo del otro -->
+        <div class="listado seccion">
+
+            <!-- los filtros que pusimos de horario, categoria y distancia -->
+            <!-- !!!!!!!!! las casillas se pueden marcar pero aun no hacen el filtro de verdad (JS) -->
+            <form class="tarjeta" aria-labelledby="titulo-filtros">
+
+                <h2 id="titulo-filtros">Filtrar vacantes</h2>
+
+                <fieldset>
+                    <legend>Horario</legend>
+                        <label class="opcion"><input type="checkbox" name="horario" value="completo"> Tiempo completo</label>
+                        <label class="opcion"><input type="checkbox" name="horario" value="medio"> Medio tiempo</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Categoría</legend>
+                        <label class="opcion"><input type="checkbox" name="categoria" value="operativo"> Operativo</label>
+                        <label class="opcion"><input type="checkbox" name="categoria" value="administrativo"> Administrativo</label>
+                        <label class="opcion"><input type="checkbox" name="categoria" value="seguridad"> Seguridad</label>
+                        <label class="opcion"><input type="checkbox" name="categoria" value="ventas"> Ventas</label>
+                        <label class="opcion"><input type="checkbox" name="categoria" value="atencion-cliente"> Atención al cliente</label>
+                </fieldset>
+
+                <div class="campo-formulario">
+                    <label for="distancia">Distancia desde su casa</label>
+                    <select id="distancia" name="distancia">
+                        <option>Cualquier distancia</option>
+                        <option>Menos de 5 km</option>
+                        <option>Menos de 10 km</option>
+                        <option>Menos de 20 km</option>
+                    </select>
+                    <p class="campo-formulario__ayuda">Desde su domicilio: Arboledas, Guadalupe.</p>
+                </div>
+
+                <button class="boton boton--secundario boton--bloque" type="button"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> Usar mi ubicación</button>
+                <button class="boton boton--secundario" type="reset">Quitar filtros</button>
+
+            </form>
+
+            <!-- aqui van las vacantes que se muestran en la pagina -->
+            <section aria-labelledby="titulo-resultados">
+
+                <!-- role status sirve para avisar si cambia la cantidad de resultados, cuando ya funcione el buscador -->
+                <h2 class="solo-lector" id="titulo-resultados">Vacantes</h2>
+                <p role="status"><strong>6 vacantes disponibles</strong></p>
+
+                <ul class="lista seccion">
+
+                    <!-- primera vacante: auxiliar de almacen -->
+                    <li>
+                        <article class="tarjeta">
+
+                            <!-- nombre del puesto y empresa -->
+                            <div>
+                                <h3>Auxiliar de almacén</h3>
+                                <p class="texto-2">Soriana</p>
+                            </div>
+
+                            <!--  sueldo, lugar y prestaciones -->
+                            <div>
+                                <p><span class="texto-2">Sueldo:</span> <strong>$9,500 al mes</strong></p>
+                                <p><span class="texto-2">Lugar:</span> Guadalupe, N.L.</p>
+                                <p><span class="texto-2">Prestaciones:</span> Comedor, vales de despensa, transporte</p>
+                            </div>
+
+                            <!-- estas etiquetas  dicen el horario y la categoria -->
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Medio tiempo</li>
+                                <li class="etiqueta-experiencia">Operativo</li>
+                            </ul>
+
+                            <p class="texto-2 con-icono"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> A unos 3 km de su casa</p>
+
+                            <!-- con solo-lector aclaramos a cual vacante pertenece cada boton -->
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="vacante.html">Ver detalles<span class="solo-lector"> de Auxiliar de almacén</span></a>
+                                <button class="boton boton--secundario" type="button"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> Guardar<span class="solo-lector"> Auxiliar de almacén</span></button>
+                            </div>
+
+                        </article>
+                    </li>
+                    <!-- segunda vacante: cajero o cajera -->
+                    <li>
+                        <article class="tarjeta">
+
+                            <!-- nombre del puesto y empresa -->
+                            <div>
+                                <h3>Cajero o cajera</h3>
+                                <p class="texto-2">OXXO</p>
+                            </div>
+
+                            <!-- los datos principales de esta vacante -->
+                            <div>
+                                <p><span class="texto-2">Sueldo:</span> <strong>$8,200 al mes</strong></p>
+                                <p><span class="texto-2">Lugar:</span> Monterrey, N.L.</p>
+                                <p><span class="texto-2">Prestaciones:</span> Prestaciones de ley, vales de despensa</p>
+                            </div>
+
+                            <!-- etiquetas que usariamos para los filtros -->
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Medio tiempo</li>
+                                <li class="etiqueta-experiencia">Ventas</li>
+                            </ul>
+
+                            <p class="texto-2 con-icono"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> A unos 9 km de su casa</p>
+
+                            <!-- el texto de solo-lector no se ve, pero si ayuda al lector de pantalla -->
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="vacante.html">Ver detalles<span class="solo-lector"> de Cajero o cajera</span></a>
+                                <button class="boton boton--secundario" type="button"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> Guardar<span class="solo-lector"> Cajero o cajera</span></button>
+                            </div>
+
+                        </article>
+                    </li>
+                    <!-- tercera vacante: analista de datos -->
+                    <li>
+                        <article class="tarjeta">
+
+                            <!-- aqui va el puesto y quien lo ofrece -->
+                            <div>
+                                <h3>Analista de datos</h3>
+                                <p class="texto-2">Gobierno de Nuevo León</p>
+                            </div>
+
+                            <!-- sueldo, ubicacion y prestaciones -->
+                            <div>
+                                <p><span class="texto-2">Sueldo:</span> <strong>$13,000 al mes</strong></p>
+                                <p><span class="texto-2">Lugar:</span> Monterrey, N.L.</p>
+                                <p><span class="texto-2">Prestaciones:</span> Prestaciones de ley, seguro de gastos médicos</p>
+                            </div>
+
+                            <!-- horario y categoria del trabajo -->
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Medio tiempo</li>
+                                <li class="etiqueta-experiencia">Administrativo</li>
+                            </ul>
+
+                            <p class="texto-2 con-icono"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> A unos 15 km de su casa</p>
+
+                            <!-- aclaramos que estos botones son para analista de datos -->
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="vacante.html">Ver detalles<span class="solo-lector"> de Analista de datos</span></a>
+                                <button class="boton boton--secundario" type="button" aria-pressed="true"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Guardada<span class="solo-lector"> Analista de datos</span></button>
+                            </div>
+
+                        </article>
+                    </li>
+                    <!-- cuarta vacante: guardia de seguridad -->
+                    <li>
+                        <article class="tarjeta">
+
+                            <!-- ponemos puesto y empresa -->
+                            <div>
+                                <h3>Guardia de seguridad</h3>
+                                <p class="texto-2">Plaza Sendero</p>
+                            </div>
+
+                            <!-- datos de sueldo y donde queda -->
+                            <div>
+                                <p><span class="texto-2">Sueldo:</span> <strong>$11,500 al mes</strong></p>
+                                <p><span class="texto-2">Lugar:</span> Escobedo, N.L.</p>
+                                <p><span class="texto-2">Prestaciones:</span> Comedor, uniforme, prestaciones de ley</p>
+                            </div>
+
+                            <!-- estas son sus etiquetas de horario y categoria -->
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Tiempo completo</li>
+                                <li class="etiqueta-experiencia">Seguridad</li>
+                            </ul>
+
+                            <p class="texto-2 con-icono"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> A unos 8 km de su casa</p>
+
+                            <!-- para que no se confundan los botones con los de otras vacantes -->
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="vacante.html">Ver detalles<span class="solo-lector"> de Guardia de seguridad</span></a>
+                                <button class="boton boton--secundario" type="button"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> Guardar<span class="solo-lector"> Guardia de seguridad</span></button>
+                            </div>
+
+                        </article>
+                    </li>
+                    <!-- quinta vacante: recepcionista -->
+                    <li>
+                        <article class="tarjeta">
+
+                            <!-- titulo y empresa de la vacante -->
+                            <div>
+                                <h3>Recepcionista</h3>
+                                <p class="texto-2">Hospital San José</p>
+                            </div>
+
+                            <!-- aca va la info del trabajo -->
+                            <div>
+                                <p><span class="texto-2">Sueldo:</span> <strong>$9,000 al mes</strong></p>
+                                <p><span class="texto-2">Lugar:</span> Monterrey, N.L.</p>
+                                <p><span class="texto-2">Prestaciones:</span> Prestaciones de ley, comedor</p>
+                            </div>
+
+                            <!-- etiquetas que se ven debajo de los datos -->
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Medio tiempo</li>
+                                <li class="etiqueta-experiencia">Atención al cliente</li>
+                            </ul>
+
+                            <p class="texto-2 con-icono"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> A unos 11 km de su casa</p>
+
+                            <!-- tambien aclaramos a que vacante lleva ver detalles -->
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="vacante.html">Ver detalles<span class="solo-lector"> de Recepcionista</span></a>
+                                <button class="boton boton--secundario" type="button"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> Guardar<span class="solo-lector"> Recepcionista</span></button>
+                            </div>
+
+                        </article>
+                    </li>
+                    <!-- sexta vacante: empacador o empacadora -->
+                    <li>
+                        <article class="tarjeta">
+
+                            <!-- ultimo puesto y empresa de la lista -->
+                            <div>
+                                <h3>Empacador o empacadora</h3>
+                                <p class="texto-2">HEB</p>
+                            </div>
+
+                            <!-- sueldo, lugar y prestaciones -->
+                            <div>
+                                <p><span class="texto-2">Sueldo:</span> <strong>$7,800 al mes</strong></p>
+                                <p><span class="texto-2">Lugar:</span> San Nicolás de los Garza, N.L.</p>
+                                <p><span class="texto-2">Prestaciones:</span> Vales de despensa, transporte</p>
+                            </div>
+
+                            <!-- horario y categoria de esta vacante -->
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Medio tiempo</li>
+                                <li class="etiqueta-experiencia">Operativo</li>
+                            </ul>
+
+                            <p class="texto-2 con-icono"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> A unos 6 km de su casa</p>
+
+                            <!-- OJOOOOOOO con solo-lector, esto no se ve pero sirve para accesibilidad -->
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="vacante.html">Ver detalles<span class="solo-lector"> de Empacador o empacadora</span></a>
+                                <button class="boton boton--secundario" type="button"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> Guardar<span class="solo-lector"> Empacador o empacadora</span></button>
+                            </div>
+
+                        </article>
+                    </li>
+                </ul>
+
+            </section>
+
+        </div>
 
     </main>
 
 
-    <!-- FOOTER -->
-
+    <!--FOOTER-->
     <footer class="pie">
 
-        <!-- Uso grid para acomodar las columnas -->
+        <!-- aqui usamos grid para acomodar las tres columnas del footer -->
         <div class="contenedor pie__columnas">
 
-
-            <!-- PRIMERA COLUMNA: INFORMACION DE AMAC -->
-
+            <!-- primera columna con la info de amac -->
             <div class="pie__columna">
 
                 <img class="pie__logo" src="img/logo-amac-blanco.svg"
@@ -170,7 +436,7 @@
                     San Pedro Garza García, N.L.
                 </p>
 
-                <!-- Correo de contacto -->
+                <!-- correo para contactar a amac -->
                 <a href="mailto:contacto@somosamac.org">
                     contacto@somosamac.org
                 </a>
@@ -181,9 +447,7 @@
 
             </div>
 
-
-            <!-- SEGUNDA COLUMNA: ENLACES -->
-
+            <!-- segunda columna con los enlaces -->
             <nav class="pie__columna" aria-label="Sitio de AMAC">
 
                 <ul>
@@ -196,9 +460,7 @@
 
             </nav>
 
-
-            <!-- TERCERA COLUMNA: REDES SOCIALES -->
-
+            <!-- tercera columna con las redes -->
             <div class="pie__columna">
 
                 <h2 class="pie__titulo">Síguenos</h2>
@@ -215,13 +477,8 @@
     </footer>
 
 
-    <!-- BOTON DE AYUDA -->
-
-    <!-- Este boton se queda fijo abajo de la pantalla -->
-    <!-- Falta agregar el numero de telefono para que pueda llamar -->
+    <!-- boton de ayuda que queda flotando -->
     <a class="boton-ayuda" href="tel:+520000000000">
-
-        <!-- Icono de telefono -->
         <svg class="icono" 
              aria-hidden="true" 
              xmlns="http://www.w3.org/2000/svg" 

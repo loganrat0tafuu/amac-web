@@ -186,7 +186,7 @@ Estilos que vamos a reutilizar en las paginas de AMAC!!!! */
 
 /* Con ::marker cambio el color del punto */
 .lista-puntos li::marker {
-    color: var(--coral);
+    color: var(--texto);
 }
 
 /* ESTATUS Y EXPERIENCIA */
@@ -374,7 +374,6 @@ hr {
 }
 
 /* PASOS DEL REGISTRO */
-
 /* Acomodo los pasos en una fila */
 .pasos {
     display: flex;
@@ -506,7 +505,6 @@ hr {
 }
 
 /* PAGINA 404 */
-
 /* Centro el contenido de la pagina de error */
 .pagina-error {
     display: grid;
@@ -599,4 +597,107 @@ hr {
         white-space: nowrap;
     }
 
+}
+
+/* SE AGREGO !!!!! LISTADO Y DETALLE DE VACANTES */
+/* acomodo los iconos con su texto en una fila */
+.con-icono {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--espacio-1);
+}
+
+/* en celular pongo el buscador y el boton uno abajo del otro */
+.buscador {
+    display: grid;
+    gap: var(--espacio-3);
+}
+
+/* aqui usamos grid para acomodar filtros y vacantes */
+/* tmb lo usamos para la info y el boton de postularme */
+.listado,
+.detalle {
+    display: grid;
+    gap: var(--espacio-5);
+    align-items: start;
+}
+
+/* dejo menos espacio entre los titulos y sus textos */
+.detalle section {
+    display: grid;
+    gap: var(--espacio-1);
+}
+
+/* los titulos del detalle usan work sans, no baskerville */
+.detalle h2 {
+    font-family: var(--fuente-texto);
+    font-size: var(--texto-h3);
+    font-weight: 700;
+}
+
+/* tablet: el boton Buscar se pone al lado del cuadro */
+@media (min-width: 768px) {
+    .buscador {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+    }
+}
+
+/* computadora: filtros a la izquierda, tarjetas a la derecha !!!!!!!!!!!!!!!*/
+@media (min-width: 1024px) {
+    .listado {
+        grid-template-columns: 22.5rem 1fr;
+    }
+
+    .detalle {
+        grid-template-columns: 1fr 24.5rem;
+        column-gap: var(--espacio-6);
+    }
+}
+
+/* CONFIRMACION (solicitud-enviada.html) */
+/* Centro todo y le pongo un ancho maximo para que no quede tan ancho */
+.confirmacion {
+    display: grid;
+    justify-items: center;
+    gap: var(--espacio-3);
+    max-width: 36rem;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* Circulo verde con la palomita */
+.confirmacion__icono {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 999px;
+    background-color: var(--exito-fondo);
+    color: var(--exito);
+}
+
+/* Palomita mas grande que los iconos normales */
+.confirmacion__icono .icono {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* El resumen ocupa todo el ancho y su texto va a la izquierda */
+.confirmacion .tarjeta {
+    width: 100%;
+    gap: var(--espacio-2);
+    text-align: left;
+}
+
+/* Cada fila del resumen: titulo a la izquierda, dato a la derecha */
+.confirmacion__fila {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    align-items: center;
+}
+
+/* Centro los botones */
+.confirmacion .grupo-botones {
+    justify-content: center;
 }
