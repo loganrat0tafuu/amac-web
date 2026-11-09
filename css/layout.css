@@ -207,6 +207,7 @@ main {
 /* Color de los enlaces del footer */
 .pie a {
     color: var(--coral);
+    font-weight: 400;
 }
 
 /* Uso grid para acomodar las columnas */
@@ -245,6 +246,11 @@ main {
     color: var(--coral);
 }
 
+/* Las redes sociales van en negritas */
+.pie__redes a {
+    font-weight: 700;
+}
+
 
 /* BOTON DE AYUDA */
 /* El boton se queda fijo abajo a la derecha */
@@ -278,9 +284,11 @@ main {
 /* Cuando la pantalla mide 768px o mas */
 @media (min-width: 768px) {
 
-    /* El footer ahora tiene 3 columnas */
+    /* El footer ahora tiene 3 columnas 
+    1fr auto auto: la primera columna toma todo el espacio que sobra */
     .pie__columnas {
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 1fr auto auto;
+        column-gap: var(--espacio-6);
     }
 
 }
