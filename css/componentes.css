@@ -378,6 +378,8 @@
     padding: var(--espacio-4);
     background-color: var(--coral-tinte);
     border-radius: var(--radio-tarjeta);
+    background-color: var(--gris);
+
 }
 
 .campo-formulario {
