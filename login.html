@@ -30,6 +30,7 @@
 
         <div class="contenedor">
 
+            <!-- Falta agregar el numero cuando lo tengamos -->
             <a class="barra-ayuda__telefono" href="tel:+520000000000">
 
                 <svg class="icono" 
@@ -89,7 +90,15 @@
             <details class="menu-movil">
 
                 <summary>
-                    <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="icono" 
+                        aria-hidden="true" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round">
                         <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
                     </svg> Menú
                 </summary>
@@ -114,22 +123,21 @@
 
     <!-- MAIN -->
 
-    <main id="principal" class="contenedor pagina-formulario">
+    <main id="principal" class="contenedor">
 
-        <form class="tarjeta-formulario" action="mis-solicitudes.html" method="get">
+        <form class="formulario formulario--login tarjeta" action="mis-solicitudes.html" method="get">
 
-            <h1 class="tarjeta-formulario__titulo">Iniciar sesión</h1>
-            <p class="tarjeta-formulario__descripcion">Para personas que buscan empleo, empresas y personal de AMAC.</p>
+            <h1>Iniciar sesión</h1>
+            <p class="texto-2">Para personas que buscan empleo, empresas y personal de AMAC.</p>
 
             <div class="campo-formulario">
-                <label class="campo-formulario__etiqueta" for="correo">Correo electrónico</label>
+                <label for="correo">Correo electrónico</label>
                 <input type="email" id="correo" name="correo" autocomplete="email" placeholder="maria.lopez@correo.com" required>
             </div>
 
             <div class="campo-formulario">
-                <label class="campo-formulario__etiqueta" for="clave">Contraseña</label>
+                <label for="clave">Contraseña</label>
                 <div class="campo-formulario__grupo">
-                    <!-- Sin name a proposito: asi la contraseña no viaja en la URL mientras es estatico -->
                     <input type="password" id="clave" autocomplete="current-password" required>
                     <button class="boton-texto" type="button" aria-controls="clave">
                         <svg class="icono" 
@@ -150,16 +158,16 @@
 
             <button class="boton boton--coral boton--bloque" type="submit">Iniciar sesión</button>
 
-            <a class="tarjeta-formulario__olvido" href="#">¿Olvidó su contraseña?</a>
+            <a href="#">¿Olvidó su contraseña?</a>
 
             <button class="boton boton--secundario boton--bloque" type="button">
                 <img src="img/google.svg" alt="" width="24" height="24">
                 Entrar con Google
             </button>
 
-            <hr class="separador">
+            <hr>
 
-            <p class="tarjeta-formulario__pregunta">¿Todavía no tiene cuenta?</p>
+            <p><strong>¿Todavía no tiene cuenta?</strong></p>
             <a class="boton boton--secundario boton--bloque" href="registro-candidato.html">Registrarme para buscar empleo</a>
             <a class="boton boton--secundario boton--bloque" href="registro-empresa.html">Registrar mi empresa</a>
 
