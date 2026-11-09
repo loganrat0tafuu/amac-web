@@ -1,0 +1,336 @@
+/* layout.css */
+/* Aqui acomodo las partes que se repiten en todas las paginas */
+
+
+/* CONTENEDOR */
+/* Centro el contenido y le doy un ancho maximo (el contenido no queda pegado a las orillas)*/
+.contenedor {
+    width: min(100% - 2 * var(--margen-lateral), var(--ancho-maximo));
+    margin-inline: auto;
+}
+
+/* Espacio arriba y abajo del contenido principal */
+main {
+    padding-block: var(--espacio-4) var(--espacio-6);
+}
+
+
+/* BARRA DE AYUDA DE ARRIBA*/
+/* La escondo en celular porque ya tengo el boton de ayuda */
+.barra-ayuda {
+    display: none;
+    background-color: var(--marino);
+    color: var(--texto-invertido);
+    font-size: var(--texto-chico);
+}
+
+/* Uso flex para acomodar los elementos en una fila
+18px = 1.125rem !!!!! */
+.barra-ayuda .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-4);
+    min-height: 3rem;
+}
+
+/* Color de los enlaces */
+.barra-ayuda a {
+    color: var(--texto-invertido);
+}
+
+/* Acomodo el telefono y su icono */
+.barra-ayuda__telefono {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-1);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+/* Pongo el numero en negritas */
+.barra-ayuda__telefono strong {
+    font-weight: 700;
+}
+
+/* Acomodo los enlaces de la cuenta */
+.barra-ayuda__cuenta {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-4);
+}
+
+
+/* ENCABEZADO !!!!!!!!!!!!!!!!!!!!!!!*/
+/* El encabezado se queda arriba cuando bajo en la pagina */
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--fondo);
+    border-bottom: var(--grosor-borde) solid var(--gris);
+}
+
+/* Acomodo el logo y el menu en una fila */
+.encabezado__fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-4);
+    min-height: 4.5rem;
+}
+
+
+/* LOGO */
+/* Acomodo el logo y el nombre de la pagina */
+.marca {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-3);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* Tamaño del logo en celular */
+.marca img {
+    width: 9.75rem;
+    height: auto;
+}
+
+/* Escondo el nombre en celular para que solo aparezca el logo */
+.marca__nombre {
+    display: none;
+    padding-left: var(--espacio-3);
+    border-left: var(--grosor-borde) solid var(--gris-amac);
+    color: var(--texto-2);
+}
+
+
+/* MENU PRINCIPAL */
+/* En celular escondo el menu de computadora */
+.nav-principal {
+    display: none;
+}
+
+/* Acomodo las opciones del menu horizontalmente */
+.nav-principal ul {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-5);
+    padding: 0;
+    list-style: none;
+}
+
+/* Estilos de los enlaces del menu */
+.nav-principal a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--espacio-1);
+    min-height: 3rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+/* Marco con una linea coral la pagina donde estoy */
+.nav-principal a[aria-current="page"] {
+    box-shadow: inset 0 -3px 0 var(--coral);
+}
+
+
+/* CONTADOR */
+/* Circulo que muestra el numero de solicitudes */
+.contador {
+    display: inline-grid;
+    place-items: center;
+    min-width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background-color: var(--coral);
+    color: var(--texto);
+    font-size: var(--texto-chico);
+    font-weight: 700;
+}
+
+
+/* MENU DE CELULAR */
+/* Acomodo el boton que abre el menu */
+.menu-movil summary {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-1);
+    min-height: 3rem;
+    padding-inline: var(--espacio-2);
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+/* Quito la flecha que aparece por defecto */
+.menu-movil summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Acomodo la lista que aparece al abrir el menu */
+.menu-movil__lista {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    display: grid;
+    gap: var(--espacio-1);
+    padding: var(--espacio-4) var(--margen-lateral);
+    margin: 0;
+    list-style: none;
+    background-color: var(--fondo);
+    border-bottom: var(--grosor-borde) solid var(--gris);
+}
+
+/* Los enlaces aparecen uno debajo del otro */
+.menu-movil__lista a {
+    display: block;
+    padding-block: var(--espacio-2);
+    font-size: var(--texto-h2);
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* PIE DE PAGINA */
+/* Fondo y espacios del footer */
+.pie {
+    background-color: var(--marino);
+    color: var(--texto-invertido);
+    padding-block: var(--espacio-6);
+}
+
+/* Color de los enlaces del footer */
+.pie a {
+    color: var(--coral);
+    font-weight: 400;
+}
+
+/* Uso grid para acomodar las columnas */
+.pie__columnas {
+    display: grid;
+    gap: var(--espacio-5);
+}
+
+/* Acomodo los elementos dentro de cada columna */
+.pie__columna {
+    display: grid;
+    gap: var(--espacio-2);
+    align-content: start;
+}
+
+/* Tamaño del logo del footer */
+.pie__logo {
+    width: 12.5rem;
+    height: auto;
+    margin-bottom: var(--espacio-2);
+}
+
+/* Quito los puntos de las listas */
+.pie ul {
+    display: grid;
+    gap: var(--espacio-2);
+    padding: 0;
+    list-style: none;
+}
+
+/* Titulos del footer */
+.pie__titulo {
+    font-family: var(--fuente-titulos);
+    font-size: var(--texto-h2);
+    font-weight: 400;
+    color: var(--coral);
+}
+
+/* Las redes sociales van en negritas */
+.pie__redes a {
+    font-weight: 700;
+}
+
+
+/* BOTON DE AYUDA */
+/* El boton se queda fijo abajo a la derecha */
+.boton-ayuda {
+    position: fixed;
+    right: var(--espacio-3);
+    bottom: var(--espacio-4);
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--espacio-1);
+    min-height: var(--alto-boton);
+    padding: var(--espacio-2) var(--espacio-4);
+    border-radius: 999px;
+    background-color: var(--marino);
+    color: var(--texto-invertido);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgb(32 41 69 / 0.3);
+}
+
+/* Tamaño de los iconos */
+.icono {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex: none;
+}
+
+
+/* TABLET */
+/* Cuando la pantalla mide 768px o mas */
+@media (min-width: 768px) {
+
+    /* El footer ahora tiene 3 columnas 
+    1fr auto auto: la primera columna toma todo el espacio que sobra */
+    .pie__columnas {
+        grid-template-columns: 1fr auto auto;
+        column-gap: var(--espacio-6);
+    }
+
+}
+
+
+/* COMPUTADORA */
+/* Cuando la pantalla mide 1024px o mas */
+@media (min-width: 1024px) {
+
+    /* Aumento los espacios del contenido */
+    main {
+        padding-block: var(--espacio-6) 6rem;
+    }
+
+    /* Muestro la barra de ayuda */
+    .barra-ayuda {
+        display: block;
+    }
+
+    /* Hago mas grande el logo */
+    .marca img {
+        width: 12.5rem;
+    }
+
+    /* Muestro el nombre junto al logo */
+    .marca__nombre {
+        display: inline;
+    }
+
+    /* Muestro el menu principal */
+    .nav-principal {
+        display: block;
+    }
+
+    /* Escondo el menu de celular */
+    .menu-movil {
+        display: none;
+    }
+
+    /* Ajusto la posicion del boton de ayuda */
+    .boton-ayuda {
+        right: var(--espacio-4);
+    }
+
+}
