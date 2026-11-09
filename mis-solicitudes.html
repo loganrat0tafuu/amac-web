@@ -1,138 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis solicitudes | Bolsa de Trabajo AMAC</title>
 
-    <!-- Fuentes que uso en la pagina -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
 
-    <!-- Conecto mis archivos de CSS -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/componentes.css">
-
 </head>
-
 <body>
 
-    <!-- Enlace para ir directo al contenido usando Tab -->
+    <!-- Iconos: se usan con <use href="#i-nombre"> -->
+    <svg class="solo-lector" aria-hidden="true" focusable="false">
+        <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></symbol>
+    </svg>
+
     <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
 
-
-    <!-- BARRA DE AYUDA -->
-    <!-- Esta barra aparece en computadora -->
     <div class="barra-ayuda">
-
         <div class="contenedor">
-
-            <!-- Telefono de ayuda de AMAC -->
-            <!-- Falta agregar el numero cuando lo tengamos -->
             <a class="barra-ayuda__telefono" href="tel:+520000000000">
-
-                <!-- Icono de telefono -->
-                <svg class="icono"
-                     aria-hidden="true"
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
-                </svg>
-
+                <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg>
                 <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
-
             </a>
-
-            <!-- Datos de la cuenta -->
             <div class="barra-ayuda__cuenta">
                 <span>Hola, María</span>
                 <a href="login.html">Cerrar sesión</a>
             </div>
-
         </div>
-
     </div>
 
-
-    <!-- HEADER -->
-
     <header class="encabezado">
-
-        <!-- Uso flex desde CSS para acomodar el logo y los menus -->
         <div class="contenedor encabezado__fila">
-
-            <!-- Logo de AMAC -->
             <a class="marca" href="index.html">
                 <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
                 <span class="marca__nombre">Bolsa de Trabajo</span>
             </a>
 
-
-            <!-- MENU DE COMPUTADORA -->
-
             <nav class="nav-principal" aria-label="Navegación principal">
-
                 <ul>
-                    <!-- Indico que esta es la pagina actual -->
-                    <li>
-                        <a href="index.html">Vacantes</a>
-                    </li>
-
+                    <li><a href="index.html">Vacantes</a></li>
                     <li>
                         <a href="mis-solicitudes.html" aria-current="page">
                             Mis solicitudes
                             <span class="contador" aria-label="2 avisos nuevos">2</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="guardadas.html">
                             Guardadas
                             <span class="contador" aria-label="1 vacante guardada">1</span>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="perfil.html">Mi perfil</a>
-                    </li>
+                    <li><a href="perfil.html">Mi perfil</a></li>
                 </ul>
-
             </nav>
 
-
-            <!-- MENU DE CELULAR -->
-
-            <!-- Details permite abrir y cerrar el menu -->
             <details class="menu-movil">
-
-                <!-- Boton que abre el menu -->
                 <summary>
-                    <!-- Icono del menu -->
-                    <svg class="icono"  
-                         aria-hidden="true" 
-                         xmlns="http://www.w3.org/2000/svg" 
-                         viewBox="0 0 24 24" 
-                         fill="none" 
-                         stroke="currentColor" 
-                         stroke-width="2" 
-                         stroke-linecap="round" 
-                         stroke-linejoin="round">
-                        <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
-                    </svg> Menú
+                    <svg class="icono" aria-hidden="true"><use href="#i-menu"/></svg> Menú
                 </summary>
-
-                <!-- Opciones que aparecen al abrirlo -->
                 <nav aria-label="Navegación principal (celular)">
-
                     <ul class="menu-movil__lista">
                         <li><a href="index.html">Vacantes</a></li>
                         <li><a href="mis-solicitudes.html" aria-current="page">Mis solicitudes (2)</a></li>
@@ -140,36 +80,29 @@
                         <li><a href="perfil.html">Mi perfil</a></li>
                         <li><a href="login.html">Cerrar sesión</a></li>
                     </ul>
-
                 </nav>
-
             </details>
-
         </div>
-
     </header>
 
-
-    <!-- MAIN -->
-
     <main id="principal" class="contenedor">
+
         <div class="titulo-pagina">
             <h1>Mis solicitudes</h1>
-            <p>Aquí ve en qué vacantes se postuló. Puede retirar una solicitud solo mientras diga <strong>Enviada</strong>, antes de que la empresa la revise.</p>
+            <p>Aquí ve en qué va cada empleo al que se postuló. Puede retirar una solicitud solo mientras diga <strong>Enviada</strong>, antes de que la empresa la revise.</p>
         </div>
 
-        <section class="avisos-correo" aria-labelledby="titulo-avisos">
-            <h2 class="avisos-correo__titulo" id="titulo-avisos">Avisos que le enviamos por correo</h2>
-            <ul class="avisos-correo__lista">
-                <li><time datetime="2026-10-20">20 oct 2026</time>: Gobierno de Nuevo León cambió su solicitud de Analista de datos a “En revisión”.</li>
-                <li><time datetime="2026-10-14">14 oct 2026</time>: OXXO aceptó su solicitud de Cajero o cajera.</li>
+        <section class="tarjeta tarjeta--gris" aria-labelledby="titulo-avisos">
+            <h2 id="titulo-avisos">Avisos que le enviamos por correo</h2>
+            <ul class="lista-puntos">
+                <li><time datetime="2026-10-20">20 oct 2026</time> · Clínica Familiar del Valle cambió su solicitud de Recepcionista a “En revisión”.</li>
+                <li><time datetime="2026-10-14">14 oct 2026</time> · Abarrotes La Esperanza aceptó su solicitud de Cajero o cajera.</li>
             </ul>
         </section>
 
-        <section aria-labelledby="titulo-lista">
+        <section class="seccion" aria-labelledby="titulo-lista">
             <h2 class="solo-lector" id="titulo-lista">Sus solicitudes</h2>
 
-            <!-- Encabezados de la tabla (solo se ven en computadora) -->
             <div class="tabla-cabecera" aria-hidden="true">
                 <span>Vacante</span>
                 <span>Fecha</span>
@@ -177,146 +110,128 @@
                 <span>Qué puede hacer</span>
             </div>
 
-            <ul class="solicitudes">
-            <li>
-                <article class="solicitud" id="solicitud-soriana">
-                    <div class="solicitud__vacante">
-                        <h3 class="solicitud__titulo"><a <h3><a href="vacante.html"><strong>Auxiliar de almacén</strong></a></h3>
-                        <p class="solicitud__empresa">Soriana</p>
-                    </div>
-                    <p class="solicitud__fecha">
-                        <span class="solicitud__etiqueta">Fecha</span>
-                        <time datetime="2026-10-25">25 oct 2026</time>
-                    </p>
-                    <p class="solicitud__estatus">
-                        <span class="solicitud__etiqueta">Estatus</span>
-                        <span class="etiqueta-estatus etiqueta-estatus--enviada"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>Enviada</span>
-                    </p>
-                    <div class="solicitud__acciones">
-                        <span class="solicitud__etiqueta">Qué puede hacer</span>
-                        <p>Puede retirarla mientras la empresa no la revise.</p>
-                        <a class="boton boton--secundario" href="#confirmar-retiro" aria-label="Retirar solicitud de Auxiliar de almacén en Soriana"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>Retirar solicitud</a>
-                    </div>
-                </article>
-            </li>
-            <li>
-                <article class="solicitud" id="solicitud-gobierno">
-                    <div class="solicitud__vacante">
-                        <h3 class="solicitud__titulo"><a <h3><a href="vacante.html"><strong>Analista de datos</strong></a></h3>
-                        <p class="solicitud__empresa">Gobierno de Nuevo León</p>
-                    </div>
-                    <p class="solicitud__fecha">
-                        <span class="solicitud__etiqueta">Fecha</span>
-                        <time datetime="2026-10-20">20 oct 2026</time>
-                    </p>
-                    <p class="solicitud__estatus">
-                        <span class="solicitud__etiqueta">Estatus</span>
-                        <span class="etiqueta-estatus etiqueta-estatus--revision"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>En revisión</span>
-                    </p>
-                    <div class="solicitud__acciones">
-                        <span class="solicitud__etiqueta">Qué puede hacer</span>
-                        <p>La empresa está revisando su solicitud. Ya no se puede retirar.</p>
-                    </div>
-                </article>
-            </li>
-            <li>
-                <article class="solicitud" id="solicitud-oxxo">
-                    <div class="solicitud__vacante">
-                        <h3 class="solicitud__titulo"><a <h3><a href="vacante.html"><strong>Cajero o cajera</strong></a></h3>
-                        <p class="solicitud__empresa">OXXO</p>
-                    </div>
-                    <p class="solicitud__fecha">
-                        <span class="solicitud__etiqueta">Fecha</span>
-                        <time datetime="2026-10-12">12 oct 2026</time>
-                    </p>
-                    <p class="solicitud__estatus">
-                        <span class="solicitud__etiqueta">Estatus</span>
-                        <span class="etiqueta-estatus etiqueta-estatus--aceptada"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Aceptada</span>
-                    </p>
-                    <div class="solicitud__acciones">
-                        <span class="solicitud__etiqueta">Qué puede hacer</span>
-                        <p class="solicitud__pregunta">¿Lo contrataron?</p>
-                        <button class="boton boton--coral" type="button">Sí, me contrataron</button>
-                        <button class="boton boton--secundario" type="button">No me contrataron</button>
-                    </div>
-                </article>
-            </li>
-            <li>
-                <article class="solicitud" id="solicitud-plaza">
-                    <div class="solicitud__vacante">
-                        <h3 class="solicitud__titulo"><a <h3><a href="vacante.html"><strong>Guardia de seguridad</strong></a></h3>
-                        <p class="solicitud__empresa">Plaza Sendero</p>
-                    </div>
-                    <p class="solicitud__fecha">
-                        <span class="solicitud__etiqueta">Fecha</span>
-                        <time datetime="2026-10-02">2 oct 2026</time>
-                    </p>
-                    <p class="solicitud__estatus">
-                        <span class="solicitud__etiqueta">Estatus</span>
-                        <span class="etiqueta-estatus etiqueta-estatus--rechazada"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>Rechazada</span>
-                    </p>
-                    <div class="solicitud__acciones">
-                        <span class="solicitud__etiqueta">Qué puede hacer</span>
-                        <p>Esta vez no fue seleccionado. Siga buscando: hay más vacantes para usted.</p>
-                    </div>
-                </article>
-            </li>
+            <ul class="lista">
+
+                <li>
+                    <article class="tarjeta tarjeta--fila tarjeta--destacada" id="solicitud-distribuidora">
+                        <div>
+                            <h3><a href="vacante.html">Auxiliar de almacén</a></h3>
+                            <p class="texto-2">Distribuidora del Norte</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Fecha</span>
+                            <time datetime="2026-10-25">25 oct 2026</time>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Estatus</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--enviada"><svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg>Enviada</span>
+                        </p>
+                        <div class="acciones-celda">
+                            <span class="etiqueta-dato">Qué puede hacer</span>
+                            <p>Puede retirarla mientras la empresa no la revise.</p>
+                            <a class="boton boton--secundario" href="#confirmar-retiro" aria-label="Retirar solicitud de Auxiliar de almacén en Distribuidora del Norte"><svg class="icono" aria-hidden="true"><use href="#i-undo"/></svg>Retirar solicitud</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="tarjeta tarjeta--fila" id="solicitud-clinica">
+                        <div>
+                            <h3><a href="vacante.html">Recepcionista</a></h3>
+                            <p class="texto-2">Clínica Familiar del Valle</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Fecha</span>
+                            <time datetime="2026-10-20">20 oct 2026</time>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Estatus</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--revision"><svg class="icono" aria-hidden="true"><use href="#i-clock"/></svg>En revisión</span>
+                        </p>
+                        <div class="acciones-celda">
+                            <span class="etiqueta-dato">Qué puede hacer</span>
+                            <p>La empresa está revisando su solicitud. Ya no se puede retirar.</p>
+                        </div>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="tarjeta tarjeta--fila" id="solicitud-abarrotes">
+                        <div>
+                            <h3><a href="vacante.html">Cajero o cajera</a></h3>
+                            <p class="texto-2">Abarrotes La Esperanza</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Fecha</span>
+                            <time datetime="2026-10-12">12 oct 2026</time>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Estatus</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--aceptada"><svg class="icono" aria-hidden="true"><use href="#i-check"/></svg>Aceptada</span>
+                        </p>
+                        <div class="acciones-celda">
+                            <span class="etiqueta-dato">Qué puede hacer</span>
+                            <p><strong>¿Lo contrataron?</strong></p>
+                            <button class="boton boton--coral" type="button">Sí, me contrataron</button>
+                            <button class="boton boton--secundario" type="button">No me contrataron</button>
+                        </div>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="tarjeta tarjeta--fila" id="solicitud-plaza">
+                        <div>
+                            <h3><a href="vacante.html">Guardia de seguridad</a></h3>
+                            <p class="texto-2">Plaza Comercial Linda Vista</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Fecha</span>
+                            <time datetime="2026-10-02">2 oct 2026</time>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Estatus</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--rechazada"><svg class="icono" aria-hidden="true"><use href="#i-x"/></svg>Rechazada</span>
+                        </p>
+                        <div class="acciones-celda">
+                            <span class="etiqueta-dato">Qué puede hacer</span>
+                            <p>Esta vez no fue seleccionado. Siga buscando: hay más vacantes para usted.</p>
+                        </div>
+                    </article>
+                </li>
+
             </ul>
         </section>
 
-        <!-- VENTANA: CONFIRMAR RETIRO (frame 5b de Figma) -->
-        <!-- Se abre con el enlace "Retirar solicitud" (:target). Sin JavaScript todavia -->
+        <!-- Ventana de confirmación (se abre con :target, sin JavaScript) -->
         <div class="ventana" id="confirmar-retiro" role="dialog" aria-modal="true" aria-labelledby="titulo-retiro">
-            <div class="ventana__caja">
-                <h2 class="ventana__titulo" id="titulo-retiro">¿Retirar su solicitud?</h2>
-                <p>Va a retirar su solicitud para Auxiliar de almacén en Soriana. La empresa ya no la verá.</p>
+            <div class="tarjeta">
+                <h2 id="titulo-retiro">¿Retirar su solicitud?</h2>
+                <p>Va a retirar su solicitud para Auxiliar de almacén en Distribuidora del Norte. La empresa ya no la verá.</p>
                 <p><strong>Esto no se puede deshacer.</strong></p>
                 <div class="grupo-botones">
-                    <a class="boton boton--secundario" href="#solicitud-soriana">No, conservarla</a>
-                    <a class="boton boton--primario" href="mis-solicitudes.html">Sí, retirar solicitud</a>
+                    <a class="boton boton--secundario" href="#solicitud-distribuidora">No, conservarla</a>
+                    <a class="boton boton--oscuro" href="mis-solicitudes.html">Sí, retirar solicitud</a>
                 </div>
             </div>
         </div>
+
     </main>
 
-
-    <!-- FOOTER -->
-
     <footer class="pie">
-
-        <!-- Uso grid para acomodar las columnas -->
         <div class="contenedor pie__columnas">
-
-
-            <!-- PRIMERA COLUMNA: INFORMACION DE AMAC -->
-
             <div class="pie__columna">
-
-                <img class="pie__logo" src="img/logo-amac-blanco.svg"
-                     alt="AMAC" width="200" height="23">
-
+                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC" width="200" height="23">
                 <p>
                     <strong>asociAMayores A.C.</strong><br>
                     Amatista 107<br>
                     San Pedro Garza García, N.L.
                 </p>
-
-                <!-- Correo de contacto -->
-                <a href="mailto:contacto@somosamac.org">
-                    contacto@somosamac.org
-                </a>
-
+                <a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a>
                 <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
-
                 <a href="https://somosamac.org">Aviso de privacidad</a>
-
             </div>
 
-
-            <!-- SEGUNDA COLUMNA: ENLACES -->
-
             <nav class="pie__columna" aria-label="Sitio de AMAC">
-
                 <ul>
                     <li><a href="https://somosamac.org">Inicio</a></li>
                     <li><a href="https://somosamac.org">Nosotros</a></li>
@@ -324,49 +239,21 @@
                     <li><a href="https://somosamac.org">Apóyanos</a></li>
                     <li><a href="https://somosamac.org">Quiero donar</a></li>
                 </ul>
-
             </nav>
 
-
-            <!-- TERCERA COLUMNA: REDES SOCIALES -->
-
             <div class="pie__columna">
-
                 <h2 class="pie__titulo">Síguenos</h2>
-
                 <ul class="pie__redes">
                     <li><a href="https://www.facebook.com">Facebook</a></li>
                     <li><a href="https://www.instagram.com">Instagram</a></li>
                 </ul>
-
             </div>
-
         </div>
-
     </footer>
 
-
-    <!-- BOTON DE AYUDA -->
-
-    <!-- Este boton se queda fijo abajo de la pantalla -->
-    <!-- Falta agregar el numero de telefono para que pueda llamar -->
     <a class="boton-ayuda" href="tel:+520000000000">
-
-        <!-- Icono de telefono -->
-        <svg class="icono" 
-             aria-hidden="true" 
-             xmlns="http://www.w3.org/2000/svg" 
-             viewBox="0 0 24 24" 
-             fill="none" 
-             stroke="currentColor" 
-             stroke-width="2" 
-             stroke-linecap="round" 
-             stroke-linejoin="round">
-            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
-        </svg>
-
+        <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg>
         ¿Necesita ayuda?
-
     </a>
 
 </body>
