@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/panel-empresa.css">
 </head>
 <body>
 
@@ -20,10 +21,15 @@
     <svg class="solo-lector" aria-hidden="true" focusable="false">
         <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
         <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></symbol>
-        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
-        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
-        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+        <symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="currentColor"/></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></symbol>
         <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+        <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
     </svg>
 
     <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
@@ -35,7 +41,7 @@
                 <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
             </a>
             <div class="barra-ayuda__cuenta">
-                <span>Distribuidora del Norte</span>
+                <span>Soriana</span>
                 <a href="login.html">Cerrar sesión</a>
             </div>
         </div>
@@ -53,7 +59,6 @@
                     <li><a href="empresa-vacantes.html">Mis vacantes</a></li>
                     <li><a href="solicitudes-recibidas.html" aria-current="page">Solicitudes</a></li>
                     <li><a href="mi-empresa.html">Mi empresa</a></li>
-                    <li><a href="index.html">Bolsa de trabajo</a></li>
                 </ul>
             </nav>
 
@@ -66,7 +71,6 @@
                         <li><a href="empresa-vacantes.html">Mis vacantes</a></li>
                         <li><a href="solicitudes-recibidas.html" aria-current="page">Solicitudes</a></li>
                         <li><a href="mi-empresa.html">Mi empresa</a></li>
-                        <li><a href="index.html">Bolsa de trabajo</a></li>
                         <li><a href="login.html">Cerrar sesión</a></li>
                     </ul>
                 </nav>
@@ -115,29 +119,38 @@
                     <option selected>Todos</option>
                     <option>Enviada</option>
                     <option>En revisión</option>
+                    <option>Entrevista</option>
                     <option>Aceptada</option>
                     <option>Rechazada</option>
                 </select>
             </div>
-            <label class="opcion" for="solo-almacen">
-                <input type="checkbox" id="solo-almacen" name="solo-almacen">
-                <span>Solo con experiencia en almacén</span>
-            </label>
+            <div class="campo-formulario">
+                <label for="experiencia">Experiencia en</label>
+                <select id="experiencia" name="experiencia">
+                    <option>Todos</option>
+                    <option selected>Almacén</option>
+                    <option>Ventas</option>
+                    <option>Reparto</option>
+                </select>
+            </div>
         </form>
 
-        <p class="seccion" role="status"><strong>4 de 4 solicitudes coinciden</strong></p>
+        <p class="seccion" role="status"><strong>3 de 4 solicitudes coinciden</strong></p>
 
         <section class="seccion" aria-labelledby="candidatos-titulo">
             <h2 class="solo-lector" id="candidatos-titulo">Personas que se postularon</h2>
 
             <ul class="lista">
-
                 <li>
                     <article class="tarjeta tarjeta--candidato">
                         <div>
                             <h3>José Emilio Pliego Rangel</h3>
                             <p class="texto-2">64 años · Vive en Monterrey, N.L. · Solicitud del 24 oct 2026</p>
                             <p><strong>Experiencia:</strong> Almacenista en ferretería 12 años; vendedor de mostrador 8 años.</p>
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Almacén</li>
+                                <li class="etiqueta-experiencia">Ventas</li>
+                            </ul>
                             <p><strong>Prefiere que lo contacten por:</strong> teléfono, 81 2345 6789</p>
                             <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de José Emilio Pliego Rangel</span></a>
                         </div>
@@ -148,6 +161,7 @@
                                 <label for="cambiar-1">Cambiar estatus a</label>
                                 <select id="cambiar-1" name="cambiar-estatus">
                                     <option selected>En revisión</option>
+                                    <option>Entrevista</option>
                                     <option>Aceptada</option>
                                     <option>Rechazada</option>
                                 </select>
@@ -156,13 +170,15 @@
                         </div>
                     </article>
                 </li>
-
                 <li>
                     <article class="tarjeta tarjeta--candidato">
                         <div>
                             <h3>Rogelio Cantú Salazar</h3>
-                            <p class="texto-2">61 años · Vive en San Nicolás de los Garza, N.L. · Solicitud del 22 oct 2026</p>
+                            <p class="texto-2">81 años · Vive en San Nicolás de los Garza, N.L. · Solicitud del 22 oct 2026</p>
                             <p><strong>Experiencia:</strong> Supervisor de bodega 20 años.</p>
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Almacén</li>
+                            </ul>
                             <p><strong>Prefiere que lo contacten por:</strong> correo, rogelio.cantu@correo.com</p>
                             <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de Rogelio Cantú Salazar</span></a>
                         </div>
@@ -173,38 +189,15 @@
                         </div>
                     </article>
                 </li>
-
-                <li>
-                    <article class="tarjeta tarjeta--candidato">
-                        <div>
-                            <h3>Ana María Villarreal Ochoa</h3>
-                            <p class="texto-2">67 años · Vive en Guadalupe, N.L. · Solicitud del 21 oct 2026</p>
-                            <p><strong>Experiencia:</strong> Costurera en taller 25 años.</p>
-                            <p><strong>Prefiere que lo contacten por:</strong> teléfono, 81 3456 7890</p>
-                            <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de Ana María Villarreal Ochoa</span></a>
-                        </div>
-                        <div class="tarjeta__estatus">
-                            <p><strong>Estatus actual</strong></p>
-                            <span class="etiqueta-estatus etiqueta-estatus--enviada"><svg class="icono" aria-hidden="true"><use href="#i-arrow"/></svg>Enviada</span>
-                            <form class="campo-formulario">
-                                <label for="cambiar-3">Cambiar estatus a</label>
-                                <select id="cambiar-3" name="cambiar-estatus">
-                                    <option selected>En revisión</option>
-                                    <option>Aceptada</option>
-                                    <option>Rechazada</option>
-                                </select>
-                                <button class="boton boton--secundario boton--bloque" type="button">Guardar estatus<span class="solo-lector"> de Ana María Villarreal Ochoa</span></button>
-                            </form>
-                        </div>
-                    </article>
-                </li>
-
                 <li>
                     <article class="tarjeta tarjeta--candidato">
                         <div>
                             <h3>Héctor Javier Ríos Leal</h3>
                             <p class="texto-2">62 años · Vive en Apodaca, N.L. · Solicitud del 19 oct 2026</p>
                             <p><strong>Experiencia:</strong> Chofer repartidor 18 años; carga y descarga de mercancía.</p>
+                            <ul class="etiquetas-experiencia">
+                                <li class="etiqueta-experiencia">Almacén</li>
+                            </ul>
                             <p><strong>Prefiere que lo contacten por:</strong> correo, hector.rios@correo.com</p>
                             <a href="perfil-candidato.html">Ver perfil completo y currículum<span class="solo-lector"> de Héctor Javier Ríos Leal</span></a>
                         </div>
@@ -215,7 +208,6 @@
                         </div>
                     </article>
                 </li>
-
             </ul>
         </section>
 
@@ -261,4 +253,4 @@
     </a>
 
 </body>
-</html>
+</html> 
