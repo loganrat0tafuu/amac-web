@@ -701,3 +701,43 @@ hr {
 .confirmacion .grupo-botones {
     justify-content: center;
 }
+
+/* Iconos que se usan con <use href="#..."> */
+.icono {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+ 
+/* Enlace "Regresar" (se usa junto con .con-icono) */
+.enlace-volver {
+    min-height: 3rem;
+    margin-bottom: var(--espacio-3);
+}
+ 
+/* Solicitud que se puede retirar: borde coral */
+.tarjeta--destacada {
+    border-color: var(--coral);
+}
+ 
+/* Columna "Qué puede hacer": textos y botones uno debajo del otro */
+.acciones-celda {
+    display: grid;
+    gap: var(--espacio-2);
+    justify-items: start;
+}
+ 
+/* Tarjeta de candidato: sus dos columnas acomodan el contenido con espacio */
+.tarjeta--candidato > div {
+    display: grid;
+    gap: var(--espacio-2);
+    align-content: start;
+}
+ 
+/* Filtros: el checkbox queda alineado con los selects */
+.tarjeta--gris.columnas {
+    align-items: end;
+}
+ 
