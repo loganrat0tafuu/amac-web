@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis vacantes | Panel de empresas AMAC</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -11,37 +16,35 @@
 </head>
 <body>
 
-    <!-- Iconos (se usan con <use href="#i-nombre">) -->
+    <!-- Iconos: se usan con <use href="#i-nombre"> -->
     <svg class="solo-lector" aria-hidden="true" focusable="false">
-        <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
-        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
-        <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
-        <symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="currentColor"/></symbol>
-        <symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M9 5v14M15 5v14"/></symbol>
-        <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+        <symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="currentColor"/></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
     </svg>
 
     <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
 
-    <!-- BARRA DE AYUDA (solo computadora) -->
     <div class="barra-ayuda">
         <div class="contenedor">
             <a class="barra-ayuda__telefono" href="tel:+520000000000">
-                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+                <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg>
                 <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
             </a>
             <div class="barra-ayuda__cuenta">
-                <span>Soriana</span>
+                <span>Distribuidora del Norte</span>
                 <a href="login.html">Cerrar sesión</a>
             </div>
         </div>
     </div>
 
-    <!-- ENCABEZADO -->
     <header class="encabezado">
         <div class="contenedor encabezado__fila">
             <a class="marca" href="index.html">
-                <img src="img/logo-amac.svg" alt="AMAC">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
                 <span class="marca__nombre">Panel de empresas</span>
             </a>
 
@@ -50,20 +53,23 @@
                     <li><a href="empresa-vacantes.html" aria-current="page">Mis vacantes</a></li>
                     <li><a href="solicitudes-recibidas.html">Solicitudes</a></li>
                     <li><a href="mi-empresa.html">Mi empresa</a></li>
+                    <li><a href="index.html">Bolsa de trabajo</a></li>
                 </ul>
             </nav>
 
             <details class="menu-movil">
                 <summary>
-                    <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
-                    Menú
+                    <svg class="icono" aria-hidden="true"><use href="#i-menu"/></svg> Menú
                 </summary>
-                <ul class="menu-movil__lista">
-                    <li><a href="empresa-vacantes.html" aria-current="page">Mis vacantes</a></li>
-                    <li><a href="solicitudes-recibidas.html">Solicitudes</a></li>
-                    <li><a href="mi-empresa.html">Mi empresa</a></li>
-                    <li><a href="login.html">Cerrar sesión</a></li>
-                </ul>
+                <nav aria-label="Navegación principal (celular)">
+                    <ul class="menu-movil__lista">
+                        <li><a href="empresa-vacantes.html" aria-current="page">Mis vacantes</a></li>
+                        <li><a href="solicitudes-recibidas.html">Solicitudes</a></li>
+                        <li><a href="mi-empresa.html">Mi empresa</a></li>
+                        <li><a href="index.html">Bolsa de trabajo</a></li>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+                </nav>
             </details>
         </div>
     </header>
@@ -72,153 +78,147 @@
 
         <div class="encabezado-panel">
             <div class="titulo-pagina">
-                <p>Soriana</p>
+                <p class="texto-2">Distribuidora del Norte</p>
                 <h1>Mis vacantes</h1>
             </div>
             <a class="boton boton--coral" href="publicar-vacante.html">
-                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+                <svg class="icono" aria-hidden="true"><use href="#i-plus"/></svg>
                 Publicar vacante
             </a>
         </div>
 
-        <!-- RESUMEN -->
         <h2 class="solo-lector">Resumen</h2>
-        <ul class="resumen">
-            <li class="dato-resumen">
+        <ul class="lista columnas columnas--3">
+            <li class="tarjeta tarjeta--gris">
                 <span>Vacantes activas</span>
-                <strong class="dato-resumen__numero">2</strong>
+                <strong class="cifra">2</strong>
             </li>
-            <li class="dato-resumen">
+            <li class="tarjeta tarjeta--gris">
                 <span>Solicitudes nuevas sin revisar</span>
-                <strong class="dato-resumen__numero">3</strong>
+                <strong class="cifra">3</strong>
             </li>
-            <li class="dato-resumen">
+            <li class="tarjeta tarjeta--gris">
                 <span>Personas contratadas</span>
-                <strong class="dato-resumen__numero">0</strong>
+                <strong class="cifra">0</strong>
             </li>
         </ul>
 
-        <!-- AVISOS RECIENTES -->
-        <section class="avisos-correo" aria-labelledby="avisos-titulo">
-            <h2 class="avisos-correo__titulo" id="avisos-titulo">Avisos recientes</h2>
-            <ul class="avisos-correo__lista">
-                <li>24 oct 2026: José Emilio Pliego Rangel se postuló a Auxiliar de almacén.</li>
-                <li>23 oct 2026: Héctor Javier Ríos Leal se postuló a Montacarguista.</li>
+        <section class="tarjeta tarjeta--gris seccion" aria-labelledby="avisos-titulo">
+            <h2 id="avisos-titulo">Avisos recientes</h2>
+            <ul class="lista-puntos">
+                <li><time datetime="2026-10-24">24 oct 2026</time> · José Emilio Pliego Rangel se postuló a Auxiliar de almacén.</li>
+                <li><time datetime="2026-10-23">23 oct 2026</time> · Héctor Javier Ríos Leal se postuló a Montacarguista.</li>
             </ul>
         </section>
 
-        <!-- LISTA DE VACANTES -->
-        <section aria-labelledby="lista-titulo">
+        <section class="seccion" aria-labelledby="lista-titulo">
             <h2 class="solo-lector" id="lista-titulo">Lista de vacantes</h2>
 
-            <div class="tabla-cabecera tabla-cabecera--vacantes" aria-hidden="true">
+            <div class="tabla-cabecera tabla-cabecera--4" aria-hidden="true">
                 <span>Vacante</span>
                 <span>Estado</span>
                 <span>Solicitudes</span>
+                <span>Acciones</span>
             </div>
 
-            <ul class="solicitudes">
+            <ul class="lista">
 
-                <!-- Vacante 1: activa -->
                 <li>
-                    <article class="solicitud solicitud--vacante">
+                    <article class="tarjeta tarjeta--fila-4">
                         <div>
-                          <h3 class="solicitud__titulo"><b>Auxiliar de almacén</b></h3>
-                            <p class="solicitud__empresa">Publicada el 20 oct 2026</p>
-                            <div class="grupo-botones grupo-botones--vacante">
+                            <h3>Auxiliar de almacén</h3>
+                            <p class="texto-2">Publicada el 20 oct 2026</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Estado</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--activa"><svg class="icono" aria-hidden="true"><use href="#i-dot"/></svg>Activa</span>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Solicitudes</span>
+                            <strong>4</strong> (2 nuevas)
+                        </p>
+                        <div>
+                            <span class="etiqueta-dato">Acciones</span>
+                            <div class="grupo-botones">
                                 <a class="boton boton--coral" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Auxiliar de almacén</span></a>
                                 <a class="boton boton--secundario" href="editar-vacante.html">Editar<span class="solo-lector"> Auxiliar de almacén</span></a>
                                 <button class="boton boton--secundario" type="button">Pausar<span class="solo-lector"> Auxiliar de almacén</span></button>
                                 <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Auxiliar de almacén</span></button>
                             </div>
                         </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Estado</span>
-                            <span class="etiqueta-estatus etiqueta-estatus--activa">
-                                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-dot"/></svg>
-                                Activa
-                            </span>
-                        </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Solicitudes</span>
-                            <p><strong>4</strong> (2 nuevas)</p>
-                        </div>
                     </article>
                 </li>
 
-                <!-- Vacante 2: activa -->
                 <li>
-                    <article class="solicitud solicitud--vacante">
+                    <article class="tarjeta tarjeta--fila-4">
                         <div>
-                            <h3 class="solicitud__titulo"><b>Montacarguista</b></h3>
-                            <p class="solicitud__empresa">Publicada el 15 oct 2026</p>
-                            <div class="grupo-botones grupo-botones--vacante">
+                            <h3>Montacarguista</h3>
+                            <p class="texto-2">Publicada el 15 oct 2026</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Estado</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--activa"><svg class="icono" aria-hidden="true"><use href="#i-dot"/></svg>Activa</span>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Solicitudes</span>
+                            <strong>2</strong> (1 nueva)
+                        </p>
+                        <div>
+                            <span class="etiqueta-dato">Acciones</span>
+                            <div class="grupo-botones">
                                 <a class="boton boton--coral" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Montacarguista</span></a>
                                 <a class="boton boton--secundario" href="editar-vacante.html">Editar<span class="solo-lector"> Montacarguista</span></a>
                                 <button class="boton boton--secundario" type="button">Pausar<span class="solo-lector"> Montacarguista</span></button>
                                 <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Montacarguista</span></button>
                             </div>
                         </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Estado</span>
-                            <span class="etiqueta-estatus etiqueta-estatus--activa">
-                                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-dot"/></svg>
-                                Activa
-                            </span>
-                        </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Solicitudes</span>
-                            <p><strong>2</strong> (1 nueva)</p>
-                        </div>
                     </article>
                 </li>
 
-                <!-- Vacante 3: pausada -->
                 <li>
-                    <article class="solicitud solicitud--vacante">
+                    <article class="tarjeta tarjeta--fila-4">
                         <div>
-                             <h3 class="solicitud__titulo"><b>Recepción de mercancía</b></h3>
-                            <p class="solicitud__empresa">Publicada el 1 oct 2026</p>
-                            <div class="grupo-botones grupo-botones--vacante">
+                            <h3>Recepción de mercancía</h3>
+                            <p class="texto-2">Publicada el 1 oct 2026</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Estado</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--pausada"><svg class="icono" aria-hidden="true"><use href="#i-pause"/></svg>Pausada</span>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Solicitudes</span>
+                            <strong>1</strong>
+                        </p>
+                        <div>
+                            <span class="etiqueta-dato">Acciones</span>
+                            <div class="grupo-botones">
                                 <a class="boton boton--secundario" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Recepción de mercancía</span></a>
                                 <button class="boton boton--secundario" type="button">Reactivar<span class="solo-lector"> Recepción de mercancía</span></button>
                                 <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Recepción de mercancía</span></button>
                             </div>
                         </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Estado</span>
-                            <span class="etiqueta-estatus etiqueta-estatus--pausada">
-                                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg>
-                                Pausada
-                            </span>
-                        </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Solicitudes</span>
-                            <p><strong>1</strong></p>
-                        </div>
                     </article>
                 </li>
 
-                <!-- Vacante 4: cerrada -->
                 <li>
-                    <article class="solicitud solicitud--vacante">
+                    <article class="tarjeta tarjeta--fila-4">
                         <div>
-                           <h3 class="solicitud__titulo"><b>Empacador</b></h3>
-                            <p class="solicitud__empresa">Publicada el 10 sep 2026</p>
-                            <div class="grupo-botones grupo-botones--vacante">
+                            <h3>Empacador</h3>
+                            <p class="texto-2">Publicada el 10 sep 2026</p>
+                        </div>
+                        <p>
+                            <span class="etiqueta-dato">Estado</span>
+                            <span class="etiqueta-estatus etiqueta-estatus--cerrada"><svg class="icono" aria-hidden="true"><use href="#i-x"/></svg>Cerrada</span>
+                        </p>
+                        <p>
+                            <span class="etiqueta-dato">Solicitudes</span>
+                            <strong>0</strong>
+                        </p>
+                        <div>
+                            <span class="etiqueta-dato">Acciones</span>
+                            <div class="grupo-botones">
                                 <a class="boton boton--secundario" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Empacador</span></a>
                             </div>
-                        </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Estado</span>
-                            <span class="etiqueta-estatus etiqueta-estatus--cerrada">
-                                <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-x"/></svg>
-                                Cerrada
-                            </span>
-                        </div>
-                        <div>
-                            <span class="solicitud__etiqueta">Solicitudes</span>
-                            <p><strong>0</strong></p>
                         </div>
                     </article>
                 </li>
@@ -228,41 +228,42 @@
 
     </main>
 
-    <!-- PIE DE PAGINA -->
     <footer class="pie">
         <div class="contenedor pie__columnas">
             <div class="pie__columna">
-                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC">
-                <p><strong>asociAMayores A.C.</strong></p>
-                <p>Amatista 107<br>San Pedro Garza García, N.L.</p>
-                <p><a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a></p>
+                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC" width="200" height="23">
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+                <a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a>
                 <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
-                <p><a href="aviso-privacidad.html">Aviso de privacidad</a></p>
+                <a href="https://somosamac.org">Aviso de privacidad</a>
             </div>
 
-            <nav class="pie__columna" aria-label="Enlaces del sitio">
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="que-hacemos.html">Qué hacemos</a></li>
-                    <li><a href="apoyanos.html">Apóyanos</a></li>
-                    <li><a href="donar.html">Quiero donar</a></li>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
                 </ul>
             </nav>
 
             <div class="pie__columna">
                 <h2 class="pie__titulo">Síguenos</h2>
                 <ul class="pie__redes">
-                    <li><a href="https://www.facebook.com/">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
-    <!-- BOTON DE AYUDA (fijo) -->
     <a class="boton-ayuda" href="tel:+520000000000">
-        <svg class="icono" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+        <svg class="icono" aria-hidden="true"><use href="#i-phone"/></svg>
         ¿Necesita ayuda?
     </a>
 
