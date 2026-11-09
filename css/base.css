@@ -1,0 +1,134 @@
+
+/* base.css */
+/* Aqui pongo los estilos generales que se usan en todas las paginas */
+
+/* RESET */
+/* Hace que el padding y el borde se incluyan en el tamaño del elemento */
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Quito los margenes que vienen por defecto */
+* {
+    margin: 0;
+}
+
+
+/* IMAGENES */
+/* Las imagenes no pueden ser mas grandes que su contenedor */
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* FORMULARIOS */
+/* Los botones y campos usan la misma letra que la pagina */
+input, button, select, textarea {
+    font: inherit;
+}
+
+
+/* PAGINA */
+/* Respeta el tamaño de letra del navegador */
+html {
+    font-size: 100%;
+}
+
+/* Estilos generales del body */
+body {
+    font-family: var(--fuente-texto); /* tipo de letra */
+    font-size: var(--texto-base); /* tamaño de letra */
+    line-height: var(--interlineado-texto); /* espacio entre lineas */
+    color: var(--texto); /* color de texto */
+    background-color: var(--fondo); /* color de fondo */
+}
+
+
+/* TITULOS */
+/* Estilos que comparten h1 y h2 */
+h1, h2 {
+    font-family: var(--fuente-titulos);
+    font-weight: 400; /* grosor de la letra */
+    line-height: var(--interlineado-titulo);
+}
+
+/* Tamaño del titulo principal */
+h1 {
+    font-size: var(--texto-h1);
+}
+
+/* Tamaño del segundo titulo */
+h2 {
+    font-size: var(--texto-h2);
+}
+
+/* Estilos para los subtitulos */
+h3 {
+    font-family: var(--fuente-texto);
+    font-size: var(--texto-h3);
+    font-weight: 700; /* letra mas gruesa */
+    line-height: var(--interlineado-titulo);
+}
+
+
+/* PARRAFOS Y LISTAS */
+/* Limito el ancho para que los textos no sean tan largos */
+p, li {
+    max-width: 70ch;
+}
+
+
+/* ENLACES */
+/* Estilos de los enlaces */
+a {
+    color: var(--texto);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em; /* separacion del subrayado */
+}
+
+/* Cuando paso el mouse, el subrayado se hace mas grueso */
+a:hover {
+    text-decoration-thickness: 3px;
+}
+
+
+/* FOCO VISIBLE */
+/* Cuando uso Tab, se marca el elemento seleccionado */
+:focus-visible {
+    outline: 3px solid var(--marino);
+    outline-offset: 3px;
+}
+
+
+/* SALTAR AL CONTENIDO */
+/* Es un enlace que normalmente esta escondido */
+.saltar-contenido {
+    position: absolute;
+    left: -9999px; /* lo mueve fuera de la pantalla */
+    top: var(--espacio-3);
+    padding: var(--espacio-2) var(--espacio-3);
+    background-color: var(--marino);
+    color: var(--texto-invertido);
+    z-index: 100; /* hace que aparezca encima de otros elementos */
+}
+
+/* Cuando llego al enlace usando Tab, aparece en pantalla */
+.saltar-contenido:focus {
+    left: var(--espacio-3);
+}
+
+
+/* TEXTO PARA LECTORES DE PANTALLA */
+/* Oculto este texto visualmente, pero puede ser leido por lectores de pantalla */
+.solo-lector {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
