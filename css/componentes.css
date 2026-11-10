@@ -795,3 +795,7 @@ hr {
     padding: 0 1rem;
 }
 
+/* Separo los titulos de la tabla de la primera tarjeta */
+.tabla-cabecera {
+    margin-bottom: var(--espacio-2);
+}
