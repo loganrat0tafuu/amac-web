@@ -576,7 +576,7 @@ hr {
     /* Divido Mis vacantes en tres columnas */
     .tarjeta--fila-3,
     .tabla-cabecera--3 {
-        grid-template-columns: 4fr 2.5fr 3fr;
+        grid-template-columns:  5fr 2fr 2fr;
     }
 
     /* Muestro los encabezados de la tabla */
@@ -701,7 +701,6 @@ hr {
 .confirmacion .grupo-botones {
     justify-content: center;
 }
-*/
 
 /* Iconos que se usan con <use href="#..."> */
 .icono {
