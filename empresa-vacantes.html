@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/panel-empresa.css">
 </head>
 <body>
 
@@ -24,6 +25,11 @@
         <symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5" fill="currentColor"/></symbol>
         <symbol id="i-pause" viewBox="0 0 24 24"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></symbol>
         <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+        <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
     </svg>
 
     <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
@@ -35,7 +41,7 @@
                 <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
             </a>
             <div class="barra-ayuda__cuenta">
-                <span>Distribuidora del Norte</span>
+                <span>Soriana</span>
                 <a href="login.html">Cerrar sesión</a>
             </div>
         </div>
@@ -53,7 +59,6 @@
                     <li><a href="empresa-vacantes.html" aria-current="page">Mis vacantes</a></li>
                     <li><a href="solicitudes-recibidas.html">Solicitudes</a></li>
                     <li><a href="mi-empresa.html">Mi empresa</a></li>
-                    <li><a href="index.html">Bolsa de trabajo</a></li>
                 </ul>
             </nav>
 
@@ -66,7 +71,6 @@
                         <li><a href="empresa-vacantes.html" aria-current="page">Mis vacantes</a></li>
                         <li><a href="solicitudes-recibidas.html">Solicitudes</a></li>
                         <li><a href="mi-empresa.html">Mi empresa</a></li>
-                        <li><a href="index.html">Bolsa de trabajo</a></li>
                         <li><a href="login.html">Cerrar sesión</a></li>
                     </ul>
                 </nav>
@@ -78,13 +82,13 @@
 
         <div class="encabezado-panel">
             <div class="titulo-pagina">
-                <p class="texto-2">Distribuidora del Norte</p>
+                <p class="texto-2">Soriana</p>
                 <h1>Mis vacantes</h1>
             </div>
             <a class="boton boton--coral" href="publicar-vacante.html">
-                <svg class="icono" aria-hidden="true"><use href="#i-plus"/></svg>
-                Publicar vacante
-            </a>
+    <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    Publicar vacante
+</a>
         </div>
 
         <h2 class="solo-lector">Resumen</h2>
@@ -114,20 +118,26 @@
         <section class="seccion" aria-labelledby="lista-titulo">
             <h2 class="solo-lector" id="lista-titulo">Lista de vacantes</h2>
 
-            <div class="tabla-cabecera tabla-cabecera--4" aria-hidden="true">
+            <div class="tabla-cabecera tabla-cabecera--3" aria-hidden="true">
+
                 <span>Vacante</span>
                 <span>Estado</span>
                 <span>Solicitudes</span>
-                <span>Acciones</span>
+
             </div>
 
             <ul class="lista">
-
                 <li>
-                    <article class="tarjeta tarjeta--fila-4">
-                        <div>
+                    <article class="tarjeta tarjeta--fila-3">
+                        <div class="pila">
                             <h3>Auxiliar de almacén</h3>
                             <p class="texto-2">Publicada el 20 oct 2026</p>
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Auxiliar de almacén</span></a>
+                                <a class="boton boton--secundario" href="editar-vacante.html">Editar<span class="solo-lector"> Auxiliar de almacén</span></a>
+                                <button class="boton boton--secundario" type="button">Pausar<span class="solo-lector"> Auxiliar de almacén</span></button>
+                                <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Auxiliar de almacén</span></button>
+                            </div>
                         </div>
                         <p>
                             <span class="etiqueta-dato">Estado</span>
@@ -137,23 +147,19 @@
                             <span class="etiqueta-dato">Solicitudes</span>
                             <strong>4</strong> (2 nuevas)
                         </p>
-                        <div>
-                            <span class="etiqueta-dato">Acciones</span>
-                            <div class="grupo-botones">
-                                <a class="boton boton--coral" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Auxiliar de almacén</span></a>
-                                <a class="boton boton--secundario" href="editar-vacante.html">Editar<span class="solo-lector"> Auxiliar de almacén</span></a>
-                                <button class="boton boton--secundario" type="button">Pausar<span class="solo-lector"> Auxiliar de almacén</span></button>
-                                <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Auxiliar de almacén</span></button>
-                            </div>
-                        </div>
                     </article>
                 </li>
-
                 <li>
-                    <article class="tarjeta tarjeta--fila-4">
-                        <div>
+                    <article class="tarjeta tarjeta--fila-3">
+                        <div class="pila">
                             <h3>Montacarguista</h3>
                             <p class="texto-2">Publicada el 15 oct 2026</p>
+                            <div class="grupo-botones">
+                                <a class="boton boton--coral" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Montacarguista</span></a>
+                                <a class="boton boton--secundario" href="editar-vacante.html">Editar<span class="solo-lector"> Montacarguista</span></a>
+                                <button class="boton boton--secundario" type="button">Pausar<span class="solo-lector"> Montacarguista</span></button>
+                                <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Montacarguista</span></button>
+                            </div>
                         </div>
                         <p>
                             <span class="etiqueta-dato">Estado</span>
@@ -163,23 +169,18 @@
                             <span class="etiqueta-dato">Solicitudes</span>
                             <strong>2</strong> (1 nueva)
                         </p>
-                        <div>
-                            <span class="etiqueta-dato">Acciones</span>
-                            <div class="grupo-botones">
-                                <a class="boton boton--coral" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Montacarguista</span></a>
-                                <a class="boton boton--secundario" href="editar-vacante.html">Editar<span class="solo-lector"> Montacarguista</span></a>
-                                <button class="boton boton--secundario" type="button">Pausar<span class="solo-lector"> Montacarguista</span></button>
-                                <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Montacarguista</span></button>
-                            </div>
-                        </div>
                     </article>
                 </li>
-
                 <li>
-                    <article class="tarjeta tarjeta--fila-4">
-                        <div>
+                    <article class="tarjeta tarjeta--fila-3">
+                        <div class="pila">
                             <h3>Recepción de mercancía</h3>
                             <p class="texto-2">Publicada el 1 oct 2026</p>
+                            <div class="grupo-botones">
+                                <a class="boton boton--secundario" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Recepción de mercancía</span></a>
+                                <button class="boton boton--secundario" type="button">Reactivar<span class="solo-lector"> Recepción de mercancía</span></button>
+                                <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Recepción de mercancía</span></button>
+                            </div>
                         </div>
                         <p>
                             <span class="etiqueta-dato">Estado</span>
@@ -189,22 +190,16 @@
                             <span class="etiqueta-dato">Solicitudes</span>
                             <strong>1</strong>
                         </p>
-                        <div>
-                            <span class="etiqueta-dato">Acciones</span>
-                            <div class="grupo-botones">
-                                <a class="boton boton--secundario" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Recepción de mercancía</span></a>
-                                <button class="boton boton--secundario" type="button">Reactivar<span class="solo-lector"> Recepción de mercancía</span></button>
-                                <button class="boton boton--secundario" type="button">Cerrar<span class="solo-lector"> Recepción de mercancía</span></button>
-                            </div>
-                        </div>
                     </article>
                 </li>
-
                 <li>
-                    <article class="tarjeta tarjeta--fila-4">
-                        <div>
+                    <article class="tarjeta tarjeta--fila-3">
+                        <div class="pila">
                             <h3>Empacador</h3>
                             <p class="texto-2">Publicada el 10 sep 2026</p>
+                            <div class="grupo-botones">
+                                <a class="boton boton--secundario" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Empacador</span></a>
+                            </div>
                         </div>
                         <p>
                             <span class="etiqueta-dato">Estado</span>
@@ -214,15 +209,8 @@
                             <span class="etiqueta-dato">Solicitudes</span>
                             <strong>0</strong>
                         </p>
-                        <div>
-                            <span class="etiqueta-dato">Acciones</span>
-                            <div class="grupo-botones">
-                                <a class="boton boton--secundario" href="solicitudes-recibidas.html">Ver solicitudes<span class="solo-lector"> de Empacador</span></a>
-                            </div>
-                        </div>
                     </article>
                 </li>
-
             </ul>
         </section>
 
