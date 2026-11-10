@@ -73,5 +73,5 @@ Todos están en `componentes.css`, salvo los últimos cuatro, que están en `lay
 - `vacante.html` es un ejemplo: todas las tarjetas del listado llevan a esa misma página.
 - La búsqueda, los filtros y botones como Guardar, Pausar o Mostrar contraseña todavía no funcionan, porque esta entrega es solo HTML y CSS.
 - Los enlaces con `href="#"` son de páginas que todavía no existen.
-- `header-footer.html` es la plantilla del encabezado y el pie que usamos para armar las páginas.
+- `header-footer.html` es la plantilla del encabezado y el pie que usamos para armar las páginas, ademas del menu de la compu, el celular y los mensajes de llamar.
 - Iconos de [Lucide](https://lucide.dev). Fuentes de [Google Fonts](https://fonts.google.com).
