@@ -65,7 +65,7 @@ Todos están en `componentes.css`, salvo los últimos cuatro, que están en `lay
 |  ![index en celular](img/capturas/index-celular.png) | ![index en escritorio](img/capturas/index-escritorio.png) |
 
 ## Lighthouse: Accesibilidad
-![Puntaje de Lighthouse](img/capturas/Lighthouse.png)
+![Puntaje de Lighthouse](img/capturas/lighthouse.png)
 
 ## Notas
 
