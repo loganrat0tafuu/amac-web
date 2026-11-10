@@ -701,7 +701,7 @@ hr {
 .confirmacion .grupo-botones {
     justify-content: center;
 }
-
+*/
 
 /* Iconos que se usan con <use href="#..."> */
 .icono {
@@ -711,74 +711,88 @@ hr {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-
-
+ 
 /* Avisos: los puntos van en coral */
 .lista-puntos li::marker {
     color: var(--coral);
 }
-
-
-/* Titulos que son enlace: sin subrayado, se subrayan al pasar el mouse o con Tab */
+ 
+/* Titulos que son enlace: sin subrayado, se subrayan con mouse o Tab */
 .tarjeta h3 a {
     text-decoration: none;
 }
-
+ 
 .tarjeta h3 a:hover,
 .tarjeta h3 a:focus-visible {
     text-decoration: underline;
 }
-
-
+ 
 /* Enlace "Regresar" (se usa junto con .con-icono) */
 .enlace-volver {
     min-height: 3rem;
     margin-bottom: var(--espacio-3);
 }
-
-
+ 
 /* Solicitud que se puede retirar: borde coral */
 .tarjeta--destacada {
     border-color: var(--coral);
 }
-
-
-/* Columna "Que puede hacer": textos y botones uno debajo del otro */
-.acciones-celda {
+ 
+/* Textos y botones uno debajo del otro (columna de acciones, bloque de vacante) */
+.pila {
     display: grid;
     gap: var(--espacio-2);
     justify-items: start;
 }
-
-
+ 
 /* Tarjeta de candidato: sus dos columnas acomodan el contenido con espacio */
 .tarjeta--candidato > div {
     display: grid;
     gap: var(--espacio-2);
     align-content: start;
 }
-
-
+ 
 /* Filtros: el checkbox queda alineado con los selects */
 .tarjeta--gris.columnas {
     align-items: end;
 }
-
-
+ 
+/* Flecha de los select, como en el Figma */
+.campo-formulario select {
+    appearance: none;
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23202945' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
+}
+ 
+/* Celular: linea entre los datos del candidato y su estatus */
+@media (max-width: 767px) {
+    .tarjeta__estatus {
+        padding-top: var(--espacio-3);
+        border-top: var(--grosor-borde) solid var(--gris);
+    }
+}
+ 
 /* COMPUTADORA: 1024px o mas */
 @media (min-width: 1024px) {
-
-    /* Mis solicitudes: el contenido de cada fila queda centrado en vertical */
-    .tarjeta--fila {
+ 
+    /* Mis solicitudes: contenido de cada fila centrado en vertical */
+    .tarjeta.tarjeta--fila {
         align-items: center;
     }
-
-    /* Mis vacantes (panel de empresa): Vacante, Estado, Solicitudes y Acciones */
-    .tarjeta--fila-4,
-    .tabla-cabecera--4 {
-        grid-template-columns: 1.5fr 1fr 1fr 3.5fr;
-        column-gap: var(--espacio-3);
-        align-items: center;
-    }
-
+ 
 }
+
+/* MIS VACANTES: espacio entre el titulo y los botones */
+.tarjeta--fila-3 .grupo-botones {
+    margin-top: var(--espacio-2);
+}
+
+/* MIS VACANTES: botones mas compactos para que quepan en una linea */
+.tarjeta--fila-3 .boton {
+    min-height: 2.75rem; /* 44px, el minimo para que se puedan tocar */
+    padding: 0 1rem;
+}
+
