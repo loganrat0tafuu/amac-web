@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar vacante | Bolsa de Trabajo AMAC</title>
+
+    <!-- Fuentes que uso en la pagina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
+    <!-- Conecto mis archivos de CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+
+</head>
+
+<body>
+
+    <!-- Enlace para ir directo al contenido usando Tab -->
+    <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
+
+
+    <!-- BARRA DE AYUDA -->
+    <!-- Esta barra aparece en computadora -->
+    <div class="barra-ayuda">
+
+        <div class="contenedor">
+
+            <!-- Telefono de ayuda de AMAC -->
+            <!-- Falta agregar el numero cuando lo tengamos -->
+            <a class="barra-ayuda__telefono" href="tel:+520000000000">
+
+                <!-- Icono de telefono -->
+                <svg class="icono"
+                     aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                </svg>
+
+                <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
+
+            </a>
+
+            <!-- Datos de la cuenta -->
+            <div class="barra-ayuda__cuenta">
+                <span>Distribuidora del Norte</span>
+                <a href="login.html">Cerrar sesión</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="encabezado">
+
+        <!-- Uso flex desde CSS para acomodar el logo y los menus -->
+        <div class="contenedor encabezado__fila">
+
+            <!-- Logo de AMAC -->
+            <a class="marca" href="index.html">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
+                <span class="marca__nombre">Panel de empresas</span>
+            </a>
+
+
+            <!-- MENU DE COMPUTADORA -->
+
+            <nav class="nav-principal" aria-label="Navegación principal">
+
+                <ul>
+                    <li>
+                        <a href="empresa-vacantes.html" aria-current="page">Mis vacantes</a>
+                    </li>
+
+                    <li>
+                        <a href="solicitudes-recibidas.html">Solicitudes</a>
+                    </li>
+
+                    <li>
+                        <a href="mi-empresa.html">Mi empresa</a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">Bolsa de trabajo</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <!-- MENU DE CELULAR -->
+
+            <!-- Details permite abrir y cerrar el menu -->
+            <details class="menu-movil">
+
+                <!-- Boton que abre el menu -->
+                <summary>
+                    <!-- Icono del menu -->
+                    <svg class="icono"  
+                         aria-hidden="true" 
+                         xmlns="http://www.w3.org/2000/svg" 
+                         viewBox="0 0 24 24" 
+                         fill="none" 
+                         stroke="currentColor" 
+                         stroke-width="2" 
+                         stroke-linecap="round" 
+                         stroke-linejoin="round">
+                        <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                    </svg> Menú
+                </summary>
+
+                <!-- Opciones que aparecen al abrirlo -->
+                <nav aria-label="Navegación principal (celular)">
+
+                    <ul class="menu-movil__lista">
+                        <li><a href="empresa-vacantes.html" aria-current="page">Mis vacantes</a></li>
+                        <li><a href="solicitudes-recibidas.html">Solicitudes</a></li>
+                        <li><a href="mi-empresa.html">Mi empresa</a></li>
+                        <li><a href="index.html">Bolsa de trabajo</a></li>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+
+                </nav>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main id="principal" class="contenedor">
+        <a class="con-icono enlace-volver" href="empresa-vacantes.html"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Regresar a mis vacantes</a>
+
+        <div class="titulo-pagina">
+            <h1>Publicar vacante</h1>
+            <p>Llene los datos de su vacante. Los campos con <span aria-hidden="true">*</span><span class="solo-lector">asterisco</span> son obligatorios.</p>
+        </div>
+
+        <form class="formulario formulario--ancho" action="empresa-vacantes.html" method="post">
+
+            <!-- 1. DATOS DE LA VACANTE -->
+            <section class="tarjeta" aria-labelledby="titulo-datos">
+                <h2 id="titulo-datos">1. Datos de la vacante</h2>
+            <div class="campo-formulario">
+                <label for="puesto">Nombre del puesto <span aria-hidden="true">*</span></label>
+                <p class="campo-formulario__ayuda" id="puesto-ayuda">Con palabras sencillas. Ejemplo: Ayudante de panadería</p>
+                <input type="text" id="puesto" name="puesto" value="Ayudante de panadería" required aria-describedby="puesto-ayuda">
+            </div>
+            <div class="campo-formulario">
+                <label for="categoria">Categoría <span aria-hidden="true">*</span></label>
+                <select id="categoria" name="categoria" required>
+                    <option value="operativo" selected>Operativo</option>
+                    <option value="administrativo">Administrativo</option>
+                    <option value="ventas">Ventas y atención</option>
+                    <option value="servicios">Servicios generales</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="campo-formulario">
+                <label for="horario">Horario <span aria-hidden="true">*</span></label>
+                <select id="horario" name="horario" required>
+                    <option value="medio-tiempo" selected>Medio tiempo</option>
+                    <option value="tiempo-completo">Tiempo completo</option>
+                    <option value="por-turnos">Por turnos</option>
+                    <option value="fines-semana">Fines de semana</option>
+                </select>
+            </div>
+            <div class="campo-formulario">
+                <label for="dias-horas">Días y horas</label>
+                <p class="campo-formulario__ayuda" id="dias-horas-ayuda">Ejemplo: Lunes a viernes de 7:00 a 15:00</p>
+                <input type="text" id="dias-horas" name="dias-horas" value="Lunes a viernes de 7:00 a 15:00" aria-describedby="dias-horas-ayuda">
+            </div>
+            <div class="campo-formulario">
+                <label for="sueldo">Sueldo al mes <span aria-hidden="true">*</span></label>
+                <p class="campo-formulario__ayuda" id="sueldo-ayuda">Escriba la cantidad completa, sin puntos.</p>
+                <input type="text" id="sueldo" name="sueldo" value="$9,000" required aria-describedby="sueldo-ayuda" inputmode="numeric">
+            </div>
+            <div class="campo-formulario">
+                <label for="lugar">Lugar de trabajo <span aria-hidden="true">*</span></label>
+                <p class="campo-formulario__ayuda" id="lugar-ayuda">Si tiene varias sucursales, escriba en cuál es.</p>
+                <input type="text" id="lugar" name="lugar" value="Colonia Linda Vista, Guadalupe, N.L." required aria-describedby="lugar-ayuda">
+            </div>
+            </section>
+
+            <!-- 2. QUE HARA Y QUE NECESITA -->
+            <section class="tarjeta" aria-labelledby="titulo-necesita">
+                <h2 id="titulo-necesita">2. Qué hará y qué necesita</h2>
+                <fieldset>
+                    <legend>¿En qué áreas busca experiencia?</legend>
+                    <p class="campo-formulario__ayuda">Elija una o más. Se mostrarán en la vacante y en el filtro de solicitudes.</p>
+                    <div class="columnas">
+                    <label class="opcion"><input type="checkbox" name="areas" value="almacen">Almacén</label>
+                    <label class="opcion"><input type="checkbox" name="areas" value="cocina" checked>Cocina</label>
+                    <label class="opcion"><input type="checkbox" name="areas" value="ventas">Ventas</label>
+                    <label class="opcion"><input type="checkbox" name="areas" value="limpieza">Limpieza</label>
+                    <label class="opcion"><input type="checkbox" name="areas" value="atencion">Atención al cliente</label>
+                    <label class="opcion"><input type="checkbox" name="areas" value="seguridad">Seguridad</label>
+                    <label class="opcion"><input type="checkbox" name="areas" value="oficina">Oficina</label>
+                    <label class="opcion"><input type="checkbox" name="areas" value="otro">Otro</label>
+                    </div>
+                </fieldset>
+            <div class="campo-formulario">
+                <label for="descripcion">Descripción <span aria-hidden="true">*</span></label>
+                <p class="campo-formulario__ayuda" id="descripcion-ayuda">Qué hará la persona en su día normal.</p>
+                <textarea id="descripcion" name="descripcion" rows="4" required aria-describedby="descripcion-ayuda">Ayudar a preparar y acomodar el pan, mantener limpia el área y atender a los clientes.</textarea>
+            </div>
+            <div class="campo-formulario">
+                <label for="requisitos">Requisitos <span aria-hidden="true">*</span></label>
+                <p class="campo-formulario__ayuda" id="requisitos-ayuda">Lo que la persona necesita saber o tener.</p>
+                <textarea id="requisitos" name="requisitos" rows="4" required aria-describedby="requisitos-ayuda">Saber leer y escribir. Poder estar de pie gran parte de la jornada.</textarea>
+            </div>
+            <div class="campo-formulario">
+                <label for="prestaciones">Prestaciones <span aria-hidden="true">*</span></label>
+                <p class="campo-formulario__ayuda" id="prestaciones-ayuda">Ejemplo: vales de despensa, transporte.</p>
+                <textarea id="prestaciones" name="prestaciones" rows="4" required aria-describedby="prestaciones-ayuda">Prestaciones de ley, comedor, vales de despensa.</textarea>
+            </div>
+            </section>
+
+            <!-- 3. PROCESO DE SELECCION -->
+            <section class="tarjeta" aria-labelledby="titulo-proceso">
+                <h2 id="titulo-proceso">3. Proceso de selección</h2>
+                <p class="campo-formulario__ayuda">Escriba cada etapa, en orden. Las personas la verán en el detalle de la vacante.</p>
+                <ol class="lista">
+                <li class="tarjeta tarjeta--gris tarjeta--fila-3">
+                    <p>1. Revisión de la solicitud</p>
+                    <button class="boton-texto" type="button">Quitar<span class="solo-lector"> la etapa 1, Revisión de la solicitud</span></button>
+                </li>
+                <li class="tarjeta tarjeta--gris tarjeta--fila-3">
+                    <p>2. Entrevista presencial en la tienda</p>
+                    <button class="boton-texto" type="button">Quitar<span class="solo-lector"> la etapa 2, Entrevista presencial en la tienda</span></button>
+                </li>
+                <li class="tarjeta tarjeta--gris tarjeta--fila-3">
+                    <p>3. Entrega de documentos</p>
+                    <button class="boton-texto" type="button">Quitar<span class="solo-lector"> la etapa 3, Entrega de documentos</span></button>
+                </li>
+                </ol>
+                <div class="grupo-botones">
+                    <button class="boton boton--secundario" type="button">Agregar etapa</button>
+                </div>
+            </section>
+
+            <!-- 4. COMO SE PUEDEN POSTULAR -->
+            <section class="tarjeta" aria-labelledby="titulo-postular">
+                <h2 id="titulo-postular">4. ¿Cómo se pueden postular?</h2>
+                <fieldset>
+                    <legend class="solo-lector">Forma de postularse</legend>
+                    <label class="opcion"><input type="radio" name="postulacion" value="bolsa">Solo por la bolsa de trabajo</label>
+                    <label class="opcion"><input type="radio" name="postulacion" value="bolsa-telefono" checked>Por la bolsa de trabajo y también por teléfono</label>
+                </fieldset>
+            <div class="campo-formulario">
+                <label for="telefono">Teléfono para recibir solicitudes <span aria-hidden="true">*</span></label>
+                <p class="campo-formulario__ayuda" id="telefono-ayuda">10 números. Las personas podrán llamar a este número.</p>
+                <input type="tel" id="telefono" name="telefono" value="81 8000 1234" required aria-describedby="telefono-ayuda" inputmode="tel" autocomplete="tel">
+            </div>
+            </section>
+
+            <div class="formulario-acciones">
+                <a class="boton boton--secundario" href="empresa-vacantes.html">Cancelar</a>
+                <button class="boton boton--coral" type="submit">Publicar vacante</button>
+            </div>
+
+        </form>
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="pie">
+
+        <!-- Uso grid para acomodar las columnas -->
+        <div class="contenedor pie__columnas">
+
+
+            <!-- PRIMERA COLUMNA: INFORMACION DE AMAC -->
+
+            <div class="pie__columna">
+
+                <img class="pie__logo" src="img/logo-amac-blanco.svg"
+                     alt="AMAC" width="200" height="23">
+
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+
+                <!-- Correo de contacto -->
+                <a href="mailto:contacto@somosamac.org">
+                    contacto@somosamac.org
+                </a>
+
+                <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
+
+                <a href="https://somosamac.org">Aviso de privacidad</a>
+
+            </div>
+
+
+            <!-- SEGUNDA COLUMNA: ENLACES -->
+
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
+
+                <ul>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- TERCERA COLUMNA: REDES SOCIALES -->
+
+            <div class="pie__columna">
+
+                <h2 class="pie__titulo">Síguenos</h2>
+
+                <ul class="pie__redes">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOTON DE AYUDA -->
+
+    <!-- Este boton se queda fijo abajo de la pantalla -->
+    <!-- Falta agregar el numero de telefono para que pueda llamar -->
+    <a class="boton-ayuda" href="tel:+520000000000">
+
+        <!-- Icono de telefono -->
+        <svg class="icono" 
+             aria-hidden="true" 
+             xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             fill="none" 
+             stroke="currentColor" 
+             stroke-width="2" 
+             stroke-linecap="round" 
+             stroke-linejoin="round">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+        </svg>
+
+        ¿Necesita ayuda?
+
+    </a>
+
+</body>
+</html>
