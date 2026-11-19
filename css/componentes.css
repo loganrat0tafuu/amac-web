@@ -577,6 +577,7 @@ hr {
     .tarjeta--fila-3,
     .tabla-cabecera--3 {
         grid-template-columns:  5fr 2fr 2fr;
+        align-items: baseline;
     }
 
     /* Muestro los encabezados de la tabla */
@@ -884,4 +885,41 @@ Campo del codigo: numeros para que sea facil ver cuantos numeros lleva escritos 
 /* Si un campo tiene un error, su borde se pone rojo */
 .campo-formulario input[aria-invalid="true"] {
     border-color: var(--error);
+}
+
+/* PUBLICAR VACANTE (Publica-vacante.html) */
+/* Las etapas del proceso de seleccion van mas juntas */
+.lista--etapas {
+    gap: var(--espacio-2);
+}
+
+/* Cada etapa: texto a la izquierda y "Quitar" a la derecha, centrados en vertical */
+.etapa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-3);
+    padding: var(--espacio-2) var(--espacio-3);
+}
+
+/* "Quitar" va subrayado, como un enlace, para que se vea que se puede picar */
+.etapa .boton-texto {
+    text-decoration: underline;
+}
+
+/* Hace mas angosto el contenido de la pagina y lo centra.
+   Es el mismo ancho del formulario (47.5rem) para que todo quede alineado */
+.contenedor--angosto {
+    width: min(100% - 2 * var(--margen-lateral), 47.5rem);
+}
+
+/* PERFIL DEL CANDIDATO (perfil-candidato.html) */
+/* Fila con un texto a la izquierda y un boton a la derecha (como el curriculum) */
+/* en celular si no cabe el boton se baja */
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-3);
 }
