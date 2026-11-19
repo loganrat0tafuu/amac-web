@@ -51,7 +51,7 @@
 
             <!-- Visitante: todavia no inicia sesion -->
             <div class="barra-ayuda__cuenta">
-                <a href="login.html" aria-current="page">Iniciar sesión</a>
+                <a href="login.html"> Iniciar sesión </a><!--CAMBIO-->
                 <a href="registro-candidato.html">Registrarme</a>
             </div>
 
@@ -108,7 +108,8 @@
                     <ul class="menu-movil__lista">
                         <li><a href="index.html">Vacantes</a></li>
                         <li><a href="#">Sobre AMAC</a></li>
-                        <li><a href="login.html" aria-current="page">Iniciar sesión</a></li>
+                        <li><a href="login.html">Iniciar sesión</a> <!--CAMBIO-->
+                        </li>
                         <li><a href="registro-candidato.html">Registrarme</a></li>
                     </ul>
 
@@ -158,7 +159,8 @@
 
             <button class="boton boton--coral boton--bloque" type="submit">Iniciar sesión</button>
 
-            <a href="#">¿Olvidó su contraseña?</a>
+            <!-- lleva a la pagina para recuperar la contraseña -->
+            <a href="recuperar-contrasena.html">¿Olvidó su contraseña?</a>  
 
             <button class="boton boton--secundario boton--bloque" type="button">
                 <img src="img/google.svg" alt="" width="24" height="24">
@@ -170,6 +172,10 @@
             <p><strong>¿Todavía no tiene cuenta?</strong></p>
             <a class="boton boton--secundario boton--bloque" href="registro-candidato.html">Registrarme para buscar empleo</a>
             <a class="boton boton--secundario boton--bloque" href="registro-empresa.html">Registrar mi empresa</a>
+
+            <hr>
+            <!--cualquier persona puede ver las vacates aunque no tenga cuenta-->
+            <a class="enlace-centrado" href="index.html">Ver vacantes sin iniciar sesión</a>
 
         </form>
 
