@@ -71,7 +71,7 @@
         <div class="contenedor encabezado__fila">
 
             <!-- Logo de AMAC -->
-            <a class="marca" href="index.html">
+            <a class="marca" href="empresa-vacantes.html">
                 <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
                 <span class="marca__nombre">Panel de empresas</span>
             </a>
@@ -144,8 +144,8 @@
 
 
     <!-- MAIN -->
-
-    <main id="principal" class="contenedor">
+    <!-- contenedor--angosto hace que todo (regresar, titulo y formulario) quede en una columna centrada, como en el figma -->
+    <main id="principal" class="contenedor contenedor--angosto">
         <a class="con-icono enlace-volver" href="empresa-vacantes.html"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Regresar a mis vacantes</a>
 
         <div class="titulo-pagina">
@@ -153,7 +153,8 @@
             <p>Llene los datos de su vacante. Los campos con <span aria-hidden="true">*</span><span class="solo-lector">asterisco</span> son obligatorios.</p>
         </div>
 
-        <form class="formulario formulario--ancho" action="empresa-vacantes.html" method="post">
+        <!-- quitamos formulario--ancho para que el formulario quede angosto y centrado, como en el figma -->
+        <form class="formulario" action="empresa-vacantes.html" method="post">
 
             <!-- 1. DATOS DE LA VACANTE -->
             <section class="tarjeta" aria-labelledby="titulo-datos">
@@ -182,11 +183,36 @@
                     <option value="fines-semana">Fines de semana</option>
                 </select>
             </div>
-            <div class="campo-formulario">
-                <label for="dias-horas">Días y horas</label>
-                <p class="campo-formulario__ayuda" id="dias-horas-ayuda">Ejemplo: Lunes a viernes de 7:00 a 15:00</p>
-                <input type="text" id="dias-horas" name="dias-horas" value="Lunes a viernes de 7:00 a 15:00" aria-describedby="dias-horas-ayuda">
+
+            <!-- en vez de escribir los dias, la empresa los marca -->
+            <fieldset>
+                <legend>Días de trabajo</legend>
+                <p class="campo-formulario__ayuda">Marque los días que trabajará la persona.</p>
+                <div class="columnas">
+                    <label class="opcion"><input type="checkbox" name="dias" value="lunes" checked>Lunes</label>
+                    <label class="opcion"><input type="checkbox" name="dias" value="martes" checked>Martes</label>
+                    <label class="opcion"><input type="checkbox" name="dias" value="miercoles" checked>Miércoles</label>
+                    <label class="opcion"><input type="checkbox" name="dias" value="jueves" checked>Jueves</label>
+                    <label class="opcion"><input type="checkbox" name="dias" value="viernes" checked>Viernes</label>
+                    <label class="opcion"><input type="checkbox" name="dias" value="sabado">Sábado</label>
+                    <label class="opcion"><input type="checkbox" name="dias" value="domingo">Domingo</label>
+                </div>
+            </fieldset>
+            
+            <!-- DIAS Y HORARIO !!!!!!!!!!-->
+            <!-- type="time" es un campo especial para horas -->
+            <!-- min y max ponen el limite: solo se aceptan horas entre 6:00 y 22:00 step="1800" hace que las horas vayan de media en media hora (1800 segundos = 30 minutos) -->
+            <div class="columnas">
+                <div class="campo-formulario">
+                    <label for="hora-entrada">Hora de entrada</label>
+                    <input type="time" id="hora-entrada" name="hora-entrada" value="07:00" min="06:00" max="22:00" step="1800">
+                </div>
+                <div class="campo-formulario">
+                    <label for="hora-salida">Hora de salida</label>
+                    <input type="time" id="hora-salida" name="hora-salida" value="15:00" min="06:00" max="22:00" step="1800">
+                </div>
             </div>
+
             <div class="campo-formulario">
                 <label for="sueldo">Sueldo al mes <span aria-hidden="true">*</span></label>
                 <p class="campo-formulario__ayuda" id="sueldo-ayuda">Escriba la cantidad completa, sin puntos.</p>
@@ -237,16 +263,16 @@
             <section class="tarjeta" aria-labelledby="titulo-proceso">
                 <h2 id="titulo-proceso">3. Proceso de selección</h2>
                 <p class="campo-formulario__ayuda">Escriba cada etapa, en orden. Las personas la verán en el detalle de la vacante.</p>
-                <ol class="lista">
-                <li class="tarjeta tarjeta--gris tarjeta--fila-3">
+                <ol class="lista lista--etapas">
+                <li class="tarjeta tarjeta--gris etapa">
                     <p>1. Revisión de la solicitud</p>
                     <button class="boton-texto" type="button">Quitar<span class="solo-lector"> la etapa 1, Revisión de la solicitud</span></button>
                 </li>
-                <li class="tarjeta tarjeta--gris tarjeta--fila-3">
+                <li class="tarjeta tarjeta--gris etapa">
                     <p>2. Entrevista presencial en la tienda</p>
                     <button class="boton-texto" type="button">Quitar<span class="solo-lector"> la etapa 2, Entrevista presencial en la tienda</span></button>
                 </li>
-                <li class="tarjeta tarjeta--gris tarjeta--fila-3">
+                <li class="tarjeta tarjeta--gris etapa">
                     <p>3. Entrega de documentos</p>
                     <button class="boton-texto" type="button">Quitar<span class="solo-lector"> la etapa 3, Entrega de documentos</span></button>
                 </li>
