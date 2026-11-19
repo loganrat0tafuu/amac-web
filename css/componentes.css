@@ -710,52 +710,52 @@ hr {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
- 
+
 /* Avisos: los puntos van en coral */
 .lista-puntos li::marker {
     color: var(--coral);
 }
- 
+
 /* Titulos que son enlace: sin subrayado, se subrayan con mouse o Tab */
 .tarjeta h3 a {
     text-decoration: none;
 }
- 
+
 .tarjeta h3 a:hover,
 .tarjeta h3 a:focus-visible {
     text-decoration: underline;
 }
- 
+
 /* Enlace "Regresar" (se usa junto con .con-icono) */
 .enlace-volver {
     min-height: 3rem;
     margin-bottom: var(--espacio-3);
 }
- 
+
 /* Solicitud que se puede retirar: borde coral */
 .tarjeta--destacada {
     border-color: var(--coral);
 }
- 
+
 /* Textos y botones uno debajo del otro (columna de acciones, bloque de vacante) */
 .pila {
     display: grid;
     gap: var(--espacio-2);
     justify-items: start;
 }
- 
+
 /* Tarjeta de candidato: sus dos columnas acomodan el contenido con espacio */
 .tarjeta--candidato > div {
     display: grid;
     gap: var(--espacio-2);
     align-content: start;
 }
- 
+
 /* Filtros: el checkbox queda alineado con los selects */
 .tarjeta--gris.columnas {
     align-items: end;
 }
- 
+
 /* Flecha de los select, como en el Figma */
 .campo-formulario select {
     appearance: none;
@@ -765,7 +765,7 @@ hr {
     background-position: right 0.75rem center;
     background-size: 1.25rem;
 }
- 
+
 /* Celular: linea entre los datos del candidato y su estatus */
 @media (max-width: 767px) {
     .tarjeta__estatus {
@@ -773,15 +773,13 @@ hr {
         border-top: var(--grosor-borde) solid var(--gris);
     }
 }
- 
+
 /* COMPUTADORA: 1024px o mas */
 @media (min-width: 1024px) {
- 
     /* Mis solicitudes: contenido de cada fila centrado en vertical */
     .tarjeta.tarjeta--fila {
         align-items: center;
     }
- 
 }
 
 /* MIS VACANTES: espacio entre el titulo y los botones */
@@ -798,4 +796,92 @@ hr {
 /* Separo los titulos de la tabla de la primera tarjeta */
 .tabla-cabecera {
     margin-bottom: var(--espacio-2);
+}
+
+
+/* VACANTES GUARDADAS (vacantes-guardadas-candidato.html) */
+
+/* La lista de guardadas no ocupa todo el ancho, asi la tarjeta queda como en el Figma */
+.guardadas {
+    max-width: 45rem;
+}
+
+/* El texto debajo del titulo ocupa todo el ancho (en base.css los parrafos tienen max-width: 70ch) */
+.titulo-pagina--ancho p {
+    max-width: none;
+}
+
+/* Boton "Guardada": fondo coral clarito para que se vea que ya esta activado */
+.boton--guardada {
+    background-color: var(--coral-tinte);
+}
+
+/* El corazon del boton va relleno de coral */
+.boton--guardada .icono {
+    color: var(--coral);
+    fill: currentColor; /* currentColor usa el mismo color de arriba */
+}
+
+/* PERFIL DE LA EMPRESA (perfil-empresa.html) */
+/* Cuadro azul donde va la portada de la empresa */
+.portada {
+    display: grid;
+    place-items: center; /* centro el texto adentro */
+    min-height: 9.5rem;
+    border-radius: var(--radio-tarjeta);
+    background-color: var(--azul-amac);
+}
+
+/* Logo a la izquierda y nombre de la empresa a la derecha */
+.empresa-encabezado {
+    display: flex;
+    flex-wrap: wrap; /* en celular si no cabe se baja */
+    align-items: flex-start;
+    gap: var(--espacio-4);
+}
+
+/* Cuadro del logo */
+.empresa-logo {
+    display: grid;
+    place-items: center;
+    width: 6rem;
+    height: 6rem;
+    border: var(--grosor-borde) solid var(--gris);
+    border-radius: var(--radio-tarjeta);
+}
+
+/* En las tarjetas de datos el titulo y el dato van mas pegados */
+.datos-empresa .tarjeta {
+    gap: var(--espacio-1);
+}
+
+/* El correo es una palabra muy larga, con esto se parte en dos renglones en celular */
+.datos-empresa a {
+    overflow-wrap: anywhere;
+}
+
+/* RECUPERAR CONTRASEÑA (recuperar-contrasena.html) */
+/* Enlace centrado dentro del formulario, como "Regresar a iniciar sesión" */
+.enlace-centrado {
+    justify-self: center; /* lo centra dentro del grid del formulario */
+}
+
+/* CODIGO DE VERIFICACION (codigo-contrasena.html) 
+Campo del codigo: numeros para que sea facil ver cuantos numeros lleva escritos */
+.campo-formulario .campo-codigo {
+    font-size: var(--texto-h2);
+    font-weight: 700; /* num en negritas */
+    letter-spacing: 0.5em; /* espacio entre cada numero */
+    text-align: center;
+}
+
+/* Mensaje de error en rojo (por ejemplo cuando el codigo esta mal) */
+.mensaje--error {
+    background-color: var(--error-fondo);
+    color: var(--error);
+}
+
+/* Si un campo tiene un error, su borde se pone rojo */
+.campo-formulario input[aria-invalid="true"] {
+    border-color: var(--error);
 }
