@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi empresa | Panel de empresas AMAC</title>
+
+    <!-- Fuentes que uso en la pagina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
+    <!-- Conecto mis archivos de CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+
+</head>
+
+<body>
+
+    <!-- Enlace para ir directo al contenido usando Tab -->
+    <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
+
+
+    <div class="barra-ayuda">
+
+        <div class="contenedor">
+
+            <!-- Telefono de ayuda de AMAC -->
+            <!-- Falta agregar el numero cuando lo tengamos -->
+            <a class="barra-ayuda__telefono" href="tel:+520000000000">
+
+                <!-- Icono de telefono -->
+                <svg class="icono"
+                     aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                </svg>
+
+                <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
+
+            </a>
+
+            <!-- Datos de la cuenta -->
+            <div class="barra-ayuda__cuenta">
+                <span>Soriana</span>
+                <a href="login.html">Cerrar sesión</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="encabezado">
+
+        <!-- Uso flex desde CSS para acomodar el logo y los menus -->
+        <div class="contenedor encabezado__fila">
+
+            <!-- Logo de AMAC -->
+            <a class="marca" href="empresa-vacantes.html">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
+                <span class="marca__nombre">Panel de empresas</span>
+            </a>
+
+
+            <!-- MENU DE COMPUTADORA -->
+
+            <nav class="nav-principal" aria-label="Navegación principal">
+
+                <ul>
+                    <li>
+                        <a href="empresa-vacantes.html">Mis vacantes</a>
+                    </li>
+
+                    <li>
+                        <a href="solicitudes-recibidas.html">Solicitudes</a>
+                    </li>
+
+                    <li>
+                        <a href="mi-empresa.html" aria-current="page">Mi empresa</a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">Bolsa de trabajo</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <!-- MENU DE CELULAR -->
+
+            <!-- Details permite abrir y cerrar el menu -->
+            <details class="menu-movil">
+
+                <!-- Boton que abre el menu -->
+                <summary>
+                    <!-- Icono del menu -->
+                    <svg class="icono"  
+                         aria-hidden="true" 
+                         xmlns="http://www.w3.org/2000/svg" 
+                         viewBox="0 0 24 24" 
+                         fill="none" 
+                         stroke="currentColor" 
+                         stroke-width="2" 
+                         stroke-linecap="round" 
+                         stroke-linejoin="round">
+                        <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                    </svg> Menú
+                </summary>
+
+                <!-- Opciones que aparecen al abrirlo -->
+                <nav aria-label="Navegación principal (celular)">
+
+                    <ul class="menu-movil__lista">
+                        <li><a href="empresa-vacantes.html">Mis vacantes</a></li>
+                        <li><a href="solicitudes-recibidas.html">Solicitudes</a></li>
+                        <li><a href="mi-empresa.html" aria-current="page">Mi empresa</a></li>
+                        <li><a href="index.html">Bolsa de trabajo</a></li>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+
+                </nav>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main id="principal" class="contenedor contenedor--angosto">
+
+        <div class="titulo-pagina">
+            <h1>Mi empresa</h1>
+            <p class="texto-2">Estos datos aparecen en el perfil de su empresa, que ven los candidatos.</p>
+            <!-- La misma etiqueta verde de los estatus que se usa en perfil-empresa.html -->
+            <p><span class="etiqueta-estatus etiqueta-estatus--aceptada"><svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Empresa revisada por AMAC</span></p>
+        </div>
+
+        <!-- Estatico: guardar vuelve a cargar esta misma pagina. En la Entrega 3 React guarda los cambios en la base de datos. -->
+        <!-- Es method="get" porque en Vercel una pagina estatica no recibe POST -->
+        <form class="formulario" action="mi-empresa.html" method="get">
+
+
+            <!-- DATOS DE LA EMPRESA -->
+
+            <section class="tarjeta" aria-labelledby="titulo-datos">
+
+                <h2 id="titulo-datos">Datos de la empresa</h2>
+
+                <div class="campo-formulario">
+                    <label for="empresa">Nombre de la empresa *</label>
+                    <input type="text" id="empresa" name="empresa" value="Soriana" autocomplete="organization" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="giro">Giro *</label>
+                    <input type="text" id="giro" name="giro" value="Supermercados y tiendas de autoservicio" required>
+                </div>
+
+                <!-- El RFC solo se lee: readonly deja verlo y copiarlo, pero no cambiarlo -->
+                <div class="campo-formulario">
+                    <label for="rfc">RFC</label>
+                    <p class="campo-formulario__ayuda" id="ayuda-rfc">El RFC no se puede cambiar. Si hay un error, llame a AMAC.</p>
+                    <input type="text" id="rfc" name="rfc" value="SOR850101AB1" readonly aria-describedby="ayuda-rfc">
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="telefono-empresa">Teléfono de la empresa *</label>
+                    <input type="tel" id="telefono-empresa" name="telefono_empresa" value="8180001234" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="correo-empresa">Correo de la empresa *</label>
+                    <p class="campo-formulario__ayuda" id="ayuda-correo-empresa">Con este correo inicia sesión.</p>
+                    <input type="email" id="correo-empresa" name="correo_empresa" value="vacantes.soriana@correo.com" autocomplete="email" aria-describedby="ayuda-correo-empresa" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="acerca">Acerca de la empresa</label>
+                    <p class="campo-formulario__ayuda" id="ayuda-acerca">Unas líneas sobre su empresa. Se muestra en su perfil.</p>
+                    <textarea id="acerca" name="acerca" rows="4" aria-describedby="ayuda-acerca">Cadena de supermercados en Nuevo León. Contrata personas adultas mayores para almacén, cajas y atención a clientes.</textarea>
+                </div>
+
+            </section>
+
+
+            <!-- DIRECCION -->
+
+            <section class="tarjeta" aria-labelledby="titulo-direccion">
+
+                <h2 id="titulo-direccion">Dirección</h2>
+
+                <div class="campo-formulario">
+                    <label for="calle">Calle y número *</label>
+                    <input type="text" id="calle" name="calle" value="Av. Benito Juárez 1102" autocomplete="address-line1" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="colonia">Colonia *</label>
+                    <input type="text" id="colonia" name="colonia" value="Centro" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="codigo-postal">Código postal *</label>
+                    <input type="text" id="codigo-postal" name="codigo_postal" value="67100" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="municipio">Municipio o ciudad *</label>
+                    <select id="municipio" name="municipio" required>
+                        <option>Apodaca</option>
+                        <option>García</option>
+                        <option>General Escobedo</option>
+                        <option selected>Guadalupe</option>
+                        <option>Juárez</option>
+                        <option>Monterrey</option>
+                        <option>San Nicolás de los Garza</option>
+                        <option>San Pedro Garza García</option>
+                        <option>Santa Catarina</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+
+            </section>
+
+
+            <!-- PERSONA DE CONTACTO -->
+
+            <section class="tarjeta" aria-labelledby="titulo-contacto">
+
+                <h2 id="titulo-contacto">Persona de contacto</h2>
+
+                <div class="campo-formulario">
+                    <label for="contacto-nombres">Nombre(s) *</label>
+                    <input type="text" id="contacto-nombres" name="contacto_nombres" value="Laura" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="contacto-apellidos">Apellidos *</label>
+                    <input type="text" id="contacto-apellidos" name="contacto_apellidos" value="Garza Treviño" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="contacto-telefono">Teléfono de contacto *</label>
+                    <input type="tel" id="contacto-telefono" name="contacto_telefono" value="8180001250" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="contacto-correo">Correo de contacto *</label>
+                    <input type="email" id="contacto-correo" name="contacto_correo" value="laura.garza@correo.com" required>
+                </div>
+
+            </section>
+
+
+            <!-- LOGO Y PORTADA -->
+            <!-- Los cuadros usan las mismas clases de perfil-empresa.html. Cuando haya imagen real, aqui ira un <img> -->
+            <!-- Los botones son button porque todavia no hay archivo real. En React abriran el selector de archivos -->
+
+            <section class="tarjeta" aria-labelledby="titulo-imagenes">
+
+                <h2 id="titulo-imagenes">Logo y portada</h2>
+
+                <div class="columnas">
+
+                    <div class="pila">
+                        <p><strong>Logo</strong></p>
+                        <div class="empresa-logo">
+                            <p>Logo</p>
+                        </div>
+                        <button class="boton boton--secundario" type="button">Cambiar logo</button>
+                    </div>
+
+                    <div class="pila">
+                        <p><strong>Portada</strong></p>
+                        <div class="portada">
+                            <p>Portada</p>
+                        </div>
+                        <button class="boton boton--secundario" type="button">Cambiar portada</button>
+                    </div>
+
+                </div>
+
+                <p class="campo-formulario__ayuda">Imágenes en PNG o JPG, de máximo 2 MB.</p>
+
+            </section>
+
+            <div class="grupo-botones grupo-botones--derecha">
+                <button class="boton boton--coral" type="submit">Guardar cambios</button>
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+        <footer class="pie">
+
+        <div class="contenedor pie__columnas">
+
+            <!-- PRIMERA COLUMNA: INFORMACION DE AMAC -->
+
+            <div class="pie__columna">
+
+                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC" width="200" height="23">
+
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+
+                <a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a>
+
+                <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
+
+                <a href="https://somosamac.org">Aviso de privacidad</a>
+
+            </div>
+
+
+            <!-- SEGUNDA COLUMNA: ENLACES -->
+
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
+
+                <ul>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- TERCERA COLUMNA: REDES SOCIALES -->
+
+            <div class="pie__columna">
+
+                <h2 class="pie__titulo">Síguenos</h2>
+
+                <ul class="pie__redes">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOTON DE AYUDA -->
+
+    <!-- Falta agregar el numero de telefono para que pueda llamar -->
+    <a class="boton-ayuda" href="tel:+520000000000">
+
+        <svg class="icono" 
+            aria-hidden="true" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+        </svg>
+
+        ¿Necesita ayuda?
+
+    </a>
+
+</body>
+</html>
