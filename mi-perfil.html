@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil | Bolsa de Trabajo AMAC</title>
+
+    <!-- Fuentes que uso en la pagina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Work+Sans:wght@400;700&display=swap">
+
+    <!-- Conecto mis archivos de CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/componentes.css">
+
+</head>
+
+<body>
+
+    <!-- Enlace para ir directo al contenido usando Tab -->
+    <a class="saltar-contenido" href="#principal">Saltar al contenido</a>
+
+
+    <div class="barra-ayuda">
+
+        <div class="contenedor">
+
+            <!-- aqui va el telefono de amac -->
+            <!-- falta poner el numero real cuando nos lo pasen -->
+            <a class="barra-ayuda__telefono" href="tel:+520000000000">
+
+                <!-- icono del telefono -->
+                <svg class="icono"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                </svg>
+
+                <span>¿Necesita ayuda? <strong>Llame a AMAC al [TELÉFONO DE AMAC]</strong></span>
+
+            </a>
+
+            <!-- aqui dejamos el nombre y cerrar sesion, por el momento  es de ejemplo -->
+            <div class="barra-ayuda__cuenta">
+                <span>Hola, María</span>
+                <a href="login.html">Cerrar sesión</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- encabezado de la pagina -->
+    <header class="encabezado">
+
+        <!-- con encabezado__fila acomodamos el logo y el menu con flex -->
+        <div class="contenedor encabezado__fila">
+
+            <!-- logo de amac, si lo presionan regresan al inicio -->
+            <a class="marca" href="index.html">
+                <img src="img/logo-amac.svg" alt="AMAC" width="200" height="23">
+                <span class="marca__nombre">Bolsa de Trabajo</span>
+            </a>
+
+            <!-- menu que se ve en computadora -->
+            <nav class="nav-principal" aria-label="Navegación principal">
+                <ul>
+                    <!-- aria-current marca donde estamos, por eso sale la rayita coral -->
+                    <li><a href="index.html">Vacantes</a></li>
+                    <li>
+                        <a href="mis-solicitudes.html">
+                            Mis solicitudes
+                            <span class="contador" aria-label="2 avisos nuevos">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="vacantes-guardadas-candidato.html">
+                            Guardadas
+                            <span class="contador" aria-label="1 vacante guardada">1</span>
+                        </a>
+                    </li>
+                    <li><a href="mi-perfil.html" aria-current="page">Mi perfil</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- menu para celular -->
+            <!-- usamos details para poder abrir y cerrar el menu sin js -->
+            <details class="menu-movil">
+
+                <!-- summary es lo que presionamos para abrir el menu -->
+                <summary>
+                    <!-- las tres rayitas del menu -->
+                    <svg class="icono"  
+                        aria-hidden="true" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        stroke-width="2" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round">
+                        <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+                    </svg> Menú
+                </summary>
+
+                <!-- estas opciones salen cuando abrimos el menu -->
+                <nav aria-label="Navegación principal (celular)">
+
+                    <ul class="menu-movil__lista">
+                        <li><a href="index.html">Vacantes</a></li>
+                        <li><a href="mis-solicitudes.html">Mis solicitudes (2)</a></li>
+                        <li><a href="vacantes-guardadas-candidato.html">Guardadas (1)</a></li>
+                        <li><a href="mi-perfil.html" aria-current="page">Mi perfil</a></li>
+                        <li><a href="login.html">Cerrar sesión</a></li>
+                    </ul>
+
+                </nav>
+
+            </details>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main id="principal" class="contenedor contenedor--angosto">
+
+        <div class="titulo-pagina">
+            <h1>Mi perfil</h1>
+            <p class="texto-2">Revise que sus datos estén bien. Las empresas ven su experiencia y habilidades cuando usted se postula.</p>
+        </div>
+
+        <!-- Estatico: guardar vuelve a cargar esta misma pagina. En la Entrega 3 React guarda los cambios en la base de datos. -->
+        <!-- Es method="get" porque en Vercel una pagina estatica no recibe POST -->
+        <form class="formulario" action="mi-perfil.html" method="get">
+
+            <!-- Este aviso depende del estatus de la cuenta: aprobada, en revision, etc. -->
+            <div class="mensaje">
+                <svg class="icono" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <p>Su cuenta ya fue aprobada por AMAC. Puede postularse a cualquier vacante.</p>
+            </div>
+
+
+            <!-- SUS DATOS -->
+
+            <section class="tarjeta" aria-labelledby="titulo-datos">
+
+                <h2 id="titulo-datos">Sus datos</h2>
+
+                <div class="campo-formulario">
+                    <label for="nombres">Nombre(s)</label>
+                    <input type="text" id="nombres" name="nombres" value="María Guadalupe" autocomplete="given-name" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="apellido-paterno">Apellido paterno</label>
+                    <input type="text" id="apellido-paterno" name="apellido_paterno" value="López" autocomplete="family-name" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="apellido-materno">Apellido materno</label>
+                    <input type="text" id="apellido-materno" name="apellido_materno" value="Treviño" required>
+                </div>
+
+                <fieldset>
+                    <legend>Fecha de nacimiento</legend>
+                    <div class="columnas columnas--3">
+                        <div class="campo-formulario">
+                            <label for="dia">Día</label>
+                            <select id="dia" name="dia" required>
+                                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option selected>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                            </select>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="mes">Mes</label>
+                            <select id="mes" name="mes" required>
+                                <option value="1">Enero</option><option value="2">Febrero</option><option value="3" selected>Marzo</option><option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option><option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
+                            </select>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="anio">Año</label>
+                            <select id="anio" name="anio" required>
+                                <option>1965</option><option>1964</option><option>1963</option><option>1962</option><option selected>1961</option><option>1960</option><option>1959</option><option>1958</option><option>1957</option><option>1956</option><option>1955</option><option>1954</option><option>1953</option><option>1952</option><option>1951</option><option>1950</option><option>1949</option><option>1948</option><option>1947</option><option>1946</option><option>1945</option><option>1944</option><option>1943</option><option>1942</option><option>1941</option><option>1940</option><option>1939</option><option>1938</option><option>1937</option><option>1936</option><option>1935</option><option>1934</option><option>1933</option><option>1932</option><option>1931</option><option>1930</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="campo-formulario">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo" name="sexo" required>
+                        <option selected>Mujer</option>
+                        <option>Hombre</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="estudios">Máximo nivel de estudios</label>
+                    <select id="estudios" name="estudios" required>
+                        <option>Sin estudios</option>
+                        <option>Primaria</option>
+                        <option selected>Secundaria</option>
+                        <option>Preparatoria</option>
+                        <option>Carrera técnica</option>
+                        <option>Licenciatura</option>
+                        <option>Posgrado</option>
+                    </select>
+                </div>
+
+            </section>
+
+
+            <!-- CONTACTO -->
+
+            <section class="tarjeta" aria-labelledby="titulo-contacto">
+
+                <h2 id="titulo-contacto">Contacto</h2>
+
+                <div class="campo-formulario">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" value="maria.lopez@correo.com" autocomplete="email">
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="celular">Celular</label>
+                    <p class="campo-formulario__ayuda" id="ayuda-celular">10 números, sin espacios.</p>
+                    <input type="tel" id="celular" name="celular" value="8112345678" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" aria-describedby="ayuda-celular">
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="aviso">¿Por dónde prefiere que le avisemos?</label>
+                    <select id="aviso" name="aviso">
+                        <option value="correo" selected>Por correo</option>
+                        <option value="celular">Por mensaje al celular</option>
+                    </select>
+                </div>
+
+            </section>
+
+
+            <!-- DIRECCION -->
+
+            <section class="tarjeta" aria-labelledby="titulo-direccion">
+
+                <h2 id="titulo-direccion">Dirección</h2>
+
+                <div class="campo-formulario">
+                    <label for="calle">Calle y número</label>
+                    <input type="text" id="calle" name="calle" value="Limón 201" autocomplete="address-line1" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="colonia">Colonia</label>
+                    <input type="text" id="colonia" name="colonia" value="Arboledas" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="codigo-postal">Código postal</label>
+                    <input type="text" id="codigo-postal" name="codigo_postal" value="67110" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="municipio">Municipio o ciudad</label>
+                    <select id="municipio" name="municipio" required>
+                        <option>Apodaca</option>
+                        <option>García</option>
+                        <option>General Escobedo</option>
+                        <option selected>Guadalupe</option>
+                        <option>Juárez</option>
+                        <option>Monterrey</option>
+                        <option>San Nicolás de los Garza</option>
+                        <option>San Pedro Garza García</option>
+                        <option>Santa Catarina</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+
+            </section>
+
+
+            <!-- EXPERIENCIA Y HABILIDADES -->
+
+            <section class="tarjeta" aria-labelledby="titulo-experiencia">
+
+                <h2 id="titulo-experiencia">Experiencia y habilidades</h2>
+
+                <fieldset>
+                    <legend>¿En qué áreas tiene experiencia?</legend>
+                    <p class="campo-formulario__ayuda">Marque todas las que apliquen. Las empresas las usan para encontrarlo.</p>
+                    <div class="columnas">
+                        <label class="opcion"><input type="checkbox" name="areas" value="almacen" checked> Almacén</label>
+                        <label class="opcion"><input type="checkbox" name="areas" value="cocina"> Cocina</label>
+                        <label class="opcion"><input type="checkbox" name="areas" value="ventas" checked> Ventas</label>
+                        <label class="opcion"><input type="checkbox" name="areas" value="limpieza"> Limpieza</label>
+                        <label class="opcion"><input type="checkbox" name="areas" value="atencion-cliente" checked> Atención al cliente</label>
+                        <label class="opcion"><input type="checkbox" name="areas" value="seguridad"> Seguridad</label>
+                        <label class="opcion"><input type="checkbox" name="areas" value="oficina"> Oficina</label>
+                        <label class="opcion"><input type="checkbox" name="areas" value="otro"> Otro</label>
+                    </div>
+                </fieldset>
+
+                <div class="campo-formulario">
+                    <label for="experiencia">Experiencia laboral</label>
+                    <p class="campo-formulario__ayuda" id="ayuda-experiencia">Trabajos que ha tenido y cuánto tiempo. Ejemplo: "Encargada de tienda de abarrotes, 15 años".</p>
+                    <textarea id="experiencia" name="experiencia" rows="4" aria-describedby="ayuda-experiencia" required>Cajera en tienda de abarrotes por 10 años. Acomodo de mercancía y cobro en caja.</textarea>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="habilidades">Habilidades</label>
+                    <p class="campo-formulario__ayuda" id="ayuda-habilidades">Cosas que sabe hacer bien. Ejemplo: "Manejo de caja, atención a clientes".</p>
+                    <textarea id="habilidades" name="habilidades" rows="4" aria-describedby="ayuda-habilidades" required>Atención al cliente, manejo de caja, puntualidad.</textarea>
+                </div>
+
+                <!-- Curriculum: el nombre del archivo a la izquierda y el boton a la derecha -->
+                <!-- Es button porque todavia no hay archivo real. En React abrira el selector de archivos -->
+                <div class="campo-formulario">
+                    <p><strong>Currículum (opcional)</strong></p>
+                    <div class="fila">
+                        <p>curriculum-maria-lopez.pdf, subido el 12 oct 2026</p>
+                        <button class="boton boton--secundario" type="button">Cambiar currículum</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="grupo-botones grupo-botones--derecha">
+                <button class="boton boton--coral" type="submit">Guardar cambios</button>
+            </div>
+
+        </form>
+
+
+        <!-- DESACTIVAR LA CUENTA -->
+        <!-- Esta fuera del formulario porque su boton no guarda datos -->
+
+        <section class="tarjeta seccion" aria-labelledby="titulo-desactivar">
+
+            <h2 id="titulo-desactivar">Desactivar mi cuenta</h2>
+            <p>Si ya no quiere usar la bolsa de trabajo, puede desactivar su cuenta. Tiene 7 días para arrepentirse antes de que se borre.</p>
+
+            <div class="grupo-botones">
+                <button class="boton boton--secundario" type="button">Desactivar mi cuenta</button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+        <footer class="pie">
+
+        <div class="contenedor pie__columnas">
+
+            <!-- PRIMERA COLUMNA: INFORMACION DE AMAC -->
+
+            <div class="pie__columna">
+
+                <img class="pie__logo" src="img/logo-amac-blanco.svg" alt="AMAC" width="200" height="23">
+
+                <p>
+                    <strong>asociAMayores A.C.</strong><br>
+                    Amatista 107<br>
+                    San Pedro Garza García, N.L.
+                </p>
+
+                <a href="mailto:contacto@somosamac.org">contacto@somosamac.org</a>
+
+                <p>¿Necesita ayuda con la bolsa de trabajo? Llame al [TELÉFONO DE AMAC]</p>
+
+                <a href="https://somosamac.org">Aviso de privacidad</a>
+
+            </div>
+
+
+            <!-- SEGUNDA COLUMNA: ENLACES -->
+
+            <nav class="pie__columna" aria-label="Sitio de AMAC">
+
+                <ul>
+                    <li><a href="https://somosamac.org">Inicio</a></li>
+                    <li><a href="https://somosamac.org">Nosotros</a></li>
+                    <li><a href="https://somosamac.org">Qué hacemos</a></li>
+                    <li><a href="https://somosamac.org">Apóyanos</a></li>
+                    <li><a href="https://somosamac.org">Quiero donar</a></li>
+                </ul>
+
+            </nav>
+
+
+            <!-- TERCERA COLUMNA: REDES SOCIALES -->
+
+            <div class="pie__columna">
+
+                <h2 class="pie__titulo">Síguenos</h2>
+
+                <ul class="pie__redes">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOTON DE AYUDA -->
+
+    <!-- Falta agregar el numero de telefono para que pueda llamar -->
+    <a class="boton-ayuda" href="tel:+520000000000">
+
+        <svg class="icono" 
+            aria-hidden="true" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round">
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+        </svg>
+
+        ¿Necesita ayuda?
+
+    </a>
+
+</body>
+</html>
